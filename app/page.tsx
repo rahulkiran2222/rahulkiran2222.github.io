@@ -6,6 +6,21 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section Placeholder */}
+      {/* Recognition Section for app/page.tsx */}
+<section className="py-20 px-6 border-t border-white/5 bg-white/[0.02]">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-center font-mono text-xs text-muted uppercase tracking-[0.3em] mb-12">
+      Research & Recognition
+    </h2>
+    <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+      {/* Replace these with actual logos later */}
+      <span className="text-xl font-bold">Stanford</span>
+      <span className="text-xl font-bold">Google</span>
+      <span className="text-xl font-bold">IEEE</span>
+      <span className="text-xl font-bold">ArXiv</span>
+    </div>
+  </div>
+</section>
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-6xl md:text-8xl font-heading font-bold mb-6">
