@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Kiran Gunti — AI Research</title>
+<meta name="description" content="Rahul Kiran Gunti — Founder, Raphus Solutions. Research on LLM grounding, prompt injection security, cognitive biases, and multilingual tokenization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #FAF6EE;
+    --bg-raised: #F3EDE0;
+    --ink:       #221F1B;
+    --ink-soft:  #58524A;
+    --taupe:     #857C6E;
+    --rule:      #DCD3C1;
+    --terracotta:#B14F2A;
+    --terracotta-soft: #B14F2A1a;
+    --sage:      #5C6B4F;
+    --max:       760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--terracotta-soft);}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* ---- nav ---- */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(250,246,238,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  nav .mark{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.02em;
+    color:var(--ink); text-decoration:none; font-weight:500;
+  }
+  nav .mark span{color:var(--terracotta);}
+  nav ul{
+    list-style:none; display:flex; gap:22px; margin:0; padding:0;
+  }
+  nav a.link{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px; text-transform:lowercase; letter-spacing:0.03em;
+    text-decoration:none; color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color .15s, border-color .15s;
+  }
+  nav a.link:hover{color:var(--terracotta); border-color:var(--terracotta);}
+
+  /* ---- hero ---- */
+  header.hero{padding:76px 0 48px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--terracotta);
+    letter-spacing:0.06em; text-transform:uppercase; margin:0 0 18px;
+  }
+  h1.name{
+    font-family:'Source Serif 4',serif; font-weight:600;
+    font-size:clamp(38px,6vw,54px); line-height:1.08; margin:0 0 14px; letter-spacing:-0.01em;
+  }
+  .roles{font-size:18px; color:var(--ink-soft); margin:0 0 4px; max-width:560px;}
+  .roles b{color:var(--ink); font-weight:600;}
+  .location{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--taupe); margin:0 0 26px;
+  }
+  .links{display:flex; flex-wrap:wrap; gap:0; align-items:center;
+    font-family:'IBM Plex Mono',monospace; font-size:13.5px;
+  }
+  .links a{text-decoration:none; color:var(--ink); border-bottom:1px solid var(--terracotta); padding-bottom:1px;}
+  .links a:hover{color:var(--terracotta);}
+  .links .sep{color:var(--rule); margin:0 12px;}
+
+  /* ---- section shell ---- */
+  section{padding:44px 0;}
+  section + section{border-top:1px solid var(--rule);}
+  h2.sec{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--taupe); margin:0 0 26px;
+    display:flex; align-items:center; gap:10px;
+  }
+  h2.sec::before{content:"//"; color:var(--terracotta);}
+  p.lede{font-size:17px; color:var(--ink-soft); max-width:640px;}
+  p.lede b{color:var(--ink); font-weight:600;}
+
+  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--sage);
+    background:#5C6B4F14; border:1px solid #5C6B4F33;
+    padding:5px 10px; border-radius:3px;
+  }
+
+  /* ---- project ledger ---- */
+  .repo{
+    display:grid; grid-template-columns:190px 1fr; gap:22px;
+    padding:22px 0; border-top:1px solid var(--rule);
+  }
+  .repo:first-of-type{border-top:none;}
+  .repo .path{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--terracotta);
+    word-break:break-word; line-height:1.5; padding-top:2px;
+  }
+  .repo .path::before{content:"~/"; color:var(--rule);}
+  .repo h3{
+    font-family:'Source Serif 4',serif; font-weight:600; font-size:20px; margin:0 0 8px;
+  }
+  .repo p{margin:0 0 10px; color:var(--ink-soft); font-size:15.5px;}
+  .repo .meta{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--taupe); margin:0 0 10px;
+  }
+  .repo .repo-links a{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; text-decoration:none;
+    color:var(--ink); border-bottom:1px solid var(--rule); margin-right:16px;
+  }
+  .repo .repo-links a:hover{color:var(--terracotta); border-color:var(--terracotta);}
+
+  /* ---- publications ---- */
+  .pub-group{margin-bottom:30px;}
+  .pub-group h3.gtitle{
+    font-family:'Inter',sans-serif; font-size:13px; font-weight:600; text-transform:uppercase;
+    letter-spacing:0.04em; color:var(--ink); margin:0 0 4px;
+  }
+  .pub-group .gnote{font-size:13.5px; color:var(--taupe); margin:0 0 16px;}
+  .pub{padding:14px 0; border-top:1px solid var(--rule);}
+  .pub:first-of-type{border-top:none;}
+  .pub .ptitle{font-size:15.5px; font-weight:500; margin:0 0 4px;}
+  .pub .pmeta{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--taupe);
+  }
+  .pub .pmeta a{color:var(--terracotta); text-decoration:none; border-bottom:1px solid var(--terracotta-soft);}
+
+  /* ---- experience timeline ---- */
+  .xrow{
+    display:grid; grid-template-columns:110px 1fr; gap:20px;
+    padding:18px 0; border-top:1px solid var(--rule);
+  }
+  .xrow:first-of-type{border-top:none;}
+  .xrow .when{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--taupe); padding-top:3px;
+  }
+  .xrow h3{font-size:16px; margin:0 0 3px; font-weight:600;}
+  .xrow .org{font-size:14px; color:var(--terracotta); margin:0 0 6px;}
+  .xrow p.desc{margin:0; font-size:14.5px; color:var(--ink-soft);}
+
+  .creds{
+    margin-top:18px; padding-top:18px; border-top:1px dashed var(--rule);
+    font-size:13.5px; color:var(--ink-soft);
+  }
+  .creds b{color:var(--ink); font-weight:600;}
+
+  footer{
+    padding:36px 0 60px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--taupe);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  footer a{color:var(--taupe); text-decoration:none; border-bottom:1px solid var(--rule);}
+  footer a:hover{color:var(--terracotta);}
+
+  @media(max-width:600px){
+    .repo{grid-template-columns:1fr;}
+    .xrow{grid-template-columns:1fr;}
+    nav ul{gap:14px;}
+    section{padding:34px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top">RK<span>_</span>ai</a>
+    <ul>
+      <li><a class="link" href="#about">about</a></li>
+      <li><a class="link" href="#research">research</a></li>
+      <li><a class="link" href="#projects">projects</a></li>
+      <li><a class="link" href="#publications">papers</a></li>
+      <li><a class="link" href="#experience">experience</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="top" class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Independent AI Researcher</p>
+    <h1 class="name">Rahul Kiran Gunti</h1>
+    <p class="roles">Founder &amp; Managing Partner, <b>Raphus Solutions</b> · CEO &amp; Chief AI Researcher, <b>HorizonTrax</b></p>
+    <p class="location">Hyderabad, India</p>
+    <div class="links">
+      <a href="mailto:youremail@example.com">Email</a><span class="sep">·</span>
+      <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener">GitHub</a><span class="sep">·</span>
+      <a href="https://orcid.org/0009-0009-3008-7999" target="_blank" rel="noopener">ORCID</a><span class="sep">·</span>
+      <a href="files/CV_RahulKiranGunti.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="sec">About</h2>
+    <p class="lede">
+      I run <b>Raphus Solutions</b>, an AI-enabled digital transformation company in Hyderabad, and lead
+      <b>HorizonTrax</b>, its AI-first education platform. Alongside that, I build an independent research
+      portfolio in LLM evaluation and safety — spanning hallucination theory, prompt-injection security,
+      cognitive biases in language models, and multilingual tokenization — aimed at a funded PhD in AI/CS.
+    </p>
+    <p class="lede" style="margin-top:14px;">
+      My path here is non-traditional: a B.Tech in Mechanical Engineering and an MBA in Finance/HRM,
+      followed by hands-on AI work — RLHF data work at Scale AI and Appen, applied deployments at Raphus
+      and HorizonTrax, and a growing set of self-directed empirical and theoretical research artifacts,
+      each shipped as open code rather than left as slide decks.
+    </p>
+  </section>
+
+  <section id="research">
+    <h2 class="sec">Research Interests</h2>
+    <p class="lede">I work at the intersection of applied AI and its failure modes — where models are
+      uncertain, manipulable, or biased — and how to evaluate and mitigate that rigorously.</p>
+    <div class="tags">
+      <span class="tag">LLM Hallucination &amp; Grounding</span>
+      <span class="tag">Prompt Injection &amp; Agent Security</span>
+      <span class="tag">Cognitive Biases in LLMs</span>
+      <span class="tag">Multilingual Tokenization</span>
+      <span class="tag">Sustainable / Green AI</span>
+      <span class="tag">Responsible AI Governance</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="sec">Projects</h2>
+
+    <div class="repo">
+      <div class="path">llm-grounding-deficit</div>
+      <div>
+        <h3>Three Lenses, One Gap: A Unified Theoretical Account of Hallucination in LLMs</h3>
+        <p class="meta">Theory paper (ACL/EMNLP-track) + companion evaluation harness</p>
+        <p>Introduces a "grounding deficit" construct Δ(M,F) = (δS, δC, δE), synthesizing statistical/PAC
+          learning theory, computability and information theory, and epistemology of language into one
+          account of why LLMs hallucinate. Revised across two peer-review-style rounds. The companion repo
+          implements the paper's proxy metrics as a working harness against OpenAI, Anthropic, and
+          Together AI backends, with a Streamlit dashboard.</p>
+        <div class="repo-links">
+          <a href="https://github.com/rahulkiran2222/llm-grounding-deficit" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="repo">
+      <div class="path">prompt-injection-lab</div>
+      <div>
+        <h3>Evaluation Framework for Indirect Prompt Injection in RAG Systems</h3>
+        <p class="meta">Built on the BIPIA benchmark (Microsoft, KDD 2025)</p>
+        <p>An evaluation harness for indirect prompt injection against retrieval-augmented pipelines,
+          run across Qwen2.5-7B-Instruct, Llama-3.1-8B-Instruct, and Gemma. Designed to run at zero cost
+          on Kaggle or Colab's free GPU tier, so results are reproducible without infrastructure access.</p>
+        <div class="repo-links">
+          <a href="https://github.com/rahulkiran2222/prompt-injection-lab" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="repo">
+      <div class="path">Tokenizer-Bias</div>
+      <div>
+        <h3>Tokenizer Bias in Hindi and Telugu Text</h3>
+        <p class="meta">Llama BPE vs. UTF-8 byte-level encoding, IndicCorp v2</p>
+        <p>A research-grade empirical comparison of subword tokenization behavior on two low-resource
+          Indic languages, with an extension connecting results to Hofmann et al.'s "Compute-Optimal
+          Tokenization." A June 2026 pass diagnosed a dummy-tokenizer bug, removed unreliable numeric
+          claims, and added an explicit Limitations section.</p>
+        <div class="repo-links">
+          <a href="https://github.com/rahulkiran2222/Tokenizer-Bias" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="repo">
+      <div class="path">llm-cognitive-biases</div>
+      <div>
+        <h3>Replicating Tversky &amp; Kahneman Paradigms Against LLMs</h3>
+        <p class="meta">Conjunction fallacy · framing · anchoring · base-rate neglect · availability heuristic</p>
+        <p>Tests five canonical cognitive-bias paradigms against published human baselines, using the
+          exact original item wording. Includes a model runner supporting the free-tier Hugging Face API
+          and local/Colab GPU backends, response scoring, Wilson confidence intervals, Cohen's h, and a
+          full Jupyter analysis notebook.</p>
+        <div class="repo-links">
+          <a href="https://github.com/rahulkiran2222/llm-cognitive-biases" target="_blank" rel="noopener">Code →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2 class="sec">Publications &amp; Writing</h2>
+
+    <div class="pub-group">
+      <h3 class="gtitle">Papers in Progress</h3>
+      <p class="gnote">Targeting peer-reviewed venues; not yet published.</p>
+      <div class="pub">
+        <p class="ptitle">Three Lenses, One Gap: A Unified Theoretical Account of Hallucination in Large Language Models</p>
+        <p class="pmeta">cs.AI, cross-listed cs.CL · ACL/EMNLP-style theory track (target)</p>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <h3 class="gtitle">White Papers &amp; Reports</h3>
+      <p class="gnote">Applied and policy-facing writing, hosted on Zenodo.</p>
+      <div class="pub">
+        <p class="ptitle">Sustainable AI Stack</p>
+        <p class="pmeta">DOI: <a href="https://doi.org/10.5281/zenodo.20504482" target="_blank" rel="noopener">10.5281/zenodo.20504482</a></p>
+      </div>
+      <div class="pub">
+        <p class="ptitle">Responsible AI: A Governance White Paper</p>
+        <p class="pmeta">Zenodo</p>
+      </div>
+      <div class="pub">
+        <p class="ptitle">Sustainable Waste-to-Energy Technologies</p>
+        <p class="pmeta">Zenodo</p>
+      </div>
+      <div class="pub">
+        <p class="ptitle">Financial Performance Assessment</p>
+        <p class="pmeta">Zenodo</p>
+      </div>
+      <div class="pub">
+        <p class="ptitle">Coca-Cola Refrigerants: A Review</p>
+        <p class="pmeta">Zenodo</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="sec">Experience</h2>
+
+    <div class="xrow">
+      <div class="when">2023 – Present</div>
+      <div>
+        <h3>Founder &amp; Managing Partner</h3>
+        <p class="org">Raphus Solutions</p>
+        <p class="desc">AI-enabled digital transformation company based in Hyderabad, India.</p>
+      </div>
+    </div>
+
+    <div class="xrow">
+      <div class="when">2023 – Present</div>
+      <div>
+        <h3>CEO &amp; Chief AI Researcher</h3>
+        <p class="org">HorizonTrax</p>
+        <p class="desc">AI-first education platform, operating as a product division of Raphus Solutions.</p>
+      </div>
+    </div>
+
+    <div class="xrow">
+      <div class="when">Aug 2024 – Sep 2025</div>
+      <div>
+        <h3>AI Trainer &amp; Analyst</h3>
+        <p class="org">Scale AI</p>
+        <p class="desc">Contract RLHF data work — response evaluation and preference labeling for frontier model training.</p>
+      </div>
+    </div>
+
+    <div class="xrow">
+      <div class="when">Aug 2021 – Aug 2022</div>
+      <div>
+        <h3>AI Data Analyst</h3>
+        <p class="org">Appen</p>
+        <p class="desc">Contract data annotation and evaluation work; maintained a 95% accuracy rating.</p>
+      </div>
+    </div>
+
+    <div class="xrow">
+      <div class="when">Education</div>
+      <div>
+        <h3>B.Tech, Mechanical Engineering · MBA, Finance &amp; HRM</h3>
+        <p class="desc">Non-traditional route into AI research, built on applied engineering and management foundations.</p>
+      </div>
+    </div>
+
+    <div class="creds">
+      <b>Programs &amp; workshops:</b> Google DeepMind TRI AI Cohort 10 · Stanford ETPP ·
+      UC Berkeley RDI / Agentic AI · NVIDIA NeMo ecosystem workshops
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Rahul Kiran Gunti</span>
+    <span><a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener">github.com/rahulkiran2222</a></span>
+  </footer>
+</div>
+
+</body>
+</html>
