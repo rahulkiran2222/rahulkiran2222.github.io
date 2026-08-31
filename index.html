@@ -54,7 +54,7 @@
       --terracotta-soft: #B14F2A1a;
       --sage: #5C6B4F;
       --sage-soft: #5C6B4F14;
-      --max: 820px;
+      --max: 1120px;
     }
 
     * {
@@ -531,6 +531,66 @@
       color: var(--terracotta);
     }
 
+
+/* =========================================================
+   V0.1 EXPERIENCE LAYER
+   ========================================================= */
+body{overflow-x:hidden}
+.wrap{max-width:var(--max)}
+nav{z-index:100}
+nav .wrap{max-width:1120px}
+.nav-scroll{display:flex;align-items:center;gap:20px}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:var(--terracotta);display:inline-block;box-shadow:0 0 0 5px var(--terracotta-soft)}
+.hero-stage{position:relative;min-height:420px;margin:18px 0 8px;border:1px solid var(--rule);background:linear-gradient(135deg,rgba(243,237,224,.72),rgba(250,246,238,.3));overflow:hidden}
+.hero-stage canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.hero-copy{position:relative;z-index:2;padding:42px 38px;max-width:650px}
+.hero-copy .micro{font:11px "IBM Plex Mono",monospace;color:var(--sage);letter-spacing:.06em;text-transform:uppercase}
+.hero-copy h3{font:clamp(27px,4vw,44px) "Source Serif 4",serif;line-height:1.08;margin:12px 0}
+.hero-copy p{max-width:520px;color:var(--ink-soft);font-size:15px}
+.hero-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hero-action{font:11px "IBM Plex Mono",monospace;border:1px solid var(--rule);padding:8px 11px;text-decoration:none;background:rgba(250,246,238,.72);transition:.2s}
+.hero-action:hover{color:var(--terracotta);border-color:var(--terracotta);transform:translateY(-2px)}
+.statline{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
+.statline strong{color:var(--ink)}
+#research,#projects,#publications,#writing,#journey,#education,#certifications,#field-notes,#knowledge,#about,#contact{scroll-margin-top:86px}
+.feature-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:12px}
+.feature-card{border:1px solid var(--rule);padding:22px;background:var(--bg-raised);transition:.22s;position:relative;overflow:hidden}
+.feature-card:hover{transform:translateY(-3px);border-color:var(--terracotta)}
+.feature-card.large{min-height:230px}
+.feature-card h3{font-family:"Source Serif 4",serif;font-size:25px}
+.feature-card p{font-size:14px;color:var(--ink-soft)}
+.arrow{font-family:"IBM Plex Mono",monospace;color:var(--terracotta);font-size:12px}
+.badge{display:inline-block;font:9px "IBM Plex Mono",monospace;color:var(--sage);border:1px solid #5C6B4F33;padding:4px 7px;margin-bottom:8px;text-transform:uppercase}
+.data-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);margin:22px 0 0}
+.data-strip div{padding:15px;border-right:1px solid var(--rule);font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
+.data-strip div:last-child{border-right:0}.data-strip strong{display:block;font:600 22px "Source Serif 4",serif;color:var(--ink);margin-bottom:2px}
+.timeline{position:relative;padding-left:24px;border-left:1px solid var(--rule)}
+.timeline .xrow{position:relative}.timeline .xrow:before{content:"";position:absolute;left:-28px;top:23px;width:7px;height:7px;border-radius:50%;background:var(--terracotta);box-shadow:0 0 0 4px var(--terracotta-soft)}
+.credential-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.credential{border:1px solid var(--rule);padding:20px;background:var(--bg-raised);min-height:145px;transition:.2s}
+.credential:hover{border-color:var(--terracotta);transform:translateY(-2px)}
+.credential .issuer{font:10px "IBM Plex Mono",monospace;color:var(--terracotta);text-transform:uppercase}
+.credential h3{font-size:18px;margin:10px 0 4px}.credential p{font-size:13px;color:var(--ink-soft);margin:0}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery-item{aspect-ratio:1.15/1;border:1px solid var(--rule);background:var(--bg-raised);position:relative;overflow:hidden;cursor:pointer}
+.gallery-item .placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;background:linear-gradient(135deg,var(--bg-raised),var(--bg));color:var(--taupe);font:11px "IBM Plex Mono",monospace}
+.gallery-item .placeholder b{display:block;color:var(--ink);font:22px "Source Serif 4",serif;margin-bottom:5px}
+.gallery-item:hover .placeholder{color:var(--terracotta)}
+.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.knowledge{border-top:2px solid var(--sage);padding:18px 16px;background:var(--sage-soft);min-height:150px}
+.knowledge h3{font-size:18px}.knowledge p{font-size:13px;color:var(--ink-soft)}
+.knowledge a{font:10px "IBM Plex Mono",monospace;color:var(--terracotta)}
+.section-index{font:10px "IBM Plex Mono",monospace;color:var(--taupe);margin-bottom:14px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:760px){
+ .hero-stage{min-height:500px}.hero-copy{padding:28px 22px}
+ .feature-grid,.credential-grid,.knowledge-grid{grid-template-columns:1fr}
+ .gallery-grid{grid-template-columns:1fr 1fr}.data-strip{grid-template-columns:1fr 1fr}
+ .data-strip div:nth-child(2){border-right:0}.data-strip div{border-bottom:1px solid var(--rule)}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-action,.feature-card,.credential{transition:none}}
+
     /* MOBILE */
 
     @media (max-width: 680px) {
@@ -591,12 +651,13 @@
       </a>
 
       <ul>
-        <li><a class="link" href="#research">research</a></li>
         <li><a class="link" href="#projects">projects</a></li>
-        <li><a class="link" href="#publications">papers</a></li>
-        <li><a class="link" href="#writing">writing</a></li>
-        <li><a class="link" href="#journey">journey</a></li>
-        <li><a class="link" href="#about">about</a></li>
+        <li><a class="link" href="#research">research</a></li>
+        <li><a class="link" href="#education">education</a></li>
+        <li><a class="link" href="#certifications">certifications</a></li>
+        <li><a class="link" href="#field-notes">gallery</a></li>
+        <li><a class="link" href="#knowledge">resources</a></li>
+        <li><a class="link" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
         <li><a class="link" href="#contact">contact</a></li>
       </ul>
 
@@ -611,6 +672,23 @@
          ======================================================= -->
 
     <header class="hero">
+
+      <div class="hero-stage" aria-label="Interactive research map">
+        <canvas id="researchCanvas" aria-hidden="true"></canvas>
+        <div class="hero-copy">
+          <div class="micro"><span class="nav-dot"></span> research system · interactive index</div>
+          <h3>Ideas become experiments. Experiments become evidence.</h3>
+          <p>Explore the work as a connected system: foundation models, reliability, safety, multilingual AI, efficient systems, and the artifacts built around them.</p>
+          <div class="hero-actions">
+            <a class="hero-action" href="#projects">explore work →</a>
+            <a class="hero-action" href="#research">research map →</a>
+            <a class="hero-action" href="#field-notes">field notes →</a>
+          </div>
+          <div class="statline">
+            <span><strong>AI</strong> research</span><span><strong>OPEN</strong> artifacts</span><span><strong>VISUAL</strong> archive</span><span><strong>2026</strong> v0.1</span>
+          </div>
+        </div>
+      </div>
 
       <p class="eyebrow">Independent AI Researcher</p>
 
@@ -627,15 +705,15 @@
         Hyderabad, India · Research · Open Source · Technical Writing
       </p>
 
-      <!-- Replace these three placeholders with your exact URLs -->
+      <!-- Use the contact section below for verified external links -->
       <div class="links">
 
-        <a href="mailto:YOUR_EMAIL@example.com">Email</a>
+        <a href="#contact">Email</a>
 
         <span class="sep">·</span>
 
         <a
-          href="YOUR_LINKEDIN_URL"
+          href="#contact"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -645,7 +723,7 @@
         <span class="sep">·</span>
 
         <a
-          href="YOUR_X_URL"
+          href="#contact"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -773,8 +851,8 @@
           </p>
 
           <div class="repo-links">
-            <a href="#" aria-label="Foundation Model Atlas — coming soon">
-              Explore →
+            <a href="https://rahulkiran2222.github.io/foundation-model-atlas/" target="_blank" rel="noopener noreferrer">
+              Explore live Atlas →
             </a>
 
             <a
@@ -1014,6 +1092,125 @@
     </section>
 
 
+
+    <!-- =======================================================
+         FEATURED WORK OVERVIEW
+         ======================================================= -->
+    <section id="featured">
+      <h2 class="sec">Featured Work</h2>
+      <div class="section-index">A visual entry point into the strongest completed and active artifacts.</div>
+      <div class="feature-grid">
+        <a class="feature-card large" href="#projects">
+          <span class="badge">flagship</span>
+          <h3>Foundation Model Atlas</h3>
+          <p>Interactive model and architecture research presented as a data-driven visual atlas, with comparison and architectural structure.</p>
+          <span class="arrow">open project section →</span>
+        </a>
+        <a class="feature-card" href="#projects">
+          <span class="badge">research</span>
+          <h3>LLM Grounding Deficit</h3>
+          <p>A theoretical and evaluation-oriented account of the gap between generated claims and supporting evidence.</p>
+          <span class="arrow">research artifact →</span>
+        </a>
+        <a class="feature-card" href="#projects">
+          <span class="badge">security</span>
+          <h3>Prompt Injection Lab</h3>
+          <p>Defensive evaluation of indirect prompt injection in retrieval-augmented and agentic systems.</p>
+          <span class="arrow">evaluation work →</span>
+        </a>
+      </div>
+      <div class="data-strip">
+        <div><strong>01</strong>flagship atlas</div>
+        <div><strong>06</strong>research artifacts</div>
+        <div><strong>∞</strong>questions to investigate</div>
+        <div><strong>v0.1</strong>portfolio system</div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         EDUCATION
+         ======================================================= -->
+    <section id="education">
+      <h2 class="sec">Education</h2>
+      <p class="lede">An engineering foundation followed by a self-directed transition into AI, research, and applied systems.</p>
+      <div class="credential-grid">
+        <article class="credential">
+          <div class="issuer">Academic background</div>
+          <h3>B.Tech — Mechanical Engineering</h3>
+          <p>Engineering foundation reflected in the existing research journey. Add the exact institution and dates here if desired.</p>
+        </article>
+        <article class="credential">
+          <div class="issuer">Research direction</div>
+          <h3>AI / Machine Learning — Independent Study</h3>
+          <p>Self-directed development across LLMs, foundation models, AI safety, multilingual NLP, evaluation, and efficient AI.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         CERTIFICATIONS
+         ======================================================= -->
+    <section id="certifications">
+      <h2 class="sec">Certifications</h2>
+      <p class="lede">Credentials and structured learning that support the research and engineering work. Exact certificate links can be added to each card without changing the design.</p>
+      <div class="credential-grid">
+        <article class="credential">
+          <div class="issuer">Google Cloud</div>
+          <h3>Cloud / AI Learning</h3>
+          <p>Google Cloud learning and certification work. Link to the exact credential when publishing the final record.</p>
+        </article>
+        <article class="credential">
+          <div class="issuer">AI / Research</div>
+          <h3>Professional Learning</h3>
+          <p>Use this space for verified AI, ML, research, or professional credentials from your final CV.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         FIELD NOTES / VISUAL ARCHIVE
+         ======================================================= -->
+    <section id="field-notes">
+      <h2 class="sec">Field Notes</h2>
+      <p class="lede">A visual archive of the work beyond repositories: talks, workshops, people, technology communities, institutional moments, and the places where ideas became real.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><div class="placeholder"><div><b>Talks</b>Replace with your talk photographs or video thumbnails from Drive.</div></div></div>
+        <div class="gallery-item"><div class="placeholder"><div><b>Workshops</b>AI literacy, training and technical sessions.</div></div></div>
+        <div class="gallery-item"><div class="placeholder"><div><b>Industry</b>People, events and technology community moments.</div></div></div>
+        <div class="gallery-item"><div class="placeholder"><div><b>Institutions</b>Government, academic and institutional engagements.</div></div></div>
+        <div class="gallery-item"><div class="placeholder"><div><b>Building</b>Behind-the-scenes project and research moments.</div></div></div>
+        <div class="gallery-item"><div class="placeholder"><div><b>Video archive</b>Talks, demonstrations and educational material.</div></div></div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         OPEN KNOWLEDGE
+         ======================================================= -->
+    <section id="knowledge">
+      <h2 class="sec">Open Knowledge</h2>
+      <p class="lede">Free AI learning material, research notes, white papers and useful open resources. This section is intentionally separate from publications: it is about helping people learn and explore.</p>
+      <div class="knowledge-grid">
+        <article class="knowledge">
+          <span class="badge">learn</span>
+          <h3>HorizonTrax AI Literacy</h3>
+          <p>Free AI-literacy learning and educational resources. Add the exact public learning/video URL here.</p>
+          <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">current public hub →</a>
+        </article>
+        <article class="knowledge">
+          <span class="badge">read</span>
+          <h3>Raphus White Papers</h3>
+          <p>Research and strategy material covering responsible, sustainable and AI-enabled digital transformation.</p>
+          <a href="#publications">see research writing →</a>
+        </article>
+        <article class="knowledge">
+          <span class="badge">open</span>
+          <h3>Research & Technical Notes</h3>
+          <p>Open repositories, datasets, architecture notes and experiments that make the research inspectable.</p>
+          <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">browse GitHub →</a>
+        </article>
+      </div>
+    </section>
+
     <!-- =======================================================
          PUBLICATIONS
          ======================================================= -->
@@ -1183,6 +1380,7 @@
     <section id="journey">
 
       <h2 class="sec">Research Journey</h2>
+      <div class="timeline">
 
 
       <div class="xrow">
@@ -1281,6 +1479,8 @@
       </div>
 
 
+      </div>
+
       <div class="community">
 
         <strong>Programs & community:</strong>
@@ -1360,18 +1560,18 @@
           the best way to reach me is by email or LinkedIn.
         </p>
 
-        <!-- Replace the three placeholders before launch -->
+        <!-- Add verified external links here when ready -->
 
         <div class="links">
 
-          <a href="mailto:YOUR_EMAIL@example.com">
+          <a href="#contact">
             Email
           </a>
 
           <span class="sep">·</span>
 
           <a
-            href="YOUR_LINKEDIN_URL"
+            href="#contact"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1381,7 +1581,7 @@
           <span class="sep">·</span>
 
           <a
-            href="YOUR_X_URL"
+            href="#contact"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1430,6 +1630,43 @@
     </footer>
 
   </main>
+
+
+<script>
+(() => {
+  const canvas = document.getElementById("researchCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w=0,h=0,dpr=1,mouse={x:-9999,y:-9999},points=[];
+  const labels=["RESEARCH","MODELS","AGENTS","EVIDENCE","SYSTEMS","AI"];
+  function resize(){
+    const r=canvas.getBoundingClientRect(); dpr=Math.min(devicePixelRatio||1,2);
+    w=r.width;h=r.height;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    points=labels.map((label,i)=>({x:w*(.57+.22*Math.cos(i*1.047)),y:h*(.45+.34*Math.sin(i*1.047)),vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,label}));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    points.forEach(p=>{p.x+=reduce?0:p.vx;p.y+=reduce?0:p.vy;if(p.x<30||p.x>w-30)p.vx*=-1;if(p.y<30||p.y>h-30)p.vy*=-1});
+    const cx=w*.66,cy=h*.51;
+    points.forEach((p,i)=>{
+      points.forEach((q,j)=>{if(j<=i)return;const dx=p.x-q.x,dy=p.y-q.y,dist=Math.hypot(dx,dy);if(dist<220){ctx.strokeStyle=`rgba(177,79,42,${.16*(1-dist/220)})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}});
+      const near=Math.hypot(mouse.x-p.x,mouse.y-p.y)<45;
+      ctx.beginPath();ctx.arc(p.x,p.y,near?6:3.5,0,Math.PI*2);ctx.fillStyle=near?"#B14F2A":"#5C6B4F";ctx.fill();
+      ctx.font='10px "IBM Plex Mono",monospace';ctx.fillStyle=near?"#B14F2A":"#857C6E";ctx.fillText(p.label,p.x+10,p.y+4);
+    });
+    ctx.beginPath();ctx.arc(cx,cy,30,0,Math.PI*2);ctx.fillStyle="rgba(177,79,42,.08)";ctx.fill();ctx.strokeStyle="rgba(177,79,42,.38)";ctx.stroke();
+    ctx.font='10px "IBM Plex Mono",monospace';ctx.fillStyle="#221F1B";ctx.textAlign="center";ctx.fillText("RK",cx,cy+4);ctx.textAlign="start";
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  canvas.addEventListener("pointermove",e=>{const r=canvas.getBoundingClientRect();mouse={x:e.clientX-r.left,y:e.clientY-r.top}});
+  canvas.addEventListener("pointerleave",()=>mouse={x:-9999,y:-9999});
+  window.addEventListener("resize",resize); resize(); draw();
+
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.08});
+  document.querySelectorAll("section,.repo,.feature-card,.credential,.gallery-item,.knowledge").forEach(el=>{el.classList.add("reveal");io.observe(el)});
+})();
+</script>
 
 </body>
 </html>
