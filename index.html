@@ -1,1672 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Rahul Kiran Gunti — Independent AI Researcher</title>
-
-  <meta
-    name="description"
-    content="Rahul Kiran Gunti — independent AI researcher working on foundation models, LLM reliability, AI safety, multilingual NLP, efficient AI, and responsible AI."
-  >
-
-  <meta name="author" content="Rahul Kiran Gunti">
-  <meta name="theme-color" content="#FAF6EE">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Rahul Kiran Gunti — Independent AI Researcher">
-  <meta
-    property="og:description"
-    content="Research on foundation models, LLM reliability, AI safety, multilingual NLP, efficient AI, and responsible AI."
-  >
-  <meta property="og:url" content="https://rahulkiran2222.github.io/">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rahul Kiran Gunti — Independent AI Researcher">
-  <meta
-    name="twitter:description"
-    content="Independent research in foundation models, AI safety, LLM reliability, multilingual NLP, and efficient AI."
-  >
-
-  <link rel="canonical" href="https://rahulkiran2222.github.io/">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-    :root {
-      --bg: #FAF6EE;
-      --bg-raised: #F3EDE0;
-      --ink: #221F1B;
-      --ink-soft: #58524A;
-      --taupe: #857C6E;
-      --rule: #DCD3C1;
-      --terracotta: #B14F2A;
-      --terracotta-soft: #B14F2A1a;
-      --sage: #5C6B4F;
-      --sage-soft: #5C6B4F14;
-      --max: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Inter", sans-serif;
-      font-size: 17px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    ::selection {
-      background: var(--terracotta-soft);
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* NAV */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(250, 246, 238, 0.94);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    nav .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 14px;
-      padding-bottom: 14px;
-    }
-
-    nav .mark {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 13px;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav .mark span {
-      color: var(--terracotta);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a.link {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      text-transform: lowercase;
-      letter-spacing: 0.03em;
-      text-decoration: none;
-      color: var(--ink-soft);
-      border-bottom: 1px solid transparent;
-      padding-bottom: 2px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    nav a.link:hover {
-      color: var(--terracotta);
-      border-color: var(--terracotta);
-    }
-
-    /* HERO */
-
-    header.hero {
-      padding: 82px 0 58px;
-    }
-
-    .eyebrow {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      color: var(--terracotta);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 18px;
-    }
-
-    h1.name {
-      font-family: "Source Serif 4", serif;
-      font-weight: 600;
-      font-size: clamp(40px, 7vw, 58px);
-      line-height: 1.06;
-      margin: 0 0 16px;
-      letter-spacing: -0.015em;
-    }
-
-    .headline {
-      font-size: 20px;
-      color: var(--ink-soft);
-      max-width: 680px;
-      margin: 0 0 20px;
-    }
-
-    .headline b {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .location {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12.5px;
-      color: var(--taupe);
-      margin: 0 0 26px;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      align-items: center;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 13px;
-    }
-
-    .links a {
-      text-decoration: none;
-      color: var(--ink);
-      border-bottom: 1px solid var(--terracotta);
-      padding-bottom: 1px;
-    }
-
-    .links a:hover {
-      color: var(--terracotta);
-    }
-
-    .links .sep {
-      color: var(--rule);
-      margin: 0 12px;
-    }
-
-    /* SECTION */
-
-    section {
-      padding: 46px 0;
-    }
-
-    section + section {
-      border-top: 1px solid var(--rule);
-    }
-
-    h2.sec {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--taupe);
-      margin: 0 0 26px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h2.sec::before {
-      content: "//";
-      color: var(--terracotta);
-    }
-
-    p.lede {
-      font-size: 17px;
-      color: var(--ink-soft);
-      max-width: 690px;
-    }
-
-    p.lede b {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    /* RESEARCH */
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--rule);
-    }
-
-    .research-card {
-      padding: 22px 20px 22px 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .research-card:nth-child(even) {
-      padding-left: 20px;
-      border-left: 1px solid var(--rule);
-    }
-
-    .research-card h3 {
-      font-family: "Source Serif 4", serif;
-      font-size: 20px;
-      margin: 0 0 7px;
-    }
-
-    .research-card p {
-      font-size: 14.5px;
-      color: var(--ink-soft);
-      margin: 0;
-    }
-
-    /* TAGS */
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .tag {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      color: var(--sage);
-      background: var(--sage-soft);
-      border: 1px solid #5C6B4F33;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
-
-    /* PROJECT LEDGER */
-
-    .repo {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 22px;
-      padding: 23px 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .repo:first-of-type {
-      border-top: none;
-    }
-
-    .repo .path {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12.5px;
-      color: var(--terracotta);
-      word-break: break-word;
-      line-height: 1.5;
-      padding-top: 3px;
-    }
-
-    .repo .path::before {
-      content: "~/";
-      color: var(--rule);
-    }
-
-    .repo h3 {
-      font-family: "Source Serif 4", serif;
-      font-weight: 600;
-      font-size: 20px;
-      margin: 0 0 7px;
-    }
-
-    .repo p {
-      margin: 0 0 10px;
-      color: var(--ink-soft);
-      font-size: 15px;
-    }
-
-    .repo .meta {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      color: var(--taupe);
-      margin: 0 0 10px;
-    }
-
-    .repo-links a {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      text-decoration: none;
-      color: var(--ink);
-      border-bottom: 1px solid var(--rule);
-      margin-right: 16px;
-    }
-
-    .repo-links a:hover {
-      color: var(--terracotta);
-      border-color: var(--terracotta);
-    }
-
-    /* PUBLICATIONS */
-
-    .pub-group {
-      margin-bottom: 32px;
-    }
-
-    .pub-group h3.gtitle {
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      margin: 0 0 4px;
-    }
-
-    .pub-group .gnote {
-      font-size: 13.5px;
-      color: var(--taupe);
-      margin: 0 0 16px;
-    }
-
-    .pub {
-      padding: 16px 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .pub:first-of-type {
-      border-top: none;
-    }
-
-    .pub .ptitle {
-      font-size: 15.5px;
-      font-weight: 500;
-      margin: 0 0 5px;
-    }
-
-    .pub .pmeta {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      color: var(--taupe);
-    }
-
-    .pub .pmeta a {
-      color: var(--terracotta);
-      text-decoration: none;
-      border-bottom: 1px solid var(--terracotta-soft);
-    }
-
-    /* WRITING */
-
-    .writing-row {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 20px;
-      padding: 17px 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .writing-row:first-of-type {
-      border-top: none;
-    }
-
-    .writing-row .date {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      color: var(--taupe);
-    }
-
-    .writing-row h3 {
-      font-size: 15.5px;
-      margin: 0 0 4px;
-      font-weight: 600;
-    }
-
-    .writing-row p {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 14px;
-    }
-
-    /* JOURNEY */
-
-    .xrow {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 20px;
-      padding: 18px 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .xrow:first-of-type {
-      border-top: none;
-    }
-
-    .xrow .when {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      color: var(--taupe);
-      padding-top: 3px;
-    }
-
-    .xrow h3 {
-      font-size: 16px;
-      margin: 0 0 3px;
-      font-weight: 600;
-    }
-
-    .xrow .org {
-      font-size: 14px;
-      color: var(--terracotta);
-      margin: 0 0 6px;
-    }
-
-    .xrow .desc {
-      margin: 0;
-      font-size: 14px;
-      color: var(--ink-soft);
-    }
-
-    /* COMMUNITY */
-
-    .community {
-      padding-top: 18px;
-      border-top: 1px dashed var(--rule);
-      font-size: 13.5px;
-      color: var(--ink-soft);
-    }
-
-    .community a {
-      color: var(--terracotta);
-      text-decoration: none;
-    }
-
-    /* CONTACT */
-
-    .contact-box {
-      padding: 24px 0 4px;
-    }
-
-    .contact-box p {
-      color: var(--ink-soft);
-      max-width: 620px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 38px 0 60px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      color: var(--taupe);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    footer a {
-      color: var(--taupe);
-      text-decoration: none;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    footer a:hover {
-      color: var(--terracotta);
-    }
-
-
-/* =========================================================
-   V0.1 EXPERIENCE LAYER
-   ========================================================= */
-body{overflow-x:hidden}
-.wrap{max-width:var(--max)}
-nav{z-index:100}
-nav .wrap{max-width:1120px}
-.nav-scroll{display:flex;align-items:center;gap:20px}
-.nav-dot{width:6px;height:6px;border-radius:50%;background:var(--terracotta);display:inline-block;box-shadow:0 0 0 5px var(--terracotta-soft)}
-.hero-stage{position:relative;min-height:420px;margin:18px 0 8px;border:1px solid var(--rule);background:linear-gradient(135deg,rgba(243,237,224,.72),rgba(250,246,238,.3));overflow:hidden}
-.hero-stage canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
-.hero-copy{position:relative;z-index:2;padding:42px 38px;max-width:650px}
-.hero-copy .micro{font:11px "IBM Plex Mono",monospace;color:var(--sage);letter-spacing:.06em;text-transform:uppercase}
-.hero-copy h3{font:clamp(27px,4vw,44px) "Source Serif 4",serif;line-height:1.08;margin:12px 0}
-.hero-copy p{max-width:520px;color:var(--ink-soft);font-size:15px}
-.hero-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-.hero-action{font:11px "IBM Plex Mono",monospace;border:1px solid var(--rule);padding:8px 11px;text-decoration:none;background:rgba(250,246,238,.72);transition:.2s}
-.hero-action:hover{color:var(--terracotta);border-color:var(--terracotta);transform:translateY(-2px)}
-.statline{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
-.statline strong{color:var(--ink)}
-#research,#projects,#publications,#writing,#journey,#education,#certifications,#field-notes,#knowledge,#about,#contact{scroll-margin-top:86px}
-.feature-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:12px}
-.feature-card{border:1px solid var(--rule);padding:22px;background:var(--bg-raised);transition:.22s;position:relative;overflow:hidden}
-.feature-card:hover{transform:translateY(-3px);border-color:var(--terracotta)}
-.feature-card.large{min-height:230px}
-.feature-card h3{font-family:"Source Serif 4",serif;font-size:25px}
-.feature-card p{font-size:14px;color:var(--ink-soft)}
-.arrow{font-family:"IBM Plex Mono",monospace;color:var(--terracotta);font-size:12px}
-.badge{display:inline-block;font:9px "IBM Plex Mono",monospace;color:var(--sage);border:1px solid #5C6B4F33;padding:4px 7px;margin-bottom:8px;text-transform:uppercase}
-.data-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);margin:22px 0 0}
-.data-strip div{padding:15px;border-right:1px solid var(--rule);font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
-.data-strip div:last-child{border-right:0}.data-strip strong{display:block;font:600 22px "Source Serif 4",serif;color:var(--ink);margin-bottom:2px}
-.timeline{position:relative;padding-left:24px;border-left:1px solid var(--rule)}
-.timeline .xrow{position:relative}.timeline .xrow:before{content:"";position:absolute;left:-28px;top:23px;width:7px;height:7px;border-radius:50%;background:var(--terracotta);box-shadow:0 0 0 4px var(--terracotta-soft)}
-.credential-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.credential{border:1px solid var(--rule);padding:20px;background:var(--bg-raised);min-height:145px;transition:.2s}
-.credential:hover{border-color:var(--terracotta);transform:translateY(-2px)}
-.credential .issuer{font:10px "IBM Plex Mono",monospace;color:var(--terracotta);text-transform:uppercase}
-.credential h3{font-size:18px;margin:10px 0 4px}.credential p{font-size:13px;color:var(--ink-soft);margin:0}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gallery-item{aspect-ratio:1.15/1;border:1px solid var(--rule);background:var(--bg-raised);position:relative;overflow:hidden;cursor:pointer}
-.gallery-item .placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;background:linear-gradient(135deg,var(--bg-raised),var(--bg));color:var(--taupe);font:11px "IBM Plex Mono",monospace}
-.gallery-item .placeholder b{display:block;color:var(--ink);font:22px "Source Serif 4",serif;margin-bottom:5px}
-.gallery-item:hover .placeholder{color:var(--terracotta)}
-.knowledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.knowledge{border-top:2px solid var(--sage);padding:18px 16px;background:var(--sage-soft);min-height:150px}
-.knowledge h3{font-size:18px}.knowledge p{font-size:13px;color:var(--ink-soft)}
-.knowledge a{font:10px "IBM Plex Mono",monospace;color:var(--terracotta)}
-.section-index{font:10px "IBM Plex Mono",monospace;color:var(--taupe);margin-bottom:14px}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:none}
-@media(max-width:760px){
- .hero-stage{min-height:500px}.hero-copy{padding:28px 22px}
- .feature-grid,.credential-grid,.knowledge-grid{grid-template-columns:1fr}
- .gallery-grid{grid-template-columns:1fr 1fr}.data-strip{grid-template-columns:1fr 1fr}
- .data-strip div:nth-child(2){border-right:0}.data-strip div{border-bottom:1px solid var(--rule)}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Kiran Gunti — AI Safety for Earth</title>
+<meta name="description" content="Rahul Kiran Gunti — independent AI researcher working across foundation models, LLM reliability, AI safety, multilingual NLP, efficient AI, and responsible AI.">
+<meta name="author" content="Rahul Kiran Gunti">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="canonical" href="https://rahulkiran2222.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#FAF6EE;
+  --bg2:#F3EDE0;
+  --ink:#221F1B;
+  --soft:#58524A;
+  --taupe:#857C6E;
+  --rule:#DCD3C1;
+  --terra:#B14F2A;
+  --terraSoft:#B14F2A18;
+  --sage:#5C6B4F;
+  --sageSoft:#5C6B4F12;
+  --max:1120px;
 }
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero-action,.feature-card,.credential{transition:none}}
-
-    /* MOBILE */
-
-    @media (max-width: 680px) {
-      nav .wrap {
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      nav ul {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      nav a.link {
-        font-size: 10.5px;
-      }
-
-      header.hero {
-        padding-top: 60px;
-      }
-
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .research-card,
-      .research-card:nth-child(even) {
-        padding: 20px 0;
-        border-left: none;
-      }
-
-      .repo,
-      .xrow,
-      .writing-row {
-        grid-template-columns: 1fr;
-        gap: 7px;
-      }
-
-      section {
-        padding: 36px 0;
-      }
-    }
-  </style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+::selection{background:var(--terra);color:#fff}
+.wrap{max-width:var(--max);margin:auto;padding:0 28px}
+.mono{font-family:"IBM Plex Mono",monospace}
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,246,238,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule)
+}
+.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.mark{font:500 13px "IBM Plex Mono",monospace;text-decoration:none;white-space:nowrap}
+.mark span{color:var(--terra)}
+nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0;align-items:center}
+nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft);border-bottom:1px solid transparent}
+nav a:hover{color:var(--terra);border-color:var(--terra)}
+.nav-github{padding:6px 8px;border:1px solid var(--rule)!important;border-bottom-color:var(--rule)!important}
+.hero{padding:24px 0 0}
+.hero-stage{
+  position:relative;min-height:720px;overflow:hidden;border:1px solid var(--rule);
+  background:
+    radial-gradient(circle at 72% 50%,rgba(177,79,42,.10),transparent 25%),
+    radial-gradient(circle at 85% 25%,rgba(92,107,79,.09),transparent 23%),
+    linear-gradient(135deg,#F8F2E7,#F1E9DA)
+}
+#aiCanvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+.hero-copy{position:relative;z-index:2;max-width:630px;padding:82px 52px}
+.eyebrow{font:11px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin:0 0 18px}
+.status{display:inline-flex;align-items:center;gap:8px}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 5px var(--terraSoft)}
+h1{font:600 clamp(48px,7vw,78px)/.98 "Source Serif 4",serif;letter-spacing:-.035em;margin:0 0 20px}
+h1 em{font-style:normal;color:var(--terra)}
+.hero-lede{font-size:19px;color:var(--soft);max-width:600px;margin:0}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}
+.btn{font:11px "IBM Plex Mono",monospace;text-decoration:none;border:1px solid var(--rule);padding:10px 13px;background:rgba(250,246,238,.8);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--terra);color:var(--terra)}
+.btn.primary{background:var(--terra);border-color:var(--terra);color:white}
+.meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:24px;color:var(--taupe);font:10px "IBM Plex Mono",monospace;text-transform:uppercase}
+.orbit-label{
+  position:absolute;z-index:3;padding:7px 9px;border:1px solid var(--rule);
+  background:rgba(250,246,238,.72);backdrop-filter:blur(5px);
+  font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--taupe);
+  pointer-events:none
+}
+.ol-earth{right:8%;bottom:12%;color:var(--terra)}
+.ol-safety{right:24%;top:13%;color:var(--sage)}
+.ol-evidence{right:11%;top:48%}
+.ol-agent{right:34%;bottom:24%}
+.hero-note{
+  display:grid;grid-template-columns:130px 1fr;gap:20px;
+  padding:21px 0;border-bottom:1px solid var(--rule)
+}
+.hero-note span{font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
+.hero-note strong{font:23px/1.25 "Source Serif 4",serif;max-width:760px}
+.gateway{padding:62px 0;border-bottom:1px solid var(--rule)}
+.kicker{font:10px "IBM Plex Mono",monospace;color:var(--taupe);text-transform:uppercase;letter-spacing:.08em}
+.kicker:before{content:"// ";color:var(--terra)}
+h2{font:36px/1.08 "Source Serif 4",serif;letter-spacing:-.025em;margin:8px 0 12px}
+.lede{max-width:720px;color:var(--soft)}
+.gateway-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:28px}
+.gateway-card{
+  min-height:150px;padding:20px;border:1px solid var(--rule);background:var(--bg);
+  text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;
+  transition:.22s;position:relative;overflow:hidden
+}
+.gateway-card:after{
+  content:"";position:absolute;width:90px;height:90px;border:1px solid var(--rule);
+  border-radius:50%;right:-45px;bottom:-45px;transition:.3s
+}
+.gateway-card:hover{transform:translateY(-4px);border-color:var(--terra)}
+.gateway-card:hover:after{width:140px;height:140px;border-color:var(--terra)}
+.gateway-card b{font:23px "Source Serif 4",serif}
+.gateway-card span{font:10px "IBM Plex Mono",monospace;color:var(--taupe);max-width:240px}
+.gateway-card .arrow{color:var(--terra);font-size:14px;position:absolute;right:15px;top:15px}
+.signal{padding:48px 0;border-bottom:1px solid var(--rule)}
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px}
+.signal-card{padding:22px;border:1px solid var(--rule);background:var(--bg2)}
+.signal-card h3{font:21px "Source Serif 4",serif;margin:0 0 7px}
+.signal-card p{margin:0;color:var(--soft);font-size:13.5px}
+.signal-card a{display:inline-block;margin-top:14px;font:10px "IBM Plex Mono",monospace;color:var(--terra)}
+.footer{
+  padding:38px 0 60px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font:10px "IBM Plex Mono",monospace;color:var(--taupe)
+}
+.footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+.footer a:hover{color:var(--terra);border-color:var(--terra)}
+@media(max-width:850px){
+  nav ul{gap:11px}
+  .hero-stage{min-height:760px}.hero-copy{padding:60px 28px}
+  .gateway-grid{grid-template-columns:1fr 1fr}
+  .signal-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  nav .nav{align-items:flex-start;padding-top:12px;padding-bottom:12px}
+  nav ul{flex-wrap:wrap;justify-content:flex-end;max-width:250px}
+  nav a{font-size:9px}
+  .hero-stage{min-height:780px}
+  .hero-copy{padding:45px 21px}
+  h1{font-size:46px}
+  .hero-lede{font-size:17px}
+  .orbit-label{display:none}
+  .hero-note{grid-template-columns:1fr}
+  .hero-note strong{font-size:20px}
+  .gateway-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  #aiCanvas{display:none}
+}
+</style>
 </head>
 
 <body>
+<nav>
+  <div class="wrap nav">
+    <a class="mark" href="index.html">RK<span>_</span>ai</a>
+    <ul>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="education.html">education</a></li>
+      <li><a href="certifications.html">certifications</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="resources.html">resources</a></li>
+      <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- =========================================================
-       NAVIGATION
-       ========================================================= -->
+<main class="wrap">
+  <header class="hero">
+    <div class="hero-stage">
+      <canvas id="aiCanvas" aria-label="Interactive AI safety network"></canvas>
 
-  <nav>
-    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow status"><i></i> AI SAFETY FOR EARTH · INDEPENDENT RESEARCH</p>
+        <h1>Building AI that is <em>intelligent, safe, and responsible.</em></h1>
+        <p class="hero-lede">
+          I build and evaluate AI systems across foundation models, LLM reliability,
+          AI safety, multilingual NLP, and efficient AI — turning research questions
+          into evidence, experiments, and practical open artifacts.
+        </p>
 
-      <a class="mark" href="#top">
-        RK<span>_</span>
-      </a>
+        <div class="actions">
+          <a class="btn primary" href="projects.html">Explore the work →</a>
+          <a class="btn" href="research.html">Enter the research →</a>
+          <a class="btn" href="gallery.html">Field notes →</a>
+        </div>
 
-      <ul>
-        <li><a class="link" href="#projects">projects</a></li>
-        <li><a class="link" href="#research">research</a></li>
-        <li><a class="link" href="#education">education</a></li>
-        <li><a class="link" href="#certifications">certifications</a></li>
-        <li><a class="link" href="#field-notes">gallery</a></li>
-        <li><a class="link" href="#knowledge">resources</a></li>
-        <li><a class="link" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
-        <li><a class="link" href="#contact">contact</a></li>
-      </ul>
+        <div class="meta">
+          <span>Foundation Models</span>
+          <span>LLM Safety</span>
+          <span>Responsible AI</span>
+          <span>Sustainable AI</span>
+        </div>
+      </div>
 
+      <div class="orbit-label ol-earth">EARTH / IMPACT</div>
+      <div class="orbit-label ol-safety">AI / SAFETY</div>
+      <div class="orbit-label ol-evidence">EVIDENCE</div>
+      <div class="orbit-label ol-agent">AGENTS</div>
     </div>
-  </nav>
 
-
-  <main id="top" class="wrap">
-
-    <!-- =======================================================
-         HERO
-         ======================================================= -->
-
-    <header class="hero">
-
-      <div class="hero-stage" aria-label="Interactive research map">
-        <canvas id="researchCanvas" aria-hidden="true"></canvas>
-        <div class="hero-copy">
-          <div class="micro"><span class="nav-dot"></span> research system · interactive index</div>
-          <h3>Ideas become experiments. Experiments become evidence.</h3>
-          <p>Explore the work as a connected system: foundation models, reliability, safety, multilingual AI, efficient systems, and the artifacts built around them.</p>
-          <div class="hero-actions">
-            <a class="hero-action" href="#projects">explore work →</a>
-            <a class="hero-action" href="#research">research map →</a>
-            <a class="hero-action" href="#field-notes">field notes →</a>
-          </div>
-          <div class="statline">
-            <span><strong>AI</strong> research</span><span><strong>OPEN</strong> artifacts</span><span><strong>VISUAL</strong> archive</span><span><strong>2026</strong> v0.1</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="eyebrow">Independent AI Researcher</p>
-
-      <h1 class="name">Rahul Kiran Gunti</h1>
-
-      <p class="headline">
-        I build and evaluate AI systems at the intersection of
-        <b>foundation models</b>, <b>LLM reliability</b>,
-        <b>AI safety</b>, <b>multilingual NLP</b>, and
-        <b>efficient AI</b>.
-      </p>
-
-      <p class="location">
-        Hyderabad, India · Research · Open Source · Technical Writing
-      </p>
-
-      <!-- Use the contact section below for verified external links -->
-      <div class="links">
-
-        <a href="#contact">Email</a>
-
-        <span class="sep">·</span>
-
-        <a
-          href="#contact"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-
-        <span class="sep">·</span>
-
-        <a
-          href="#contact"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          X
-        </a>
-
-        <span class="sep">·</span>
-
-        <a
-          href="https://github.com/rahulkiran2222"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        <span class="sep">·</span>
-
-        <a
-          href="files/cv/Rahul-Kiran-Gunti-CV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CV
-        </a>
-
-      </div>
-
-    </header>
-
-
-    <!-- =======================================================
-         RESEARCH
-         ======================================================= -->
-
-    <section id="research">
-
-      <h2 class="sec">Research</h2>
-
-      <p class="lede">
-        My work focuses on the behavior, reliability, security, and
-        efficiency of modern AI systems—combining empirical evaluation,
-        theoretical analysis, and reproducible open-source artifacts.
-      </p>
-
-      <div class="research-grid">
-
-        <article class="research-card">
-          <h3>Foundation Models</h3>
-          <p>
-            Model architectures, evaluation, grounding, tokenization,
-            multimodal systems, and the evolution of foundation models.
-          </p>
-        </article>
-
-        <article class="research-card">
-          <h3>AI Safety & Security</h3>
-          <p>
-            Prompt injection, agent security, robustness, model behavior,
-            evaluation, and defensive AI system design.
-          </p>
-        </article>
-
-        <article class="research-card">
-          <h3>Multilingual & Cognitive AI</h3>
-          <p>
-            Indic NLP, tokenizer behavior, cognitive biases, and the
-            relationship between model behavior and human reasoning.
-          </p>
-        </article>
-
-        <article class="research-card">
-          <h3>Efficient & Responsible AI</h3>
-          <p>
-            Green AI, inference efficiency, sustainable AI systems,
-            governance, and responsible deployment.
-          </p>
-        </article>
-
-      </div>
-
-      <div class="tags">
-        <span class="tag">LLM Reliability</span>
-        <span class="tag">Hallucination & Grounding</span>
-        <span class="tag">Prompt Injection</span>
-        <span class="tag">Agent Security</span>
-        <span class="tag">Foundation Models</span>
-        <span class="tag">Multilingual NLP</span>
-        <span class="tag">Tokenizer Bias</span>
-        <span class="tag">Cognitive Bias</span>
-        <span class="tag">Green AI</span>
-        <span class="tag">Responsible AI</span>
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         SELECTED RESEARCH / PROJECTS
-         ======================================================= -->
-
-    <section id="projects">
-
-      <h2 class="sec">Selected Research</h2>
-
-      <!-- FOUNDATION MODEL ATLAS -->
-
-      <div class="repo">
-
-        <div class="path">foundation-model-atlas</div>
-
-        <div>
-
-          <h3>Foundation Model Atlas</h3>
-
-          <p class="meta">
-            Open encyclopedia of foundation model architectures ·
-            IN DEVELOPMENT
-          </p>
-
-          <p>
-            An open, community-driven encyclopedia of modern foundation
-            models, architectures, training paradigms, evolution,
-            comparison, and deployment characteristics.
-          </p>
-
-          <div class="repo-links">
-            <a href="https://rahulkiran2222.github.io/foundation-model-atlas/" target="_blank" rel="noopener noreferrer">
-              Explore live Atlas →
-            </a>
-
-            <a
-              href="https://github.com/rahulkiran2222/foundation-model-atlas"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code →
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- GROUNDING DEFICIT -->
-
-      <div class="repo">
-
-        <div class="path">llm-grounding-deficit</div>
-
-        <div>
-
-          <h3>
-            Three Lenses, One Gap: A Unified Theoretical Account of
-            Hallucination in Large Language Models
-          </h3>
-
-          <p class="meta">
-            Theory + evaluation harness · RESEARCH
-          </p>
-
-          <p>
-            A theoretical account of hallucination centered on a
-            grounding-deficit construct, connecting statistical learning,
-            computability and information-theoretic perspectives with
-            epistemic questions about language-model knowledge.
-          </p>
-
-          <div class="repo-links">
-
-            <a
-              href="https://github.com/rahulkiran2222/llm-grounding-deficit"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code →
-            </a>
-
-            <a href="#" aria-label="Grounding Deficit paper — coming soon">
-              Paper →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- PROMPT INJECTION LAB -->
-
-      <div class="repo">
-
-        <div class="path">prompt-injection-lab</div>
-
-        <div>
-
-          <h3>
-            Prompt Injection Lab
-          </h3>
-
-          <p class="meta">
-            Defensive evaluation framework for indirect prompt injection ·
-            RESEARCH
-          </p>
-
-          <p>
-            A reproducible evaluation framework for studying resilience
-            to indirect prompt injection in retrieval-augmented and
-            agentic AI systems, with emphasis on defensive measurement
-            rather than offensive payload development.
-          </p>
-
-          <div class="repo-links">
-
-            <a
-              href="https://github.com/rahulkiran2222/prompt-injection-lab"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code →
-            </a>
-
-            <a
-              href="https://www.microsoft.com/en-us/research/publication/benchmarking-and-defending-against-indirect-prompt-injection-attacks-on-large-language-models/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              BIPIA →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- TOKENIZER BIAS -->
-
-      <div class="repo">
-
-        <div class="path">Tokenizer-Bias</div>
-
-        <div>
-
-          <h3>
-            Tokenizer Bias in Hindi and Telugu Text
-          </h3>
-
-          <p class="meta">
-            Llama BPE vs. byte-level encoding · IndicCorp v2 · RESEARCH
-          </p>
-
-          <p>
-            An empirical investigation of tokenization behavior in Hindi
-            and Telugu, examining how representation choices affect
-            multilingual text efficiency and model-facing computation.
-          </p>
-
-          <div class="repo-links">
-
-            <a
-              href="https://github.com/rahulkiran2222/Tokenizer-Bias"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code →
-            </a>
-
-            <a
-              href="https://huggingface.co/datasets/ai4bharat/IndicCorpV2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Dataset →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- GREENPROMPT -->
-
-      <div class="repo">
-
-        <div class="path">greenprompt</div>
-
-        <div>
-
-          <h3>GreenPrompt</h3>
-
-          <p class="meta">
-            Energy-aware LLM research · WHITE PAPER / RESEARCH
-          </p>
-
-          <p>
-            A research framework exploring the relationship between
-            prompt efficiency, token usage, inference cost, latency,
-            and the energy economics of large language models.
-          </p>
-
-          <div class="repo-links">
-
-            <a href="#" aria-label="GreenPrompt repository — coming soon">
-              Code →
-            </a>
-
-            <a
-              href="https://doi.org/10.5281/zenodo.20504482"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Related research →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- COGNITIVE BIASES -->
-
-      <div class="repo">
-
-        <div class="path">llm-cognitive-biases</div>
-
-        <div>
-
-          <h3>
-            Replicating Cognitive-Bias Paradigms Against LLMs
-          </h3>
-
-          <p class="meta">
-            Behavioral evaluation · EXPERIMENTAL
-          </p>
-
-          <p>
-            Tests canonical cognitive-bias paradigms against language
-            models, examining systematic reasoning behavior through
-            controlled experimental evaluation.
-          </p>
-
-          <div class="repo-links">
-
-            <a
-              href="https://github.com/rahulkiran2222/llm-cognitive-biases"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Code →
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =======================================================
-         FEATURED WORK OVERVIEW
-         ======================================================= -->
-    <section id="featured">
-      <h2 class="sec">Featured Work</h2>
-      <div class="section-index">A visual entry point into the strongest completed and active artifacts.</div>
-      <div class="feature-grid">
-        <a class="feature-card large" href="#projects">
-          <span class="badge">flagship</span>
-          <h3>Foundation Model Atlas</h3>
-          <p>Interactive model and architecture research presented as a data-driven visual atlas, with comparison and architectural structure.</p>
-          <span class="arrow">open project section →</span>
-        </a>
-        <a class="feature-card" href="#projects">
-          <span class="badge">research</span>
-          <h3>LLM Grounding Deficit</h3>
-          <p>A theoretical and evaluation-oriented account of the gap between generated claims and supporting evidence.</p>
-          <span class="arrow">research artifact →</span>
-        </a>
-        <a class="feature-card" href="#projects">
-          <span class="badge">security</span>
-          <h3>Prompt Injection Lab</h3>
-          <p>Defensive evaluation of indirect prompt injection in retrieval-augmented and agentic systems.</p>
-          <span class="arrow">evaluation work →</span>
-        </a>
-      </div>
-      <div class="data-strip">
-        <div><strong>01</strong>flagship atlas</div>
-        <div><strong>06</strong>research artifacts</div>
-        <div><strong>∞</strong>questions to investigate</div>
-        <div><strong>v0.1</strong>portfolio system</div>
-      </div>
-    </section>
-
-    <!-- =======================================================
-         EDUCATION
-         ======================================================= -->
-    <section id="education">
-      <h2 class="sec">Education</h2>
-      <p class="lede">An engineering foundation followed by a self-directed transition into AI, research, and applied systems.</p>
-      <div class="credential-grid">
-        <article class="credential">
-          <div class="issuer">Academic background</div>
-          <h3>B.Tech — Mechanical Engineering</h3>
-          <p>Engineering foundation reflected in the existing research journey. Add the exact institution and dates here if desired.</p>
-        </article>
-        <article class="credential">
-          <div class="issuer">Research direction</div>
-          <h3>AI / Machine Learning — Independent Study</h3>
-          <p>Self-directed development across LLMs, foundation models, AI safety, multilingual NLP, evaluation, and efficient AI.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- =======================================================
-         CERTIFICATIONS
-         ======================================================= -->
-    <section id="certifications">
-      <h2 class="sec">Certifications</h2>
-      <p class="lede">Credentials and structured learning that support the research and engineering work. Exact certificate links can be added to each card without changing the design.</p>
-      <div class="credential-grid">
-        <article class="credential">
-          <div class="issuer">Google Cloud</div>
-          <h3>Cloud / AI Learning</h3>
-          <p>Google Cloud learning and certification work. Link to the exact credential when publishing the final record.</p>
-        </article>
-        <article class="credential">
-          <div class="issuer">AI / Research</div>
-          <h3>Professional Learning</h3>
-          <p>Use this space for verified AI, ML, research, or professional credentials from your final CV.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- =======================================================
-         FIELD NOTES / VISUAL ARCHIVE
-         ======================================================= -->
-    <section id="field-notes">
-      <h2 class="sec">Field Notes</h2>
-      <p class="lede">A visual archive of the work beyond repositories: talks, workshops, people, technology communities, institutional moments, and the places where ideas became real.</p>
-      <div class="gallery-grid">
-        <div class="gallery-item"><div class="placeholder"><div><b>Talks</b>Replace with your talk photographs or video thumbnails from Drive.</div></div></div>
-        <div class="gallery-item"><div class="placeholder"><div><b>Workshops</b>AI literacy, training and technical sessions.</div></div></div>
-        <div class="gallery-item"><div class="placeholder"><div><b>Industry</b>People, events and technology community moments.</div></div></div>
-        <div class="gallery-item"><div class="placeholder"><div><b>Institutions</b>Government, academic and institutional engagements.</div></div></div>
-        <div class="gallery-item"><div class="placeholder"><div><b>Building</b>Behind-the-scenes project and research moments.</div></div></div>
-        <div class="gallery-item"><div class="placeholder"><div><b>Video archive</b>Talks, demonstrations and educational material.</div></div></div>
-      </div>
-    </section>
-
-    <!-- =======================================================
-         OPEN KNOWLEDGE
-         ======================================================= -->
-    <section id="knowledge">
-      <h2 class="sec">Open Knowledge</h2>
-      <p class="lede">Free AI learning material, research notes, white papers and useful open resources. This section is intentionally separate from publications: it is about helping people learn and explore.</p>
-      <div class="knowledge-grid">
-        <article class="knowledge">
-          <span class="badge">learn</span>
-          <h3>HorizonTrax AI Literacy</h3>
-          <p>Free AI-literacy learning and educational resources. Add the exact public learning/video URL here.</p>
-          <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">current public hub →</a>
-        </article>
-        <article class="knowledge">
-          <span class="badge">read</span>
-          <h3>Raphus White Papers</h3>
-          <p>Research and strategy material covering responsible, sustainable and AI-enabled digital transformation.</p>
-          <a href="#publications">see research writing →</a>
-        </article>
-        <article class="knowledge">
-          <span class="badge">open</span>
-          <h3>Research & Technical Notes</h3>
-          <p>Open repositories, datasets, architecture notes and experiments that make the research inspectable.</p>
-          <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">browse GitHub →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- =======================================================
-         PUBLICATIONS
-         ======================================================= -->
-
-    <section id="publications">
-
-      <h2 class="sec">Publications & Research Writing</h2>
-
-
-      <div class="pub-group">
-
-        <h3 class="gtitle">Research in Progress</h3>
-
-        <p class="gnote">
-          Work currently being developed toward peer-reviewed research.
-        </p>
-
-        <div class="pub">
-
-          <p class="ptitle">
-            Three Lenses, One Gap: A Unified Theoretical Account of
-            Hallucination in Large Language Models
-          </p>
-
-          <p class="pmeta">
-            Theory paper · AI / NLP ·
-            <a href="#">Paper</a>
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="pub-group">
-
-        <h3 class="gtitle">White Papers & Reports</h3>
-
-        <p class="gnote">
-          Applied and policy-facing research artifacts.
-        </p>
-
-
-        <div class="pub">
-
-          <p class="ptitle">
-            The Sustainable AI Stack: A Strategic Framework for
-            AI-Enabled Platforms
-          </p>
-
-          <p class="pmeta">
-            2026 · DOI:
-            <a
-              href="https://doi.org/10.5281/zenodo.20504482"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              10.5281/zenodo.20504482
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="pub">
-
-          <p class="ptitle">
-            Responsible AI: A Governance Framework for Enterprises
-            Building Ethical AI Systems
-          </p>
-
-          <p class="pmeta">
-            2025 · DOI:
-            <a
-              href="https://doi.org/10.5281/zenodo.19728540"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              10.5281/zenodo.19728540
-            </a>
-          </p>
-
-        </div>
-
-
-        <div class="pub">
-
-          <p class="ptitle">
-            Digital Transformation ROI: A Measurement Framework for
-            Quantifying the Business Value of AI-Enabled Transformation
-          </p>
-
-          <p class="pmeta">
-            2025 · DOI / record to be verified before publication
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         TECHNICAL WRITING
-         ======================================================= -->
-
-    <section id="writing">
-
-      <h2 class="sec">Technical Writing</h2>
-
-      <p class="lede">
-        Long-form technical writing, research notes, paper analyses,
-        tutorials, and engineering perspectives on modern AI systems.
-      </p>
-
-      <div class="writing-row">
-
-        <div class="date">COMING SOON</div>
-
-        <div>
-          <h3>Foundation Model Architecture Notes</h3>
-          <p>
-            Technical writing accompanying the Foundation Model Atlas.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="writing-row">
-
-        <div class="date">COMING SOON</div>
-
-        <div>
-          <h3>LLM Grounding & Hallucination</h3>
-          <p>
-            Research notes explaining the grounding-deficit framework
-            and its evaluation implications.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="writing-row">
-
-        <div class="date">COMING SOON</div>
-
-        <div>
-          <h3>AI Safety & Prompt Injection</h3>
-          <p>
-            Defensive evaluation, threat models, and secure AI-system
-            design.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         JOURNEY
-         ======================================================= -->
-
-    <section id="journey">
-
-      <h2 class="sec">Research Journey</h2>
-      <div class="timeline">
-
-
-      <div class="xrow">
-
-        <div class="when">2021</div>
-
-        <div>
-          <h3>B.Tech — Mechanical Engineering</h3>
-          <p class="org">Engineering foundation</p>
-          <p class="desc">
-            Began with an engineering background that later developed
-            into a self-directed transition toward software and AI.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="xrow">
-
-        <div class="when">2021–2022</div>
-
-        <div>
-          <h3>AI Data & Evaluation Work</h3>
-          <p class="org">Appen</p>
-          <p class="desc">
-            Data annotation and evaluation work supporting AI systems.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="xrow">
-
-        <div class="when">2023–Present</div>
-
-        <div>
-          <h3>Founder & Managing Partner</h3>
-          <p class="org">Raphus Solutions</p>
-          <p class="desc">
-            Building AI-enabled digital transformation and product
-            engineering initiatives.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="xrow">
-
-        <div class="when">2023–Present</div>
-
-        <div>
-          <h3>CEO & AI Research Lead</h3>
-          <p class="org">HorizonTrax</p>
-          <p class="desc">
-            Developing AI-first education systems and applied AI
-            initiatives.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="xrow">
-
-        <div class="when">2024–2025</div>
-
-        <div>
-          <h3>AI Trainer & Analyst</h3>
-          <p class="org">Scale AI</p>
-          <p class="desc">
-            Contract AI data and evaluation work involving response
-            assessment and preference-labeling workflows.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="xrow">
-
-        <div class="when">2025–2026</div>
-
-        <div>
-          <h3>Independent AI Research</h3>
-          <p class="org">Open Research</p>
-          <p class="desc">
-            Developing open research artifacts across foundation models,
-            AI safety, multilingual NLP, cognitive evaluation,
-            hallucination, and efficient AI.
-          </p>
-        </div>
-
-      </div>
-
-
-      </div>
-
-      <div class="community">
-
-        <strong>Programs & community:</strong>
-
-        <a
-          href="https://ethicsinsociety.stanford.edu/tech-ethics-practitioner-programs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Stanford Ethics & Technology
-        </a>
-        ·
-
-        <a
-          href="https://rdi.berkeley.edu/research/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          UC Berkeley RDI
-        </a>
-        ·
-
-        <a
-          href="https://docs.nvidia.com/nemo/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          NVIDIA NeMo
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         ABOUT
-         ======================================================= -->
-
-    <section id="about">
-
-      <h2 class="sec">About</h2>
-
-      <p class="lede">
-        I am an independent AI researcher and founder working across
-        applied AI systems and open research. My research interests
-        center on understanding where modern AI systems fail,
-        how those failures can be measured, and how better system
-        design can make AI more reliable, secure, efficient, and
-        responsible.
-      </p>
-
-      <p class="lede">
-        My background spans engineering, management, AI data and
-        evaluation work, product engineering, and self-directed
-        empirical research. I aim to turn research questions into
-        reproducible artifacts—papers, experiments, datasets,
-        evaluation tools, and open-source repositories.
-      </p>
-
-    </section>
-
-
-    <!-- =======================================================
-         CONTACT
-         ======================================================= -->
-
-    <section id="contact">
-
-      <h2 class="sec">Contact</h2>
-
-      <div class="contact-box">
-
-        <p>
-          For research collaboration, technical discussion,
-          open-source work, or opportunities related to AI research,
-          the best way to reach me is by email or LinkedIn.
-        </p>
-
-        <!-- Add verified external links here when ready -->
-
-        <div class="links">
-
-          <a href="#contact">
-            Email
-          </a>
-
-          <span class="sep">·</span>
-
-          <a
-            href="#contact"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-
-          <span class="sep">·</span>
-
-          <a
-            href="#contact"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            X
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         FOOTER
-         ======================================================= -->
-
-    <footer>
-
-      <span>
-        © 2026 Rahul Kiran Gunti
-      </span>
-
-      <span>
-
-        <a
-          href="https://github.com/rahulkiran2222"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        ·
-
-        <a
-          href="https://orcid.org/0009-0009-3008-7999"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ORCID
-        </a>
-
-      </span>
-
-    </footer>
-
-  </main>
-
+    <div class="hero-note">
+      <span>01 / PRINCIPLE</span>
+      <strong>Build intelligence without losing sight of the world it operates in.</strong>
+    </div>
+  </header>
+
+  <section class="gateway">
+    <p class="kicker">Portfolio map</p>
+    <h2>Explore the research system.</h2>
+    <p class="lede">The homepage is the map. Each destination opens a deeper layer of the portfolio rather than turning one page into an endless CV.</p>
+
+    <div class="gateway-grid">
+      <a class="gateway-card" href="projects.html">
+        <span class="arrow">↗</span><b>Projects</b>
+        <span>Systems, experiments, repositories and flagship artifacts.</span>
+      </a>
+      <a class="gateway-card" href="research.html">
+        <span class="arrow">↗</span><b>Research</b>
+        <span>Papers, research questions, evaluation and technical writing.</span>
+      </a>
+      <a class="gateway-card" href="education.html">
+        <span class="arrow">↗</span><b>Education</b>
+        <span>Academic background and the transition into AI research.</span>
+      </a>
+      <a class="gateway-card" href="certifications.html">
+        <span class="arrow">↗</span><b>Certifications</b>
+        <span>Professional credentials, programs and workshops.</span>
+      </a>
+      <a class="gateway-card" href="gallery.html">
+        <span class="arrow">↗</span><b>Gallery</b>
+        <span>Talks, workshops, industry, institutions, people and field notes.</span>
+      </a>
+      <a class="gateway-card" href="resources.html">
+        <span class="arrow">↗</span><b>Open Knowledge</b>
+        <span>AI literacy, HorizonTrax, Raphus white papers and open resources.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="signal">
+    <p class="kicker">Selected signal</p>
+    <h2>Three doors into the work.</h2>
+    <div class="signal-grid">
+      <article class="signal-card">
+        <h3>Foundation Model Atlas</h3>
+        <p>An interactive, evidence-aware atlas for exploring model families, architectures and structural differences.</p>
+        <a href="https://rahulkiran2222.github.io/foundation-model-atlas/" target="_blank" rel="noopener noreferrer">Open live Atlas ↗</a>
+      </article>
+      <article class="signal-card">
+        <h3>LLM Grounding Deficit</h3>
+        <p>Research on the gap between generated claims and the evidence required to support them.</p>
+        <a href="research.html">Read the research →</a>
+      </article>
+      <article class="signal-card">
+        <h3>AI Safety & Security</h3>
+        <p>Work around prompt injection, agent security, robustness, evaluation and defensive system design.</p>
+        <a href="research.html">Explore safety work →</a>
+      </article>
+      <article class="signal-card">
+        <h3>Open Knowledge</h3>
+        <p>Free learning material, technical resources and research artifacts intended to make AI easier to understand.</p>
+        <a href="resources.html">Open the knowledge hub →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="signal">
+    <p class="kicker">Current direction</p>
+    <h2>Research → evidence → artifact → impact.</h2>
+    <p class="lede">
+      My work focuses on understanding where modern AI systems fail, how those failures can be measured,
+      and how better design can make AI more reliable, secure, efficient, and responsible.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="about.html">About the journey →</a>
+      <a class="btn" href="contact.html">Start a conversation →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <span>© 2026 Rahul Kiran Gunti · AI Safety for Earth · v0.1</span>
+  <span>
+    <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">GitHub</a>
+    &nbsp;·&nbsp;
+    <a href="https://orcid.org/0009-0009-3008-7999" target="_blank" rel="noopener noreferrer">ORCID</a>
+  </span>
+</footer>
 
 <script>
 (() => {
-  const canvas = document.getElementById("researchCanvas");
+  const canvas = document.getElementById("aiCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let w=0,h=0,dpr=1,mouse={x:-9999,y:-9999},points=[];
-  const labels=["RESEARCH","MODELS","AGENTS","EVIDENCE","SYSTEMS","AI"];
-  function resize(){
-    const r=canvas.getBoundingClientRect(); dpr=Math.min(devicePixelRatio||1,2);
-    w=r.width;h=r.height;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
-    points=labels.map((label,i)=>({x:w*(.57+.22*Math.cos(i*1.047)),y:h*(.45+.34*Math.sin(i*1.047)),vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,label}));
-  }
-  function draw(){
-    ctx.clearRect(0,0,w,h);
-    points.forEach(p=>{p.x+=reduce?0:p.vx;p.y+=reduce?0:p.vy;if(p.x<30||p.x>w-30)p.vx*=-1;if(p.y<30||p.y>h-30)p.vy*=-1});
-    const cx=w*.66,cy=h*.51;
-    points.forEach((p,i)=>{
-      points.forEach((q,j)=>{if(j<=i)return;const dx=p.x-q.x,dy=p.y-q.y,dist=Math.hypot(dx,dy);if(dist<220){ctx.strokeStyle=`rgba(177,79,42,${.16*(1-dist/220)})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}});
-      const near=Math.hypot(mouse.x-p.x,mouse.y-p.y)<45;
-      ctx.beginPath();ctx.arc(p.x,p.y,near?6:3.5,0,Math.PI*2);ctx.fillStyle=near?"#B14F2A":"#5C6B4F";ctx.fill();
-      ctx.font='10px "IBM Plex Mono",monospace';ctx.fillStyle=near?"#B14F2A":"#857C6E";ctx.fillText(p.label,p.x+10,p.y+4);
-    });
-    ctx.beginPath();ctx.arc(cx,cy,30,0,Math.PI*2);ctx.fillStyle="rgba(177,79,42,.08)";ctx.fill();ctx.strokeStyle="rgba(177,79,42,.38)";ctx.stroke();
-    ctx.font='10px "IBM Plex Mono",monospace';ctx.fillStyle="#221F1B";ctx.textAlign="center";ctx.fillText("RK",cx,cy+4);ctx.textAlign="start";
-    if(!reduce) requestAnimationFrame(draw);
-  }
-  canvas.addEventListener("pointermove",e=>{const r=canvas.getBoundingClientRect();mouse={x:e.clientX-r.left,y:e.clientY-r.top}});
-  canvas.addEventListener("pointerleave",()=>mouse={x:-9999,y:-9999});
-  window.addEventListener("resize",resize); resize(); draw();
+  if (reduce) return;
 
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.08});
-  document.querySelectorAll("section,.repo,.feature-card,.credential,.gallery-item,.knowledge").forEach(el=>{el.classList.add("reveal");io.observe(el)});
+  let w=0,h=0,dpr=1,mouse={x:-9999,y:-9999};
+  const topics=[
+    ["SAFETY",0.62,0.20],
+    ["RESEARCH",0.78,0.33],
+    ["MODELS",0.58,0.42],
+    ["AGENTS",0.84,0.56],
+    ["EVIDENCE",0.67,0.64],
+    ["EARTH",0.82,0.77],
+    ["IMPACT",0.56,0.80],
+    ["OPEN",0.91,0.39]
+  ];
+  let pts=[];
+
+  function resize(){
+    const r=canvas.getBoundingClientRect();
+    w=r.width; h=r.height; dpr=Math.min(devicePixelRatio||1,2);
+    canvas.width=w*dpr; canvas.height=h*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    pts=topics.map((t,i)=>({
+      label:t[0], x:w*t[1], y:h*t[2],
+      ox:w*t[1], oy:h*t[2], phase:i*0.8,
+      speed:0.00035+(i%3)*0.00012
+    }));
+  }
+
+  function draw(t){
+    ctx.clearRect(0,0,w,h);
+
+    const cx=w*.72, cy=h*.53;
+    const pulse=1+Math.sin(t*.001)*.025;
+
+    // orbital rings
+    [95,165,245].forEach((r,i)=>{
+      ctx.beginPath();
+      ctx.ellipse(cx,cy,r,r*.62,0,0,Math.PI*2);
+      ctx.strokeStyle=i===1?"rgba(177,79,42,.16)":"rgba(92,107,79,.12)";
+      ctx.lineWidth=1; ctx.stroke();
+    });
+
+    pts.forEach((p,i)=>{
+      p.x=p.ox+Math.sin(t*p.speed+p.phase)*18;
+      p.y=p.oy+Math.cos(t*p.speed*.8+p.phase)*13;
+    });
+
+    // network connections
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<250){
+          const alpha=.13*(1-d/250);
+          ctx.strokeStyle=`rgba(92,107,79,${alpha})`;
+          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+        }
+      }
+    }
+
+    // mouse influence
+    pts.forEach(p=>{
+      const d=Math.hypot(mouse.x-p.x,mouse.y-p.y);
+      if(d<150){
+        ctx.strokeStyle=`rgba(177,79,42,${.28*(1-d/150)})`;
+        ctx.beginPath();ctx.moveTo(mouse.x,mouse.y);ctx.lineTo(p.x,p.y);ctx.stroke();
+      }
+    });
+
+    // topic nodes
+    pts.forEach(p=>{
+      const near=Math.hypot(mouse.x-p.x,mouse.y-p.y)<55;
+      ctx.beginPath();ctx.arc(p.x,p.y,near?6:3.5,0,Math.PI*2);
+      ctx.fillStyle=near?"#B14F2A":"#5C6B4F";ctx.fill();
+
+      ctx.font='10px "IBM Plex Mono",monospace';
+      ctx.fillStyle=near?"#B14F2A":"#857C6E";
+      ctx.fillText(p.label,p.x+9,p.y+4);
+    });
+
+    // central AI core
+    ctx.beginPath();ctx.arc(cx,cy,34*pulse,0,Math.PI*2);
+    ctx.fillStyle="rgba(177,79,42,.07)";ctx.fill();
+    ctx.strokeStyle="rgba(177,79,42,.36)";ctx.stroke();
+
+    ctx.beginPath();ctx.arc(cx,cy,11*pulse,0,Math.PI*2);
+    ctx.fillStyle="#B14F2A";ctx.fill();
+
+    ctx.font='10px "IBM Plex Mono",monospace';
+    ctx.textAlign="center";ctx.fillStyle="#B14F2A";
+    ctx.fillText("AI",cx,cy+4);ctx.textAlign="start";
+
+    requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener("pointermove",e=>{
+    const r=canvas.getBoundingClientRect();
+    mouse={x:e.clientX-r.left,y:e.clientY-r.top};
+  });
+  canvas.addEventListener("pointerleave",()=>mouse={x:-9999,y:-9999});
+  addEventListener("resize",resize);
+  resize();
+  requestAnimationFrame(draw);
 })();
 </script>
-
 </body>
 </html>
