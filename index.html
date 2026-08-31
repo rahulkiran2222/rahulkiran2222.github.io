@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Kiran Gunti — AI Safety for Earth</title>
-<meta name="description" content="Rahul Kiran Gunti — independent AI researcher working across foundation models, LLM reliability, AI safety, multilingual NLP, efficient AI, and responsible AI.">
+<title>Rahul Kiran Gunti — AI Safety for Earth · WebGL</title>
+<meta name="description" content="Rahul Kiran Gunti — independent AI researcher working across foundation models, AI safety, LLM reliability, multilingual NLP, efficient AI, climate-aware AI, and responsible AI.">
 <meta name="author" content="Rahul Kiran Gunti">
 <meta name="theme-color" content="#FAF6EE">
 <link rel="canonical" href="https://rahulkiran2222.github.io/">
@@ -15,129 +15,131 @@
 
 <style>
 :root{
-  --bg:#FAF6EE;
-  --bg2:#F3EDE0;
-  --ink:#221F1B;
-  --soft:#58524A;
-  --taupe:#857C6E;
-  --rule:#DCD3C1;
-  --terra:#B14F2A;
-  --terraSoft:#B14F2A18;
-  --sage:#5C6B4F;
-  --sageSoft:#5C6B4F12;
-  --max:1120px;
+  --bg:#FAF6EE; --bg2:#F2EBDD; --ink:#221F1B; --soft:#58524A;
+  --taupe:#857C6E; --rule:#D9CFBC; --terra:#B84E27; --sage:#5D704C;
+  --blue:#3C6E91; --violet:#765B88; --gold:#A57A28; --green:#3E7A5A;
+  --max:1450px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 ::selection{background:var(--terra);color:#fff}
-.wrap{max-width:var(--max);margin:auto;padding:0 28px}
+.wrap{max-width:var(--max);margin:auto;padding:0 34px}
 .mono{font-family:"IBM Plex Mono",monospace}
-nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(250,246,238,.9);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--rule)
-}
-.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.mark{font:500 13px "IBM Plex Mono",monospace;text-decoration:none;white-space:nowrap}
-.mark span{color:var(--terra)}
-nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0;align-items:center}
-nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft);border-bottom:1px solid transparent}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.90);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{font:600 15px "IBM Plex Mono",monospace;letter-spacing:.03em;text-decoration:none;white-space:nowrap}
+.brand .accent{color:var(--terra)}
+.brand small{font-size:9px;color:var(--taupe);font-weight:400;margin-left:8px}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;margin:0;align-items:center}
+nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft);border-bottom:1px solid transparent;transition:.18s}
 nav a:hover{color:var(--terra);border-color:var(--terra)}
-.nav-github{padding:6px 8px;border:1px solid var(--rule)!important;border-bottom-color:var(--rule)!important}
-.hero{padding:24px 0 0}
+.nav-github{padding:7px 10px;border:1px solid var(--rule)!important;border-bottom-color:var(--rule)!important}
+
+/* HERO */
+.hero{padding:28px 0 0}
 .hero-stage{
-  position:relative;min-height:720px;overflow:hidden;border:1px solid var(--rule);
+  position:relative;min-height:850px;overflow:hidden;border:1px solid var(--rule);
   background:
-    radial-gradient(circle at 72% 50%,rgba(177,79,42,.10),transparent 25%),
-    radial-gradient(circle at 85% 25%,rgba(92,107,79,.09),transparent 23%),
-    linear-gradient(135deg,#F8F2E7,#F1E9DA)
+    radial-gradient(circle at 72% 48%,rgba(184,78,39,.08),transparent 19%),
+    radial-gradient(circle at 88% 28%,rgba(60,110,145,.07),transparent 18%),
+    linear-gradient(135deg,#FBF6EC 0%,#F2EBDD 100%);
 }
-#aiCanvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
-.hero-copy{position:relative;z-index:2;max-width:630px;padding:82px 52px}
-.eyebrow{font:11px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin:0 0 18px}
-.status{display:inline-flex;align-items:center;gap:8px}
-.status i{width:7px;height:7px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 5px var(--terraSoft)}
-h1{font:600 clamp(48px,7vw,78px)/.98 "Source Serif 4",serif;letter-spacing:-.035em;margin:0 0 20px}
-h1 em{font-style:normal;color:var(--terra)}
-.hero-lede{font-size:19px;color:var(--soft);max-width:600px;margin:0}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:28px}
-.btn{font:11px "IBM Plex Mono",monospace;text-decoration:none;border:1px solid var(--rule);padding:10px 13px;background:rgba(250,246,238,.8);transition:.2s}
-.btn:hover{transform:translateY(-2px);border-color:var(--terra);color:var(--terra)}
-.btn.primary{background:var(--terra);border-color:var(--terra);color:white}
-.meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:24px;color:var(--taupe);font:10px "IBM Plex Mono",monospace;text-transform:uppercase}
-.orbit-label{
-  position:absolute;z-index:3;padding:7px 9px;border:1px solid var(--rule);
-  background:rgba(250,246,238,.72);backdrop-filter:blur(5px);
-  font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--taupe);
-  pointer-events:none
+#earthCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:auto;display:block}
+#aiCanvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair;z-index:2;pointer-events:auto}
+.hero-copy{position:relative;z-index:4;width:57%;max-width:770px;padding:104px 52px 60px}
+.eyebrow{font:11px "IBM Plex Mono",monospace;letter-spacing:.10em;text-transform:uppercase;color:var(--terra);margin:0 0 20px}
+.status{display:inline-flex;align-items:center;gap:9px}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 6px rgba(184,78,39,.10)}
+h1{font:600 clamp(58px,6.3vw,94px)/.95 "Source Serif 4",serif;letter-spacing:-.042em;margin:0 0 25px}
+h1 .dark{color:var(--ink)} h1 .red{color:var(--terra)} h1 .green{color:var(--green)}
+.hero-lede{font-size:19px;line-height:1.72;color:var(--soft);max-width:700px;margin:0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:31px}
+.btn{font:11px "IBM Plex Mono",monospace;text-decoration:none;border:1px solid var(--rule);padding:11px 14px;background:rgba(250,246,238,.84);transition:.2s}
+.btn:hover{transform:translateY(-3px);border-color:var(--terra);color:var(--terra)}
+.btn.primary{background:var(--terra);border-color:var(--terra);color:#fff}
+.meta{display:flex;gap:14px 19px;flex-wrap:wrap;margin-top:26px;color:var(--taupe);font:10px "IBM Plex Mono",monospace;text-transform:uppercase}
+.meta span{position:relative}.meta span:not(:last-child):after{content:"·";position:absolute;right:-12px;color:var(--rule)}
+
+.visual-hud{position:absolute;z-index:5;right:30px;top:28px;width:min(390px,31vw);pointer-events:none}
+.hud-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.hud-title,.hud-live{padding:7px 10px;border:1px solid var(--rule);background:rgba(250,246,238,.78);font:9px "IBM Plex Mono",monospace;letter-spacing:.08em}
+.hud-live{color:var(--green)}
+.hud-legend{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}
+.legend-item{display:flex;align-items:center;gap:7px;font:8px "IBM Plex Mono",monospace;color:var(--taupe)}
+.legend-dot{width:7px;height:7px;border-radius:50%}
+
+.node-info{
+  position:absolute;z-index:8;right:30px;bottom:28px;width:min(360px,31vw);
+  padding:17px 18px;border:1px solid var(--rule);background:rgba(250,246,238,.88);
+  backdrop-filter:blur(10px);box-shadow:0 14px 50px rgba(80,60,30,.08);
+  pointer-events:none;opacity:.96
 }
-.ol-earth{right:8%;bottom:12%;color:var(--terra)}
-.ol-safety{right:24%;top:13%;color:var(--sage)}
-.ol-evidence{right:11%;top:48%}
-.ol-agent{right:34%;bottom:24%}
-.hero-note{
-  display:grid;grid-template-columns:130px 1fr;gap:20px;
-  padding:21px 0;border-bottom:1px solid var(--rule)
-}
+.node-info .type{font:9px "IBM Plex Mono",monospace;color:var(--terra);letter-spacing:.08em;text-transform:uppercase}
+.node-info h3{font:22px "Source Serif 4",serif;margin:4px 0 4px}
+.node-info p{font-size:12px;color:var(--soft);margin:0}
+.node-info .hint{font:8px "IBM Plex Mono",monospace;color:var(--taupe);margin-top:10px}
+
+.hero-note{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--rule)}
 .hero-note span{font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
-.hero-note strong{font:23px/1.25 "Source Serif 4",serif;max-width:760px}
-.gateway{padding:62px 0;border-bottom:1px solid var(--rule)}
-.kicker{font:10px "IBM Plex Mono",monospace;color:var(--taupe);text-transform:uppercase;letter-spacing:.08em}
+.hero-note strong{font:24px/1.28 "Source Serif 4",serif;max-width:980px}
+
+/* SECTIONS */
+section{border-bottom:1px solid var(--rule);padding:66px 0}
+.kicker{font:10px "IBM Plex Mono",monospace;color:var(--taupe);text-transform:uppercase;letter-spacing:.08em;margin:0}
 .kicker:before{content:"// ";color:var(--terra)}
-h2{font:36px/1.08 "Source Serif 4",serif;letter-spacing:-.025em;margin:8px 0 12px}
-.lede{max-width:720px;color:var(--soft)}
-.gateway-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:28px}
+h2{font:40px/1.08 "Source Serif 4",serif;letter-spacing:-.028em;margin:9px 0 12px}
+.lede{max-width:800px;color:var(--soft);font-size:16px}
+.gateway-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:30px}
 .gateway-card{
-  min-height:150px;padding:20px;border:1px solid var(--rule);background:var(--bg);
+  min-height:175px;padding:21px;border:1px solid var(--rule);background:var(--bg);
   text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;
   transition:.22s;position:relative;overflow:hidden
 }
-.gateway-card:after{
-  content:"";position:absolute;width:90px;height:90px;border:1px solid var(--rule);
-  border-radius:50%;right:-45px;bottom:-45px;transition:.3s
-}
-.gateway-card:hover{transform:translateY(-4px);border-color:var(--terra)}
-.gateway-card:hover:after{width:140px;height:140px;border-color:var(--terra)}
-.gateway-card b{font:23px "Source Serif 4",serif}
-.gateway-card span{font:10px "IBM Plex Mono",monospace;color:var(--taupe);max-width:240px}
-.gateway-card .arrow{color:var(--terra);font-size:14px;position:absolute;right:15px;top:15px}
-.signal{padding:48px 0;border-bottom:1px solid var(--rule)}
-.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px}
-.signal-card{padding:22px;border:1px solid var(--rule);background:var(--bg2)}
-.signal-card h3{font:21px "Source Serif 4",serif;margin:0 0 7px}
+.gateway-card:before{content:"";position:absolute;left:0;top:0;width:0;height:2px;background:var(--terra);transition:.25s}
+.gateway-card:hover{transform:translateY(-5px);border-color:var(--terra)}
+.gateway-card:hover:before{width:100%}
+.gateway-card b{font:25px "Source Serif 4",serif}.gateway-card span{font:10px "IBM Plex Mono",monospace;color:var(--taupe);max-width:270px}.arrow{color:var(--terra)!important;position:absolute;right:16px;top:14px}
+
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:28px}
+.pillar{padding:19px;border:1px solid var(--rule);min-height:150px;position:relative;background:var(--bg)}
+.pillar .p-dot{width:9px;height:9px;border-radius:50%;margin-bottom:20px}
+.pillar h3{font:20px "Source Serif 4",serif;margin:0 0 7px}
+.pillar p{font-size:12.5px;color:var(--soft);margin:0}
+.pillar small{display:block;margin-top:13px;font:8px "IBM Plex Mono",monospace;color:var(--taupe);text-transform:uppercase}
+
+.signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:27px}
+.signal-card{padding:25px;border:1px solid var(--rule);background:var(--bg2);min-height:175px}
+.signal-card h3{font:23px "Source Serif 4",serif;margin:0 0 7px}
 .signal-card p{margin:0;color:var(--soft);font-size:13.5px}
-.signal-card a{display:inline-block;margin-top:14px;font:10px "IBM Plex Mono",monospace;color:var(--terra)}
-.footer{
-  padding:38px 0 60px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
-  font:10px "IBM Plex Mono",monospace;color:var(--taupe)
+.signal-card a{display:inline-block;margin-top:15px;font:10px "IBM Plex Mono",monospace;color:var(--terra);text-decoration:none;border-bottom:1px solid var(--rule)}
+
+.footer{padding:40px 0 65px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
+.footer a{text-decoration:none;border-bottom:1px solid var(--rule)}.footer a:hover{color:var(--terra)}
+
+@media(max-width:1100px){
+  .hero-stage{min-height:820px}.hero-copy{width:62%;padding-left:38px}
+  .visual-hud,.node-info{right:18px;width:33vw}.gateway-grid{grid-template-columns:1fr 1fr}.pillars{grid-template-columns:repeat(3,1fr)}
 }
-.footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
-.footer a:hover{color:var(--terra);border-color:var(--terra)}
-@media(max-width:850px){
-  nav ul{gap:11px}
-  .hero-stage{min-height:760px}.hero-copy{padding:60px 28px}
-  .gateway-grid{grid-template-columns:1fr 1fr}
-  .signal-grid{grid-template-columns:1fr}
-}
-@media(max-width:600px){
+@media(max-width:760px){
   .wrap{padding:0 18px}
-  nav .nav{align-items:flex-start;padding-top:12px;padding-bottom:12px}
-  nav ul{flex-wrap:wrap;justify-content:flex-end;max-width:250px}
+  .nav{align-items:flex-start;padding-top:13px;padding-bottom:13px}.nav ul{gap:10px;flex-wrap:wrap;justify-content:flex-end}
   nav a{font-size:9px}
-  .hero-stage{min-height:780px}
-  .hero-copy{padding:45px 21px}
-  h1{font-size:46px}
-  .hero-lede{font-size:17px}
-  .orbit-label{display:none}
-  .hero-note{grid-template-columns:1fr}
-  .hero-note strong{font-size:20px}
-  .gateway-grid{grid-template-columns:1fr}
+  .hero-stage{min-height:860px}.hero-copy{width:100%;padding:55px 24px 30px}
+  h1{font-size:54px}.hero-lede{font-size:17px}
+  .visual-hud{top:auto;bottom:20px;left:20px;right:20px;width:auto}.node-info{display:none}
+  .hero-note{grid-template-columns:1fr}.hero-note strong{font-size:21px}
+  .gateway-grid{grid-template-columns:1fr 1fr}.pillars{grid-template-columns:1fr 1fr}.signal-grid{grid-template-columns:1fr}
+}
+@media(max-width:500px){
+  h1{font-size:45px}.gateway-grid,.pillars{grid-template-columns:1fr}
+  .hero-stage{min-height:930px}.meta{gap:9px 15px}
 }
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  #aiCanvas{display:none}
+  html{scroll-behavior:auto}#aiCanvas{display:none}
 }
 </style>
 </head>
@@ -145,7 +147,7 @@ h2{font:36px/1.08 "Source Serif 4",serif;letter-spacing:-.025em;margin:8px 0 12p
 <body>
 <nav>
   <div class="wrap nav">
-    <a class="mark" href="index.html">RK<span>_</span>ai</a>
+    <a class="brand" href="index.html">RAHUL<span class="accent"> // AI</span><small>RESEARCH</small></a>
     <ul>
       <li><a href="projects.html">projects</a></li>
       <li><a href="research.html">research</a></li>
@@ -162,233 +164,445 @@ h2{font:36px/1.08 "Source Serif 4",serif;letter-spacing:-.025em;margin:8px 0 12p
 <main class="wrap">
   <header class="hero">
     <div class="hero-stage">
-      <canvas id="aiCanvas" aria-label="Interactive AI safety network"></canvas>
+      <canvas id="earthCanvas" aria-label="Interactive 3D Earth visualization"></canvas>
+      <canvas id="aiCanvas" aria-label="Interactive AI safety and Earth systems map"></canvas>
 
       <div class="hero-copy">
         <p class="eyebrow status"><i></i> AI SAFETY FOR EARTH · INDEPENDENT RESEARCH</p>
-        <h1>Building AI that is <em>intelligent, safe, and responsible.</em></h1>
+        <h1>
+          <span class="dark">Building AI that is</span><br>
+          <span class="red">intelligent, safe,</span><br>
+          <span class="green">and responsible.</span>
+        </h1>
         <p class="hero-lede">
           I build and evaluate AI systems across foundation models, LLM reliability,
-          AI safety, multilingual NLP, and efficient AI — turning research questions
-          into evidence, experiments, and practical open artifacts.
+          AI safety, multilingual NLP, efficient AI, and responsible AI — connecting
+          technical research with the wider question of how intelligent systems affect people and the planet.
         </p>
-
         <div class="actions">
           <a class="btn primary" href="projects.html">Explore the work →</a>
           <a class="btn" href="research.html">Enter the research →</a>
-          <a class="btn" href="gallery.html">Field notes →</a>
+          <a class="btn" href="gallery.html">See the journey →</a>
         </div>
-
         <div class="meta">
-          <span>Foundation Models</span>
-          <span>LLM Safety</span>
-          <span>Responsible AI</span>
-          <span>Sustainable AI</span>
+          <span>Foundation Models</span><span>Grounding</span><span>AI Safety</span>
+          <span>Agents</span><span>Multilingual NLP</span><span>Green AI</span><span>Climate</span>
         </div>
       </div>
 
-      <div class="orbit-label ol-earth">EARTH / IMPACT</div>
-      <div class="orbit-label ol-safety">AI / SAFETY</div>
-      <div class="orbit-label ol-evidence">EVIDENCE</div>
-      <div class="orbit-label ol-agent">AGENTS</div>
+      <div class="visual-hud">
+        <div class="hud-top">
+          <div class="hud-title">AI / EARTH SYSTEMS MAP</div>
+          <div class="hud-live">● LIVE</div>
+        </div>
+        <div class="hud-legend">
+          <div class="legend-item"><i class="legend-dot" style="background:#B84E27"></i> SAFETY / SECURITY</div>
+          <div class="legend-item"><i class="legend-dot" style="background:#3C6E91"></i> MODELS / ARCHITECTURES</div>
+          <div class="legend-item"><i class="legend-dot" style="background:#765B88"></i> COGNITION / BIAS</div>
+          <div class="legend-item"><i class="legend-dot" style="background:#3E7A5A"></i> EARTH / CLIMATE</div>
+          <div class="legend-item"><i class="legend-dot" style="background:#A57A28"></i> EVIDENCE / EVALUATION</div>
+          <div class="legend-item"><i class="legend-dot" style="background:#5D704C"></i> OPEN KNOWLEDGE</div>
+        </div>
+      </div>
+
+      <div class="node-info" id="nodeInfo">
+        <div class="type" id="nodeType">EARTH / CLIMATE</div>
+        <h3 id="nodeTitle">Earth-aware AI</h3>
+        <p id="nodeDesc">Responsible and efficient AI should account for environmental impact, sustainability, and real-world systems.</p>
+        <div class="hint">MOVE OVER THE NETWORK · DRAG THE EARTH · CLICK A NODE TO FOCUS</div>
+      </div>
     </div>
 
     <div class="hero-note">
       <span>01 / PRINCIPLE</span>
-      <strong>Build intelligence without losing sight of the world it operates in.</strong>
+      <strong>Build intelligence without losing sight of the evidence, the people, and the Earth that intelligent systems operate within.</strong>
     </div>
   </header>
 
-  <section class="gateway">
+  <section>
     <p class="kicker">Portfolio map</p>
-    <h2>Explore the research system.</h2>
-    <p class="lede">The homepage is the map. Each destination opens a deeper layer of the portfolio rather than turning one page into an endless CV.</p>
-
+    <h2>One research direction. Many connected systems.</h2>
+    <p class="lede">The homepage is the entry point; detailed work lives on dedicated pages so the portfolio can grow without becoming an endless single-page CV.</p>
     <div class="gateway-grid">
-      <a class="gateway-card" href="projects.html">
-        <span class="arrow">↗</span><b>Projects</b>
-        <span>Systems, experiments, repositories and flagship artifacts.</span>
-      </a>
-      <a class="gateway-card" href="research.html">
-        <span class="arrow">↗</span><b>Research</b>
-        <span>Papers, research questions, evaluation and technical writing.</span>
-      </a>
-      <a class="gateway-card" href="education.html">
-        <span class="arrow">↗</span><b>Education</b>
-        <span>Academic background and the transition into AI research.</span>
-      </a>
-      <a class="gateway-card" href="certifications.html">
-        <span class="arrow">↗</span><b>Certifications</b>
-        <span>Professional credentials, programs and workshops.</span>
-      </a>
-      <a class="gateway-card" href="gallery.html">
-        <span class="arrow">↗</span><b>Gallery</b>
-        <span>Talks, workshops, industry, institutions, people and field notes.</span>
-      </a>
-      <a class="gateway-card" href="resources.html">
-        <span class="arrow">↗</span><b>Open Knowledge</b>
-        <span>AI literacy, HorizonTrax, Raphus white papers and open resources.</span>
-      </a>
+      <a class="gateway-card" href="projects.html"><span class="arrow">↗</span><b>Projects</b><span>Experiments, systems, repositories and flagship artifacts.</span></a>
+      <a class="gateway-card" href="research.html"><span class="arrow">↗</span><b>Research</b><span>Questions, papers, evaluations and technical writing.</span></a>
+      <a class="gateway-card" href="education.html"><span class="arrow">↗</span><b>Education</b><span>Academic background and the transition into AI research.</span></a>
+      <a class="gateway-card" href="certifications.html"><span class="arrow">↗</span><b>Certifications</b><span>Credentials, cohorts, programs and workshops.</span></a>
+      <a class="gateway-card" href="gallery.html"><span class="arrow">↗</span><b>Gallery</b><span>Talks, workshops, people, institutions and field moments.</span></a>
+      <a class="gateway-card" href="resources.html"><span class="arrow">↗</span><b>Open Knowledge</b><span>Free AI literacy, HorizonTrax material and Raphus research resources.</span></a>
+      <a class="gateway-card" href="about.html"><span class="arrow">↗</span><b>About</b><span>The full journey, working philosophy and current direction.</span></a>
+      <a class="gateway-card" href="contact.html"><span class="arrow">↗</span><b>Contact</b><span>Research collaboration, technical discussion and open-source work.</span></a>
     </div>
   </section>
 
-  <section class="signal">
+  <section>
+    <p class="kicker">Research landscape</p>
+    <h2>The questions behind the work.</h2>
+    <div class="pillars">
+      <article class="pillar"><div class="p-dot" style="background:#B84E27"></div><h3>AI Safety</h3><p>Prompt injection, agent security, robustness, defensive design and trustworthy deployment.</p><small>Safety · Security</small></article>
+      <article class="pillar"><div class="p-dot" style="background:#3C6E91"></div><h3>Foundation Models</h3><p>Architecture, model evolution, multimodality, tokenization and efficient inference.</p><small>Models · Architecture</small></article>
+      <article class="pillar"><div class="p-dot" style="background:#A57A28"></div><h3>Grounding & Evaluation</h3><p>Understanding when generated claims lose connection with evidence and how failures can be measured.</p><small>Evidence · Reliability</small></article>
+      <article class="pillar"><div class="p-dot" style="background:#765B88"></div><h3>Cognitive AI</h3><p>Cognitive biases, reasoning behaviour and the relationship between model outputs and human judgement.</p><small>Cognition · Bias</small></article>
+      <article class="pillar"><div class="p-dot" style="background:#3E7A5A"></div><h3>Earth & Efficient AI</h3><p>Green AI, inference efficiency, responsible deployment and the environmental context of AI systems.</p><small>Climate · Sustainability</small></article>
+    </div>
+  </section>
+
+  <section>
     <p class="kicker">Selected signal</p>
-    <h2>Three doors into the work.</h2>
+    <h2>From research to public artifacts.</h2>
     <div class="signal-grid">
       <article class="signal-card">
         <h3>Foundation Model Atlas</h3>
-        <p>An interactive, evidence-aware atlas for exploring model families, architectures and structural differences.</p>
+        <p>An interactive atlas for exploring model families, architectures and structural differences — designed as a visual research artifact.</p>
         <a href="https://rahulkiran2222.github.io/foundation-model-atlas/" target="_blank" rel="noopener noreferrer">Open live Atlas ↗</a>
       </article>
       <article class="signal-card">
         <h3>LLM Grounding Deficit</h3>
-        <p>Research on the gap between generated claims and the evidence required to support them.</p>
+        <p>Research examining the gap between generated claims and the evidence required to support them.</p>
         <a href="research.html">Read the research →</a>
       </article>
       <article class="signal-card">
         <h3>AI Safety & Security</h3>
-        <p>Work around prompt injection, agent security, robustness, evaluation and defensive system design.</p>
+        <p>Work around prompt injection, agent security, robustness, evaluation and defensive AI-system design.</p>
         <a href="research.html">Explore safety work →</a>
       </article>
       <article class="signal-card">
         <h3>Open Knowledge</h3>
-        <p>Free learning material, technical resources and research artifacts intended to make AI easier to understand.</p>
+        <p>Free AI-literacy material, HorizonTrax resources, technical explainers and Raphus white papers.</p>
         <a href="resources.html">Open the knowledge hub →</a>
       </article>
     </div>
   </section>
 
-  <section class="signal">
+  <section>
     <p class="kicker">Current direction</p>
     <h2>Research → evidence → artifact → impact.</h2>
-    <p class="lede">
-      My work focuses on understanding where modern AI systems fail, how those failures can be measured,
-      and how better design can make AI more reliable, secure, efficient, and responsible.
-    </p>
+    <p class="lede">My aim is to understand where modern AI systems fail, measure those failures, build reproducible artifacts, and push toward AI that is more reliable, secure, efficient and responsible in the real world.</p>
     <div class="actions">
-      <a class="btn primary" href="about.html">About the journey →</a>
+      <a class="btn primary" href="about.html">Read the journey →</a>
       <a class="btn" href="contact.html">Start a conversation →</a>
     </div>
   </section>
 </main>
 
 <footer class="wrap footer">
-  <span>© 2026 Rahul Kiran Gunti · AI Safety for Earth · v0.1</span>
-  <span>
-    <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">GitHub</a>
-    &nbsp;·&nbsp;
-    <a href="https://orcid.org/0009-0009-3008-7999" target="_blank" rel="noopener noreferrer">ORCID</a>
-  </span>
+  <span>© 2026 Rahul Kiran Gunti · AI Safety for Earth · v0.1 / WebGL Earth</span>
+  <span><a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://orcid.org/0009-0009-3008-7999" target="_blank" rel="noopener noreferrer">ORCID</a></span>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.min.js"></script>
 <script>
 (() => {
-  const canvas = document.getElementById("aiCanvas");
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce) return;
+  const canvas=document.getElementById("aiCanvas"),ctx=canvas.getContext("2d");
+  if(!canvas||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 
-  let w=0,h=0,dpr=1,mouse={x:-9999,y:-9999};
-  const topics=[
-    ["SAFETY",0.62,0.20],
-    ["RESEARCH",0.78,0.33],
-    ["MODELS",0.58,0.42],
-    ["AGENTS",0.84,0.56],
-    ["EVIDENCE",0.67,0.64],
-    ["EARTH",0.82,0.77],
-    ["IMPACT",0.56,0.80],
-    ["OPEN",0.91,0.39]
+  let w=0,h=0,dpr=1,t0=performance.now(),mouse={x:-9999,y:-9999},active=null,focus=null;
+  const palette={
+    safety:"#B84E27",models:"#3C6E91",cognition:"#765B88",
+    earth:"#3E7A5A",evidence:"#A57A28",open:"#5D704C",agent:"#7B5A45"
+  };
+  const nodes=[
+    {id:"safety",label:"AI SAFETY",type:"SAFETY / SECURITY",desc:"Prompt injection, robustness, defensive design and trustworthy AI systems.",x:.78,y:.20,c:"safety"},
+    {id:"security",label:"SECURITY",type:"SAFETY / SECURITY",desc:"Agent security, threat models and failure-resistant AI system design.",x:.90,y:.31,c:"safety"},
+    {id:"models",label:"MODELS",type:"FOUNDATION MODELS",desc:"Foundation models, architectures, multimodality and model evolution.",x:.68,y:.32,c:"models"},
+    {id:"architectures",label:"ARCHITECTURES",type:"FOUNDATION MODELS",desc:"Architecture comparison, attention, MoE, recurrent and hybrid design patterns.",x:.84,y:.43,c:"models"},
+    {id:"grounding",label:"GROUNDING",type:"EVIDENCE / EVALUATION",desc:"The relationship between generated claims, evidence and the grounding deficit.",x:.70,y:.56,c:"evidence"},
+    {id:"evaluation",label:"EVALUATION",type:"EVIDENCE / EVALUATION",desc:"Measuring model behaviour, reliability, robustness and failure modes.",x:.91,y:.56,c:"evidence"},
+    {id:"agents",label:"AGENTS",type:"AI SAFETY / AGENTS",desc:"Agentic systems, tool use and the security boundaries around autonomous behaviour.",x:.78,y:.69,c:"agent"},
+    {id:"cognition",label:"COGNITION",type:"COGNITION / BIAS",desc:"Cognitive biases, reasoning behaviour and human-model interaction.",x:.59,y:.72,c:"cognition"},
+    {id:"multilingual",label:"MULTILINGUAL",type:"MULTILINGUAL NLP",desc:"Indic NLP, multilingual language behaviour and tokenizer effects.",x:.93,y:.75,c:"models"},
+    {id:"efficient",label:"GREEN AI",type:"EARTH / EFFICIENCY",desc:"Efficient inference, responsible deployment and computational sustainability.",x:.68,y:.84,c:"earth"},
+    {id:"climate",label:"CLIMATE",type:"EARTH / CLIMATE",desc:"Climate-aware thinking around the environmental context and impact of AI.",x:.88,y:.89,c:"earth"},
+    {id:"open",label:"OPEN",type:"OPEN KNOWLEDGE",desc:"Open research, AI literacy, reproducible artifacts and accessible technical knowledge.",x:.54,y:.22,c:"open"}
   ];
-  let pts=[];
+
+  const links=[
+    ["safety","security"],["safety","models"],["models","architectures"],["models","grounding"],
+    ["architectures","evaluation"],["grounding","evaluation"],["evaluation","agents"],
+    ["agents","security"],["agents","cognition"],["cognition","multilingual"],
+    ["cognition","efficient"],["efficient","climate"],["efficient","open"],["open","models"],
+    ["grounding","open"],["evaluation","efficient"]
+  ];
 
   function resize(){
-    const r=canvas.getBoundingClientRect();
-    w=r.width; h=r.height; dpr=Math.min(devicePixelRatio||1,2);
-    canvas.width=w*dpr; canvas.height=h*dpr;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    pts=topics.map((t,i)=>({
-      label:t[0], x:w*t[1], y:h*t[2],
-      ox:w*t[1], oy:h*t[2], phase:i*0.8,
-      speed:0.00035+(i%3)*0.00012
-    }));
+    const r=canvas.getBoundingClientRect();w=r.width;h=r.height;dpr=Math.min(devicePixelRatio||1,2);
+    canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function pos(n,t){
+    const drift=Math.sin(t*.0005+n.x*8)*10;
+    return {x:w*n.x+Math.cos(t*.00035+n.y*10)*14,y:h*n.y+Math.sin(t*.0004+n.x*9)*12+drift*.2};
+  }
+  function earth(t){
+    // The Earth is rendered by Three.js below. This function intentionally stays empty.
   }
 
-  function draw(t){
-    ctx.clearRect(0,0,w,h);
-
-    const cx=w*.72, cy=h*.53;
-    const pulse=1+Math.sin(t*.001)*.025;
-
-    // orbital rings
-    [95,165,245].forEach((r,i)=>{
-      ctx.beginPath();
-      ctx.ellipse(cx,cy,r,r*.62,0,0,Math.PI*2);
-      ctx.strokeStyle=i===1?"rgba(177,79,42,.16)":"rgba(92,107,79,.12)";
-      ctx.lineWidth=1; ctx.stroke();
+  function draw(now){
+    const t=now-t0;ctx.clearRect(0,0,w,h);
+    // orbital structure
+    const cx=w*.79,cy=h*.56;
+    [1.0,1.28,1.58,1.9].forEach((s,i)=>{
+      ctx.beginPath();ctx.ellipse(cx,cy,Math.min(w,h)*.19*s,Math.min(w,h)*.19*s*.53,0,0,Math.PI*2);
+      ctx.strokeStyle=i===1?"rgba(184,78,39,.18)":"rgba(92,112,76,.10)";ctx.lineWidth=1;ctx.stroke();
     });
 
-    pts.forEach((p,i)=>{
-      p.x=p.ox+Math.sin(t*p.speed+p.phase)*18;
-      p.y=p.oy+Math.cos(t*p.speed*.8+p.phase)*13;
-    });
+    const P={};nodes.forEach(n=>P[n.id]=pos(n,t));
 
-    // network connections
-    for(let i=0;i<pts.length;i++){
-      for(let j=i+1;j<pts.length;j++){
-        const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-        if(d<250){
-          const alpha=.13*(1-d/250);
-          ctx.strokeStyle=`rgba(92,107,79,${alpha})`;
-          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
-        }
-      }
-    }
-
-    // mouse influence
-    pts.forEach(p=>{
-      const d=Math.hypot(mouse.x-p.x,mouse.y-p.y);
-      if(d<150){
-        ctx.strokeStyle=`rgba(177,79,42,${.28*(1-d/150)})`;
-        ctx.beginPath();ctx.moveTo(mouse.x,mouse.y);ctx.lineTo(p.x,p.y);ctx.stroke();
+    // connections
+    links.forEach(([a,b])=>{
+      const A=P[a],B=P[b],d=Math.hypot(A.x-B.x,A.y-B.y);
+      const near=active&&(a===active.id||b===active.id);
+      if(d<520||near){
+        ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.lineTo(B.x,B.y);
+        ctx.strokeStyle=near?"rgba(184,78,39,.35)":"rgba(92,112,76,.10)";
+        ctx.lineWidth=near?1.4:1;ctx.stroke();
       }
     });
 
-    // topic nodes
-    pts.forEach(p=>{
-      const near=Math.hypot(mouse.x-p.x,mouse.y-p.y)<55;
-      ctx.beginPath();ctx.arc(p.x,p.y,near?6:3.5,0,Math.PI*2);
-      ctx.fillStyle=near?"#B14F2A":"#5C6B4F";ctx.fill();
-
-      ctx.font='10px "IBM Plex Mono",monospace';
-      ctx.fillStyle=near?"#B14F2A":"#857C6E";
-      ctx.fillText(p.label,p.x+9,p.y+4);
+    // mouse field
+    nodes.forEach(n=>{
+      const p=P[n.id],d=Math.hypot(mouse.x-p.x,mouse.y-p.y);
+      if(d<180){
+        ctx.beginPath();ctx.moveTo(mouse.x,mouse.y);ctx.lineTo(p.x,p.y);
+        ctx.strokeStyle=`rgba(184,78,39,${.28*(1-d/180)})`;ctx.stroke();
+      }
     });
 
-    // central AI core
-    ctx.beginPath();ctx.arc(cx,cy,34*pulse,0,Math.PI*2);
-    ctx.fillStyle="rgba(177,79,42,.07)";ctx.fill();
-    ctx.strokeStyle="rgba(177,79,42,.36)";ctx.stroke();
+    // nodes
+    active=null;
+    let nearest=999;
+    nodes.forEach(n=>{
+      const p=P[n.id],d=Math.hypot(mouse.x-p.x,mouse.y-p.y);
+      const r=d<52?7:4;
+      if(d<nearest&&d<60){nearest=d;active={...n,p}}
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);
+      ctx.fillStyle=palette[n.c];ctx.fill();
+      if(d<52||focus===n.id){
+        ctx.beginPath();ctx.arc(p.x,p.y,13+Math.sin(t*.006)*2,0,Math.PI*2);
+        ctx.strokeStyle=palette[n.c]+"55";ctx.stroke();
+      }
+      ctx.font='9px "IBM Plex Mono",monospace';
+      ctx.fillStyle=palette[n.c];
+      ctx.fillText(n.label,p.x+9,p.y+4);
+    });
 
-    ctx.beginPath();ctx.arc(cx,cy,11*pulse,0,Math.PI*2);
-    ctx.fillStyle="#B14F2A";ctx.fill();
+    // AI safety core
+    const pulse=1+Math.sin(t*.002)*.035;
+    ctx.beginPath();ctx.arc(cx,cy,30*pulse,0,Math.PI*2);ctx.fillStyle="rgba(184,78,39,.07)";ctx.fill();
+    ctx.beginPath();ctx.arc(cx,cy,10*pulse,0,Math.PI*2);ctx.fillStyle="#B84E27";ctx.fill();
+    ctx.font='9px "IBM Plex Mono",monospace';ctx.textAlign="center";ctx.fillStyle="#B84E27";ctx.fillText("AI",cx,cy+3);ctx.textAlign="start";
 
-    ctx.font='10px "IBM Plex Mono",monospace';
-    ctx.textAlign="center";ctx.fillStyle="#B14F2A";
-    ctx.fillText("AI",cx,cy+4);ctx.textAlign="start";
-
+    updateInfo();
     requestAnimationFrame(draw);
   }
+  function updateInfo(){
+    const type=document.getElementById("nodeType"),title=document.getElementById("nodeTitle"),desc=document.getElementById("nodeDesc");
+    const n=active || nodes.find(x=>x.id==="climate");
+    type.textContent=n.type;title.textContent=n.label;desc.textContent=n.desc;
+  }
 
-  canvas.addEventListener("pointermove",e=>{
-    const r=canvas.getBoundingClientRect();
-    mouse={x:e.clientX-r.left,y:e.clientY-r.top};
-  });
+
+  /* ------------------------------------------------------------------
+     THREE.JS EARTH
+     A real WebGL globe: satellite texture + normal/specular maps,
+     animated cloud shell, atmosphere, stars, and pointer rotation.
+     Textures are served from the official Three.js example assets.
+  ------------------------------------------------------------------ */
+  const earthCanvas = document.getElementById("earthCanvas");
+  const THREE = window.THREE;
+  if (earthCanvas && THREE && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: earthCanvas,
+      alpha: true,
+      antialias: true,
+      powerPreference: "high-performance"
+    });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(0x000000, 0);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 100);
+    camera.position.set(0, 0, 4.5);
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 1.15);
+    scene.add(ambient);
+
+    const sun = new THREE.DirectionalLight(0xfff2dc, 2.7);
+    sun.position.set(-4, 2.4, 5);
+    scene.add(sun);
+
+    const rim = new THREE.DirectionalLight(0x9fc5dc, 1.0);
+    rim.position.set(4, -1, -4);
+    scene.add(rim);
+
+    const loader = new THREE.TextureLoader();
+    const base = "https://threejs.org/examples/textures/planets/";
+    const earthMap = loader.load(base + "earth_atmos_2048.jpg");
+    const earthNormal = loader.load(base + "earth_normal_2048.jpg");
+    const earthSpecular = loader.load(base + "earth_specular_2048.jpg");
+    const cloudsMap = loader.load(base + "earth_clouds_1024.png");
+
+    [earthMap, earthNormal, earthSpecular, cloudsMap].forEach(tex => {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    });
+
+    const earth = new THREE.Mesh(
+      new THREE.SphereGeometry(1.42, 96, 96),
+      new THREE.MeshPhongMaterial({
+        map: earthMap,
+        normalMap: earthNormal,
+        normalScale: new THREE.Vector2(0.72, 0.72),
+        specularMap: earthSpecular,
+        specular: new THREE.Color(0x7897a4),
+        shininess: 12
+      })
+    );
+    group.add(earth);
+
+    const clouds = new THREE.Mesh(
+      new THREE.SphereGeometry(1.445, 96, 96),
+      new THREE.MeshPhongMaterial({
+        map: cloudsMap,
+        transparent: true,
+        opacity: 0.72,
+        depthWrite: false
+      })
+    );
+    group.add(clouds);
+
+    // Thin atmospheric shell: Fresnel-like blue/green rim.
+    const atmosphere = new THREE.Mesh(
+      new THREE.SphereGeometry(1.54, 96, 96),
+      new THREE.ShaderMaterial({
+        transparent: true,
+        side: THREE.BackSide,
+        blending: THREE.AdditiveBlending,
+        uniforms: {
+          glowColor: { value: new THREE.Color(0x76a99a) },
+          viewVector: { value: camera.position }
+        },
+        vertexShader: `
+          varying vec3 vNormal;
+          varying vec3 vWorldPosition;
+          void main(){
+            vNormal = normalize(normalMatrix * normal);
+            vec4 worldPosition = modelMatrix * vec4(position,1.0);
+            vWorldPosition = worldPosition.xyz;
+            gl_Position = projectionMatrix * viewMatrix * worldPosition;
+          }
+        `,
+        fragmentShader: `
+          uniform vec3 glowColor;
+          uniform vec3 viewVector;
+          varying vec3 vNormal;
+          varying vec3 vWorldPosition;
+          void main(){
+            vec3 viewDir = normalize(cameraPosition - vWorldPosition);
+            float intensity = pow(0.72 - max(dot(vNormal, viewDir), 0.0), 2.2);
+            gl_FragColor = vec4(glowColor, intensity * 0.42);
+          }
+        `
+      })
+    );
+    group.add(atmosphere);
+
+    // Very subtle latitude/longitude shell for the technical 2.5D look.
+    const wire = new THREE.LineSegments(
+      new THREE.WireframeGeometry(new THREE.SphereGeometry(1.465, 24, 14)),
+      new THREE.LineBasicMaterial({
+        color: 0x5d947f,
+        transparent: true,
+        opacity: 0.075
+      })
+    );
+    group.add(wire);
+
+    // Star field kept extremely subtle so the portfolio remains editorial.
+    const starGeo = new THREE.BufferGeometry();
+    const starCount = 650;
+    const starPos = new Float32Array(starCount * 3);
+    for(let i=0;i<starCount;i++){
+      const r = 8 + Math.random() * 12;
+      const u = Math.random()*2-1;
+      const a = Math.random()*Math.PI*2;
+      const s = Math.sqrt(1-u*u);
+      starPos[i*3] = r*s*Math.cos(a);
+      starPos[i*3+1] = r*u;
+      starPos[i*3+2] = r*s*Math.sin(a);
+    }
+    starGeo.setAttribute("position", new THREE.BufferAttribute(starPos,3));
+    const stars = new THREE.Points(
+      starGeo,
+      new THREE.PointsMaterial({color:0x9b8e78,size:0.018,transparent:true,opacity:0.34,sizeAttenuation:true})
+    );
+    scene.add(stars);
+
+    let targetRotX = 0.08, targetRotY = -0.42;
+    let dragging = false, lastX = 0, lastY = 0;
+    let autoRotate = true;
+
+    earthCanvas.addEventListener("pointerdown", e => {
+      dragging = true; autoRotate = false; lastX=e.clientX; lastY=e.clientY;
+      earthCanvas.setPointerCapture?.(e.pointerId);
+    });
+    earthCanvas.addEventListener("pointermove", e => {
+      if(!dragging)return;
+      targetRotY += (e.clientX-lastX)*0.006;
+      targetRotX += (e.clientY-lastY)*0.004;
+      targetRotX = Math.max(-0.75, Math.min(0.75, targetRotX));
+      lastX=e.clientX; lastY=e.clientY;
+    });
+    earthCanvas.addEventListener("pointerup", () => {
+      dragging=false;
+      setTimeout(()=>autoRotate=true,900);
+    });
+    earthCanvas.addEventListener("pointerleave", () => dragging=false);
+
+    function resizeEarth(){
+      const rect = earthCanvas.getBoundingClientRect();
+      const width = Math.max(1, rect.width), height=Math.max(1, rect.height);
+      renderer.setSize(width,height,false);
+      camera.aspect=width/height;
+      camera.updateProjectionMatrix();
+    }
+
+    function positionEarth(){
+      // Move the globe into the right-hand visual field; on mobile center it.
+      const mobile = window.innerWidth < 760;
+      const x = mobile ? 0.28 : 1.02;
+      const y = mobile ? -0.72 : -0.02;
+      const scale = mobile ? 0.84 : 1.0;
+      group.position.set(x,y,0);
+      group.scale.setScalar(scale);
+    }
+
+    function renderEarth(ms){
+      const dt = ms * 0.001;
+      if(autoRotate) targetRotY += 0.0009;
+      group.rotation.y += (targetRotY-group.rotation.y)*0.045;
+      group.rotation.x += (targetRotX-group.rotation.x)*0.045;
+      clouds.rotation.y += 0.00018;
+      wire.rotation.y = group.rotation.y;
+      stars.rotation.y = dt*0.006;
+
+      resizeEarth();
+      positionEarth();
+      renderer.render(scene,camera);
+      requestAnimationFrame(renderEarth);
+    }
+    addEventListener("resize", ()=>{resizeEarth();positionEarth()});
+    resizeEarth(); positionEarth(); requestAnimationFrame(renderEarth);
+  }
+
+  canvas.addEventListener("pointermove",e=>{const r=canvas.getBoundingClientRect();mouse={x:e.clientX-r.left,y:e.clientY-r.top}});
   canvas.addEventListener("pointerleave",()=>mouse={x:-9999,y:-9999});
-  addEventListener("resize",resize);
-  resize();
-  requestAnimationFrame(draw);
+  canvas.addEventListener("click",()=>{
+    if(active) focus=focus===active.id?null:active.id;
+  });
+  addEventListener("resize",resize);resize();requestAnimationFrame(draw);
 })();
 </script>
 </body>
