@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education — Rahul Kiran</title>
+<meta name="description" content="Education, academic programmes, and continuing learning of Rahul Kiran.">
+<style>
+:root{
+  --paper:#f4efe5;
+  --paper-2:#ebe3d5;
+  --ink:#171717;
+  --muted:#68635c;
+  --rust:#a84f2f;
+  --sage:#697b67;
+  --line:rgba(23,23,23,.18);
+  --white:#fffaf1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.nav{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 5vw;border-bottom:1px solid var(--line);
+  background:rgba(244,239,229,.92);backdrop-filter:blur(14px);
+}
+.brand{font-size:18px;font-weight:700;letter-spacing:.08em}
+.brand span{color:var(--rust)}
+.navlinks{display:flex;gap:24px;flex-wrap:wrap;justify-content:flex-end}
+.navlinks a{
+  font:600 12px/1.2 Arial,sans-serif;letter-spacing:.08em;
+  text-transform:uppercase;color:#45423e;transition:.2s;
+}
+.navlinks a:hover,.navlinks a.active{color:var(--rust)}
+.hero{
+  min-height:63vh;padding:9vh 6vw 7vh;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:6vw;
+  align-items:end;border-bottom:1px solid var(--line);
+}
+.eyebrow{
+  color:var(--rust);font:700 12px/1 Arial,sans-serif;
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px;
+}
+h1{font-size:clamp(64px,10vw,150px);line-height:.78;margin:0;letter-spacing:-.055em}
+.hero-copy{
+  max-width:620px;font-size:22px;line-height:1.45;color:#4f4b46;
+}
+.hero-note{
+  border-left:3px solid var(--sage);padding:4px 0 4px 24px;
+  font-size:18px;line-height:1.5;color:#4f4b46;
+}
+.section{padding:7vw 6vw;border-bottom:1px solid var(--line)}
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:30px;margin-bottom:48px;
+}
+.section h2{font-size:clamp(38px,5vw,72px);line-height:.95;margin:0;letter-spacing:-.04em}
+.section-kicker{font:700 11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+.timeline{position:relative;max-width:1250px;margin:auto}
+.timeline:before{
+  content:"";position:absolute;left:22px;top:0;bottom:0;width:1px;background:var(--line)
+}
+.edu{
+  position:relative;padding:0 0 46px 70px;cursor:pointer;
+}
+.dot{
+  position:absolute;left:14px;top:5px;width:17px;height:17px;
+  border:2px solid var(--paper);outline:1px solid var(--rust);
+  border-radius:50%;background:var(--rust);transition:.3s;
+}
+.edu:hover .dot{transform:scale(1.45);background:var(--sage)}
+.edu-top{
+  display:flex;justify-content:space-between;gap:30px;align-items:flex-start;
+}
+.edu h3{font-size:31px;line-height:1.08;margin:0 0 10px;max-width:900px}
+.institution{font-size:22px;color:var(--rust);font-style:italic}
+.date{
+  white-space:nowrap;font-size:17px;color:#5c5954;
+  border:1px solid var(--line);padding:8px 12px;
+}
+.meta{font-size:17px;line-height:1.55;color:#4f4b46;margin-top:13px;max-width:950px}
+.meta strong{color:var(--ink)}
+.edu.featured{padding-bottom:58px}
+.edu.featured .dot{width:21px;height:21px;left:12px;top:4px}
+.program-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;
+}
+.program{
+  background:rgba(255,250,241,.55);border:1px solid var(--line);
+  padding:25px;min-height:125px;transition:.25s;
+}
+.program:hover{transform:translateY(-5px);border-color:var(--rust);box-shadow:0 14px 30px rgba(40,30,20,.08)}
+.program .year{
+  font:700 10px Arial,sans-serif;letter-spacing:.12em;color:var(--sage);
+  text-transform:uppercase;margin-bottom:13px;
+}
+.program h3{font-size:22px;line-height:1.15;margin:0 0 8px}
+.program p{font-size:16px;line-height:1.45;color:var(--muted);margin:0}
+.bridge{
+  display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--ink);
+}
+.bridge-card{
+  min-height:260px;padding:38px;background:var(--paper-2);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.bridge-card:nth-child(2){background:#e2e8dd}
+.bridge-card:nth-child(3){background:#eee5d9}
+.bridge-card:nth-child(4){background:#e7ddd1}
+.bridge-num{font:700 11px Arial,sans-serif;letter-spacing:.12em;color:var(--rust)}
+.bridge-card h3{font-size:34px;line-height:1;margin:0 0 12px}
+.bridge-card p{font-size:16px;line-height:1.5;color:#55514b;margin:0;max-width:440px}
+.footer{
+  padding:45px 6vw;display:flex;justify-content:space-between;gap:20px;
+  color:#66615a;font:12px Arial,sans-serif;letter-spacing:.05em
+}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;min-height:auto;padding-top:70px}
+ .nav{align-items:flex-start;gap:16px}.navlinks{gap:12px}
+ .edu-top{display:block}.date{display:inline-block;margin-top:15px}
+ .program-grid,.bridge{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ h1{font-size:68px}.hero-copy{font-size:19px}.section{padding:60px 5vw}
+ .nav{padding:15px 5vw}.navlinks{display:none}
+ .edu{padding-left:52px}.timeline:before{left:16px}.dot{left:8px}
+ .edu h3{font-size:25px}.institution{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">RK <span>//</span> AI</a>
+  <div class="navlinks">
+    <a href="projects.html">Projects</a>
+    <a href="research.html">Research</a>
+    <a class="active" href="education.html">Education</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Education / 01</div>
+    <h1>EDU<br>CATION</h1>
+  </div>
+  <div>
+    <p class="hero-copy">
+      A path from mechanical engineering and management into AI research,
+      technology ethics, public policy, and responsible innovation.
+    </p>
+    <p class="hero-note">
+      Formal degrees form the foundation. Continuous learning connects them
+      to the questions I work on today.
+    </p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">01 — Formal education</div>
+      <h2>The academic<br>foundation.</h2>
+    </div>
+    <div class="section-kicker">2016 → 2026</div>
+  </div>
+
+  <div class="timeline">
+
+    <article class="edu featured">
+      <span class="dot"></span>
+      <div class="edu-top">
+        <div>
+          <h3>Ethics and Tech Public Policy Practitioner Program</h3>
+          <div class="institution">Stanford University</div>
+        </div>
+        <div class="date">Ongoing · Spring 2026</div>
+      </div>
+      <div class="meta">
+        <strong>Core competencies:</strong> Technology &amp; Public Policy,
+        Algorithmic Fairness, Scenario Planning, Generative AI,
+        Inclusion &amp; Equity in Technology.
+      </div>
+    </article>
+
+    <article class="edu">
+      <span class="dot"></span>
+      <div class="edu-top">
+        <div>
+          <h3>Master of Business Administration</h3>
+          <div class="institution">K. Chandrakala PG College, Acharya Nagarjuna University</div>
+        </div>
+        <div class="date">May 2024 · India</div>
+      </div>
+      <div class="meta">
+        <strong>Specialisation:</strong> Financial Management &amp; Human Resource Management.
+        &nbsp; <strong>CGPA:</strong> 6.9/10.0 · Top 30%.
+      </div>
+    </article>
+
+    <article class="edu">
+      <span class="dot"></span>
+      <div class="edu-top">
+        <div>
+          <h3>Bachelor of Technology, Mechanical Engineering</h3>
+          <div class="institution">Rajiv Gandhi University of Knowledge Technologies, Nuzvid (RGUKT)</div>
+        </div>
+        <div class="date">Feb 2021 · India</div>
+      </div>
+      <div class="meta">
+        <strong>CGPA:</strong> 7.28/10.0 (German equivalent: ~2.4 Gut) · Top 15%.
+      </div>
+    </article>
+
+    <article class="edu">
+      <span class="dot"></span>
+      <div class="edu-top">
+        <div>
+          <h3>Pre-University Course (PUC), Science &amp; Mathematics</h3>
+          <div class="institution">RGUKT, Nuzvid</div>
+        </div>
+        <div class="date">May 2016 · India</div>
+      </div>
+      <div class="meta">
+        <strong>CGPA:</strong> 8.15/10.0 (German equivalent: ~1.8 Sehr Gut) · Top 5%.
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">02 — Continuing learning</div>
+      <h2>Beyond<br>the degree.</h2>
+    </div>
+    <div class="section-kicker">Selected programmes</div>
+  </div>
+
+  <div class="program-grid">
+    <article class="program">
+      <div class="year">Ongoing</div>
+      <h3>TRI AI Cohort 10</h3>
+      <p>AI Research Foundations · Google DeepMind</p>
+    </article>
+
+    <article class="program">
+      <div class="year">Ongoing</div>
+      <h3>Google Cloud Career Launchpad EMEA</h3>
+      <p>Google</p>
+    </article>
+
+    <article class="program">
+      <div class="year">Apr 2026</div>
+      <h3>Machine Learning I</h3>
+      <p>Columbia University</p>
+    </article>
+
+    <article class="program">
+      <div class="year">Jan 2026</div>
+      <h3>Prompt Engineering &amp; Programming with OpenAI</h3>
+      <p>Columbia University</p>
+    </article>
+
+    <article class="program">
+      <div class="year">2025</div>
+      <h3>Agentic AI (MOOC)</h3>
+      <p>UC Berkeley RDI</p>
+    </article>
+
+    <article class="program">
+      <div class="year">Apr 2022</div>
+      <h3>Sustainable Software Engineering</h3>
+      <p>Hasso Plattner Institute, Potsdam</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-kicker">03 — Throughline</div>
+      <h2>Different fields.<br>One direction.</h2>
+    </div>
+  </div>
+
+  <div class="bridge">
+    <article class="bridge-card">
+      <div class="bridge-num">01 / ENGINEERING</div>
+      <div>
+        <h3>Systems</h3>
+        <p>Mechanical engineering established a systems-oriented foundation for understanding complex technical environments.</p>
+      </div>
+    </article>
+    <article class="bridge-card">
+      <div class="bridge-num">02 / MANAGEMENT</div>
+      <div>
+        <h3>Organizations</h3>
+        <p>An MBA added financial, organizational, and human-resource perspectives to technical problem solving.</p>
+      </div>
+    </article>
+    <article class="bridge-card">
+      <div class="bridge-num">03 / AI</div>
+      <div>
+        <h3>Intelligence</h3>
+        <p>Recent programmes deepen work in machine learning, generative AI, prompting, and agentic systems.</p>
+      </div>
+    </article>
+    <article class="bridge-card">
+      <div class="bridge-num">04 / ETHICS + POLICY</div>
+      <div>
+        <h3>Responsibility</h3>
+        <p>Technology ethics and public policy connect technical capability with questions of fairness, inclusion, governance, and societal impact.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>RAHUL KIRAN · EDUCATION</span>
+  <span>AI · ETHICS · EARTH</span>
+</footer>
+
+</body>
+</html>
