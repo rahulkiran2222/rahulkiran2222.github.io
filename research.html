@@ -16,7 +16,21 @@
 .note{margin-top:27px;border:1px solid var(--line);padding:24px;color:var(--muted);font-size:12.5px;line-height:1.65;background:#fff2}.note strong{color:var(--ink)}
 .footer{border-top:1px solid var(--line);padding:30px 0 60px;color:var(--muted);font:10px ui-monospace,monospace;display:flex;justify-content:space-between}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:30px}.research-grid{grid-template-columns:1fr}.cluster{grid-template-columns:1fr 1fr}.navlinks{gap:10px}}@media(max-width:650px){.wrap{width:min(100% - 30px,1400px)}.navlinks a:nth-child(5),.navlinks a:nth-child(6){display:none}.step{grid-template-columns:85px 1fr}.step .arrow{display:none}.cluster{grid-template-columns:1fr}.hero h1{font-size:58px}}@media(max-width:520px){.navlinks a:nth-child(4){display:none}}
-</style>
+<style>
+.research-map{height:360px;position:relative;border:1px solid var(--line);margin-bottom:22px;overflow:hidden;background:radial-gradient(circle,#eee7d9 0,#f7f2e8 60%);display:grid;place-items:center}
+.research-map:before,.research-map:after{content:"";position:absolute;border:1px solid #d7cbb9;border-radius:50%;width:220px;height:220px;animation:spin 16s linear infinite}
+.research-map:after{width:310px;height:310px;border-color:#e1d7c8;animation-direction:reverse}
+.map-core{z-index:2;width:112px;height:112px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 30%,#a9c2b0,#537462 65%,#3f5f50);color:#f7f2e8;font:12px Georgia,serif;box-shadow:0 0 45px #5d735755}
+.map-core small{font:7px ui-monospace,monospace;letter-spacing:.08em}
+.research-map button{position:absolute;z-index:3;border:1px solid #cbbfac;background:#fbf8f0e8;padding:9px 11px;color:var(--ink);font:9px ui-monospace,monospace;cursor:pointer;transition:.2s}
+.research-map button:hover,.research-map button.active{background:var(--ink);color:var(--paper);transform:scale(1.06)}
+.research-map button:nth-of-type(1){left:7%;top:17%;border-color:var(--terra)}.research-map button:nth-of-type(2){right:6%;top:18%;border-color:var(--terra)}
+.research-map button:nth-of-type(3){left:5%;bottom:17%;border-color:var(--violet)}.research-map button:nth-of-type(4){right:6%;bottom:18%;border-color:var(--sage)}
+.research-map button:nth-of-type(5){left:50%;top:7%;transform:translateX(-50%);border-color:var(--blue)}.research-map button:nth-of-type(6){left:50%;bottom:7%;transform:translateX(-50%);border-color:var(--sage)}
+@keyframes spin{to{transform:rotate(360deg)}} 
+.actions a.live{color:var(--sage)!important}
+@media(max-width:650px){.research-map{height:320px}.research-map button{font-size:8px;padding:7px}.research-map button:nth-of-type(1){left:2%}.research-map button:nth-of-type(2){right:2%}}
+</style></style>
 </head>
 <body>
 <header class="nav"><a class="brand" href="index.html">RAHUL <b>//</b> AI</a>
@@ -35,7 +49,7 @@
 <article class="research-card" style="--accent:#bd4e2a"><div class="num"><span>R02</span><span>AI SAFETY</span></div><h3>Prompt Injection Lab</h3><div class="question">QUESTION / Can retrieval become an attack surface?</div><p>Research and experimentation around indirect prompt injection in Retrieval-Augmented Generation, focusing on how untrusted retrieved content can influence an AI system's behavior.</p><div class="record"><span class="chip">PROMPT INJECTION</span><span class="chip">RAG</span><span class="chip">RED TEAMING</span><a href="https://github.com/rahulkiran2222/prompt-injection-lab" target="_blank" rel="noopener noreferrer">REPOSITORY ↗</a></div></article>
 <article class="research-card" style="--accent:#557b88"><div class="num"><span>R03</span><span>LANGUAGE / REPRESENTATION</span></div><h3>Tokenizer-Bias</h3><div class="question">QUESTION / What happens when languages are represented unevenly?</div><p>An empirical investigation of byte-level and subword representations for Indic languages, connecting tokenization choices with multilingual model behavior and representation efficiency.</p><div class="record"><span class="chip">INDIC NLP</span><span class="chip">TOKENIZATION</span><span class="chip">BIAS</span><a href="https://github.com/rahulkiran2222/Tokenizer-Bias" target="_blank" rel="noopener noreferrer">REPOSITORY ↗</a></div></article>
 <article class="research-card" style="--accent:#765b88"><div class="num"><span>R04</span><span>COGNITIVE AI</span></div><h3>LLM Cognitive Biases</h3><div class="question">QUESTION / Do language models reproduce classical cognitive biases?</div><p>Experimental work replicating classical human cognitive-bias tasks with Large Language Models to examine systematic patterns in model reasoning and judgment.</p><div class="record"><span class="chip">COGNITION</span><span class="chip">REASONING</span><span class="chip">BIAS</span><a href="https://github.com/rahulkiran2222/llm-cognitive-biases" target="_blank" rel="noopener noreferrer">REPOSITORY ↗</a></div></article>
-</div></div></section>
+<article class="research-card" id="models" style="--accent:#557b88"><div class="num"><span>R05</span><span>INTERACTIVE 3D</span></div><h3>3D Model Playground</h3><div class="question">QUESTION / What happens when model interaction becomes embodied?</div><p>An interactive web app using Three.js, MediaPipe computer vision, Web Speech API and real-time gesture/voice controls to manipulate 3D models.</p><div class="chips"><span class="chip">THREE.JS</span><span class="chip">MEDIAPIPE</span><span class="chip">WEB SPEECH</span></div><div class="actions"><a href="https://github.com/rahulkiran2222/3D-Model-Playground" target="_blank" rel="noopener noreferrer">REPOSITORY + README ↗</a><a class="live" href="https://raphussolutions.github.io/" target="_blank" rel="noopener noreferrer">LIVE DEMO ↗</a></div></article></div></div></section>
 
 <section class="section"><div class="wrap">
 <div class="kicker">02 / Research method</div><h2>How a question becomes evidence.</h2>
@@ -65,4 +79,10 @@
 </div></section>
 </main>
 <footer class="footer wrap"><span>RAHUL // AI · AI SAFETY FOR EARTH · v0.1</span><span>RESEARCH / EVIDENCE / ARTIFACT</span></footer>
-</body></html>
+<script>
+document.querySelectorAll('.research-map button').forEach(btn=>{
+ const target=document.getElementById(btn.dataset.target);
+ const go=()=>{document.querySelectorAll('.research-map button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');if(target){target.scrollIntoView({behavior:'smooth',block:'center'});target.animate([{transform:'scale(1)'},{transform:'scale(1.015)'},{transform:'scale(1)'}],{duration:700})}};
+ btn.addEventListener('click',go);btn.addEventListener('mouseenter',()=>btn.classList.add('active'));btn.addEventListener('mouseleave',()=>btn.classList.remove('active'));
+});
+</script></body></html>
