@@ -197,6 +197,29 @@ nav a.active{
 }
 
 </style>
+<style>
+
+/* Institution marks — compact visual anchors */
+.institution-row{display:flex;align-items:center;gap:12px;margin:0 0 15px}
+.institution-mark{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:rgba(255,251,243,.72);font:700 8px Arial,sans-serif;letter-spacing:.04em;color:var(--rust);flex:0 0 auto}
+.institution-mark.rgukt{border-radius:8px;color:var(--sage)}
+.institution-mark.anu{border-radius:3px;color:var(--blue)}
+.institution-name{font:700 9px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.institution-row + .edu-meta{margin-top:0}
+
+/* FINAL SHARED EDITORIAL NAV — matches Certifications / Index reference */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule,#DCD3C1)}
+.nav{min-height:72px!important;height:72px!important;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:0!important;width:min(1180px,90vw);margin:0 auto}
+.brand{font:600 15px "IBM Plex Mono",monospace!important;letter-spacing:.03em!important;text-decoration:none;white-space:nowrap}
+.brand .accent{color:var(--terra,#B14F2A)!important}
+.brand small{font-size:9px!important;color:var(--taupe,#857C6E)!important;font-weight:400!important;margin-left:8px!important;letter-spacing:0!important}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;margin:0;align-items:center}
+nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft,#58524A);border-bottom:1px solid transparent;transition:.18s}
+nav a:hover,nav a.active{color:var(--terra,#B14F2A);border-color:var(--terra,#B14F2A)}
+.nav-github{padding:7px 10px;border:1px solid var(--rule,#DCD3C1)!important;border-bottom-color:var(--rule,#DCD3C1)!important}
+@media(max-width:900px){.nav{gap:16px!important}nav ul{gap:12px}}
+@media(max-width:680px){.nav{min-height:auto!important;height:auto!important;align-items:flex-start;gap:12px!important;flex-wrap:wrap;padding:14px 0!important}nav ul{gap:10px;flex-wrap:wrap;justify-content:flex-end}nav a{font-size:10px}}
+</style>
 </head>
 <body>
 
@@ -251,7 +274,7 @@ nav a.active{
         <div class="edu-meta"><span>SPRING 2026</span><b>COMPLETED</b></div>
         <div class="edu-kind">PRACTITIONER PROGRAM</div>
         <h2>Ethics and Tech Public Policy Practitioner Program</h2>
-        <h3>Stanford University</h3>
+        <div class="institution-row"><div class="institution-mark">S</div><span class="institution-name">Stanford University</span></div>
         <p>Technology &amp; Public Policy · Algorithmic Fairness · Scenario Planning · Generative AI · Inclusion &amp; Equity in Technology</p>
       </div>
     </article>
@@ -261,7 +284,7 @@ nav a.active{
         <div class="edu-meta"><span>MAY 2024</span><b>COMPLETED</b></div>
         <div class="edu-kind">MASTER&#x27;S DEGREE</div>
         <h2>Master of Business Administration</h2>
-        <h3>K. Chandrakala PG College · Acharya Nagarjuna University</h3>
+        <div class="institution-row"><div class="institution-mark anu">ANU</div><span class="institution-name">K. Chandrakala PG College · Acharya Nagarjuna University</span></div>
         <p>Financial Management &amp; Human Resource Management · CGPA 6.9/10.0 · Top 30%</p>
       </div>
     </article>
@@ -271,7 +294,7 @@ nav a.active{
         <div class="edu-meta"><span>FEB 2021</span><b>COMPLETED</b></div>
         <div class="edu-kind">BACHELOR&#x27;S DEGREE</div>
         <h2>Bachelor of Technology · Mechanical Engineering</h2>
-        <h3>Rajiv Gandhi University of Knowledge Technologies, Nuzvid (RGUKT)</h3>
+        <div class="institution-row"><div class="institution-mark rgukt">RG</div><span class="institution-name">Rajiv Gandhi University of Knowledge Technologies, Nuzvid (formerly IIIT Nuzvid)</span></div>
         <p>CGPA 7.28/10.0 · German equivalent ~2.4 (Gut) · Top 15%</p>
       </div>
     </article>
@@ -281,7 +304,7 @@ nav a.active{
         <div class="edu-meta"><span>MAY 2016</span><b>COMPLETED</b></div>
         <div class="edu-kind">PRE-UNIVERSITY</div>
         <h2>Pre-University Course · Science &amp; Mathematics</h2>
-        <h3>RGUKT, Nuzvid</h3>
+        <div class="institution-row"><div class="institution-mark rgukt">RG</div><span class="institution-name">RGUKT, Nuzvid</span></div>
         <p>CGPA 8.15/10.0 · German equivalent ~1.8 (Sehr Gut) · Top 5%</p>
       </div>
     </article></div>
