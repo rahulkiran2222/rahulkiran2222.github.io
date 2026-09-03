@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Kiran Gunti — Certifications & Learning</title>
+<meta name="description" content="Rahul Kiran Gunti — certifications, university courses, professional learning and continuing AI education.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF6EE;--bg2:#F2EBDD;--ink:#221F1B;--soft:#58524A;
+  --taupe:#857C6E;--rule:#DCD3C1;--terra:#B14F2A;--sage:#5C6B4F;
+  --blue:#3C6E91;--violet:#765B88;--gold:#A57A28;--max:1450px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 34px}
+.mono{font-family:"IBM Plex Mono",monospace}
+::selection{background:var(--terra);color:#fff}
+
+/* SAME EDITORIAL NAV AS INDEX / RESEARCH / EDUCATION / PROJECTS */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{font:600 15px "IBM Plex Mono",monospace;letter-spacing:.03em;text-decoration:none;white-space:nowrap}
+.brand .accent{color:var(--terra)}
+.brand small{font-size:9px;color:var(--taupe);font-weight:400;margin-left:8px}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;margin:0;align-items:center}
+nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft);border-bottom:1px solid transparent;transition:.18s}
+nav a:hover,nav a.active{color:var(--terra);border-color:var(--terra)}
+.nav-github{padding:7px 10px;border:1px solid var(--rule)!important;border-bottom-color:var(--rule)!important}
+
+/* HERO */
+.hero{position:relative;min-height:760px;overflow:hidden;border-bottom:1px solid var(--rule)}
+#certCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-grid{position:absolute;inset:0;background:
+ linear-gradient(90deg,rgba(250,246,238,.97) 0%,rgba(250,246,238,.84) 34%,rgba(250,246,238,.25) 63%,rgba(250,246,238,.05) 100%),
+ linear-gradient(0deg,rgba(250,246,238,.20),transparent 45%);pointer-events:none}
+.hero-content{position:relative;z-index:2;min-height:760px;display:flex;align-items:center}
+.hero-copy{max-width:760px;padding:70px 0 80px}
+.eyebrow,.kicker{font:11px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)}
+.eyebrow{margin-bottom:20px}
+.hero h1{font:500 clamp(64px,8vw,126px)/.91 "Source Serif 4",serif;letter-spacing:-.055em;margin:0 0 30px}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero-lede{max-width:680px;font-size:19px;line-height:1.65;color:var(--soft);margin:0}
+.hero-meta{display:flex;gap:0;margin-top:42px;border-top:1px solid var(--rule);max-width:720px}
+.metric{padding:18px 28px 0 0;margin-right:28px;border-right:1px solid var(--rule)}
+.metric:last-child{border-right:0}
+.metric strong{display:block;font:500 28px/1 "Source Serif 4",serif}
+.metric span{display:block;margin-top:7px;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;color:var(--taupe);text-transform:uppercase}
+.hero-note{position:absolute;right:34px;bottom:28px;z-index:3;font:10px "IBM Plex Mono",monospace;color:var(--taupe);letter-spacing:.08em}
+
+/* FILTER BAR */
+.filterbar{position:sticky;top:72px;z-index:50;background:rgba(250,246,238,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.filter-inner{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{appearance:none;background:transparent;border:1px solid transparent;padding:8px 11px;color:var(--soft);font:10px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.filter:hover,.filter.active{border-color:var(--terra);color:var(--terra)}
+.count{font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
+
+/* SECTION */
+.section{padding:90px 0}
+.section-head{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;margin-bottom:46px}
+.section-head h2{font:500 clamp(40px,5vw,72px)/.98 "Source Serif 4",serif;letter-spacing:-.04em;margin:10px 0 0}
+.section-head p{max-width:520px;color:var(--soft);margin:0;font-size:15px}
+
+/* CREDENTIAL CARDS */
+.credential-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.credential{position:relative;min-height:350px;background:var(--bg);padding:28px;display:flex;flex-direction:column;overflow:hidden;transition:transform .28s ease,background .28s ease}
+.credential:hover{transform:translateY(-5px);background:#FBF8F1}
+.credential.hidden{display:none}
+.credential.featured{grid-column:span 2;min-height:390px;background:linear-gradient(135deg,#F6EFE3,#FAF6EE)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}
+.logo{width:88px;height:58px;display:grid;place-items:center;color:var(--ink)}
+.logo svg{max-width:100%;max-height:52px}
+.status{font:9px "IBM Plex Mono",monospace;letter-spacing:.09em;text-transform:uppercase;padding:6px 8px;border:1px solid var(--rule);color:var(--taupe)}
+.status.done{color:var(--sage);border-color:rgba(92,107,79,.35)}
+.status.live{color:var(--terra);border-color:rgba(177,79,42,.35)}
+.credential .type{font:9px "IBM Plex Mono",monospace;color:var(--taupe);letter-spacing:.1em;text-transform:uppercase;margin-top:auto;margin-bottom:10px}
+.credential h3{font:500 27px/1.1 "Source Serif 4",serif;letter-spacing:-.025em;margin:0 0 10px}
+.credential p{font-size:13px;color:var(--soft);margin:0;max-width:600px}
+.meta{display:flex;gap:14px;margin-top:20px;font:10px "IBM Plex Mono",monospace;color:var(--taupe);text-transform:uppercase}
+.meta span+span{border-left:1px solid var(--rule);padding-left:14px}
+.card-link{display:inline-block;margin-top:22px;font:10px "IBM Plex Mono",monospace;color:var(--terra);text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.orbit{position:absolute;width:210px;height:210px;border:1px solid rgba(177,79,42,.13);border-radius:50%;right:-90px;top:-90px;transition:transform .6s ease}
+.credential:hover .orbit{transform:scale(1.12) rotate(20deg)}
+.orbit:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:var(--terra);left:17px;top:35px}
+
+/* JOURNEY */
+.journey{background:var(--bg2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.path{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:45px}
+.path:before{content:"";position:absolute;left:6%;right:6%;top:30px;border-top:1px dashed #C9BEAA}
+.step{position:relative;padding-right:30px}
+.dot{position:relative;z-index:2;width:61px;height:61px;border-radius:50%;border:1px solid var(--rule);background:var(--bg2);display:grid;place-items:center;font:11px "IBM Plex Mono",monospace;color:var(--terra);margin-bottom:24px}
+.step h3{font:500 22px/1.15 "Source Serif 4",serif;margin:0 0 8px}
+.step p{font-size:12px;color:var(--soft);max-width:240px;margin:0}
+
+/* NOTE */
+.note{border-left:3px solid var(--terra);padding:4px 0 4px 22px;max-width:860px;color:var(--soft)}
+.note strong{color:var(--ink);font-weight:600}
+
+/* FOOTER */
+footer{border-top:1px solid var(--rule);padding:30px 0 60px;color:var(--taupe);font:10px "IBM Plex Mono",monospace;display:flex;justify-content:space-between}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .wrap{padding:0 24px}.nav{gap:16px}nav ul{gap:12px}
+  .credential-grid{grid-template-columns:repeat(2,1fr)}
+  .credential.featured{grid-column:span 2}
+}
+@media(max-width:760px){
+  .wrap{padding:0 18px}
+  nav .nav{align-items:flex-start;gap:12px;flex-wrap:wrap;padding:14px 0}
+  nav ul{gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  nav a{font-size:10px}
+  .hero,.hero-content{min-height:680px}
+  .hero-copy{padding:55px 0 80px}.hero-lede{font-size:16px}
+  .hero-meta{flex-wrap:wrap}.metric{padding-top:14px;margin-bottom:10px}
+  .section{padding:65px 0}.section-head{grid-template-columns:1fr;gap:18px}
+  .credential-grid{grid-template-columns:1fr}.credential.featured{grid-column:span 1}
+  .credential{min-height:310px}.path{grid-template-columns:1fr 1fr;gap:35px}
+  .path:before{display:none}
+  footer{flex-direction:column;gap:10px}
+}
+@media(max-width:520px){
+  nav ul li:nth-child(4),nav ul li:nth-child(5){display:none}
+  .hero h1{font-size:58px}.hero-note{right:18px}
+  .path{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>CREDENTIALS</small></a>
+    <ul>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="education.html">education</a></li>
+      <li><a class="active" href="certifications.html" aria-current="page">certifications</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="resources.html">resources</a></li>
+      <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <canvas id="certCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-content">
+    <div class="hero-copy">
+      <div class="eyebrow">05 / Certifications & Learning</div>
+      <h1>Learning that<br>keeps <em>moving.</em></h1>
+      <p class="hero-lede">A living record of university courses, practitioner education, AI research training and technical learning — organized by what the learning adds to the work.</p>
+      <div class="hero-meta">
+        <div class="metric"><strong>01</strong><span>Stanford completed</span></div>
+        <div class="metric"><strong>02</strong><span>Columbia courses</span></div>
+        <div class="metric"><strong>02</strong><span>Current pathways</span></div>
+        <div class="metric"><strong>06</strong><span>Featured records</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-note">MOVE THE CURSOR · THE LEARNING FIELD RESPONDS</div>
+</section>
+
+<div class="filterbar">
+  <div class="wrap filter-inner">
+    <div class="filters" role="group" aria-label="Credential filters">
+      <button class="filter active" data-filter="all">all</button>
+      <button class="filter" data-filter="done">completed</button>
+      <button class="filter" data-filter="live">ongoing</button>
+      <button class="filter" data-filter="university">university</button>
+      <button class="filter" data-filter="ai">ai / technical</button>
+    </div>
+    <div class="count" id="count">06 records</div>
+  </div>
+</div>
+
+<main>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="kicker">01 · Featured learning</div>
+        <h2>Credentials with a<br>research throughline.</h2>
+      </div>
+      <p>Not every learning record is a formal certification. This page keeps certificates, courses and ongoing programs distinct instead of turning the portfolio into a badge wall.</p>
+    </div>
+
+    <div class="credential-grid" id="credentialGrid">
+
+      <article class="credential featured" data-tags="all done university ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="Stanford University">
+            <svg viewBox="0 0 210 60" role="img">
+              <text x="0" y="43" font-family="Georgia,serif" font-size="38" font-weight="600">STANFORD</text>
+            </svg>
+          </div>
+          <span class="status done">completed · spring 2026</span>
+        </div>
+        <div class="type">Practitioner program</div>
+        <h3>Ethics and Tech Public Policy Practitioner Program</h3>
+        <p>Technology &amp; Public Policy · Algorithmic Fairness · Scenario Planning · Generative AI · Inclusion &amp; Equity in Technology.</p>
+        <div class="meta"><span>Stanford University</span><span>Spring 2026</span></div>
+        <a class="card-link" href="https://ethicsinsociety.stanford.edu/tech-ethics/career-pathways-professional-development/ethics-technology-and-public-policy-for-practitioners" target="_blank" rel="noopener noreferrer">official program ↗</a>
+      </article>
+
+      <article class="credential" data-tags="all live ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="Google DeepMind">
+            <svg viewBox="0 0 250 70" role="img">
+              <text x="0" y="31" font-family="Arial,sans-serif" font-size="21" font-weight="600">Google</text>
+              <text x="0" y="57" font-family="Arial,sans-serif" font-size="21" font-weight="600">DeepMind</text>
+            </svg>
+          </div>
+          <span class="status live">ongoing</span>
+        </div>
+        <div class="type">AI research foundations</div>
+        <h3>TRI AI Cohort 10</h3>
+        <p>AI Research Foundations with Google DeepMind, with structured study, hands-on work and capstone-oriented learning.</p>
+        <div class="meta"><span>TRI AI</span><span>2026</span></div>
+        <a class="card-link" href="https://tri-ai.org/programmes/tri-ai-saturdays/cohorts/10/" target="_blank" rel="noopener noreferrer">cohort record ↗</a>
+      </article>
+
+      <article class="credential" data-tags="all live ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="Google Cloud">
+            <svg viewBox="0 0 250 70" role="img">
+              <text x="0" y="45" font-family="Arial,sans-serif" font-size="32" font-weight="600">Google Cloud</text>
+            </svg>
+          </div>
+          <span class="status live">ongoing</span>
+        </div>
+        <div class="type">Cloud &amp; AI learning</div>
+        <h3>Google Cloud Career Launchpad EMEA</h3>
+        <p>Continuing learning across generative AI, cloud literacy and applied Google Cloud pathways.</p>
+        <div class="meta"><span>Google Cloud</span><span>2026</span></div>
+        <a class="card-link" href="https://cloud.google.com/edu/faculty/career-launchpad" target="_blank" rel="noopener noreferrer">program overview ↗</a>
+      </article>
+
+      <article class="credential" data-tags="all done university ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="Columbia University">
+            <svg viewBox="0 0 120 80" role="img">
+              <circle cx="60" cy="30" r="18" fill="none" stroke="currentColor" stroke-width="3"/>
+              <path d="M48 31h24M60 19v23M52 43l8 10 8-10" fill="none" stroke="currentColor" stroke-width="3"/>
+              <text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="600">COLUMBIA</text>
+            </svg>
+          </div>
+          <span class="status done">completed · apr 2026</span>
+        </div>
+        <div class="type">University course</div>
+        <h3>Machine Learning I</h3>
+        <p>Supervised and unsupervised learning, mathematical foundations and coding-based applications.</p>
+        <div class="meta"><span>Columbia Engineering</span><span>Apr 2026</span></div>
+        <a class="card-link" href="https://plus.columbia.edu/content/machine-learning-i" target="_blank" rel="noopener noreferrer">course record ↗</a>
+      </article>
+
+      <article class="credential" data-tags="all done university ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="Columbia University">
+            <svg viewBox="0 0 120 80" role="img">
+              <circle cx="60" cy="30" r="18" fill="none" stroke="currentColor" stroke-width="3"/>
+              <path d="M48 31h24M60 19v23M52 43l8 10 8-10" fill="none" stroke="currentColor" stroke-width="3"/>
+              <text x="60" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="13" font-weight="600">COLUMBIA</text>
+            </svg>
+          </div>
+          <span class="status done">completed · jan 2026</span>
+        </div>
+        <div class="type">University course</div>
+        <h3>Prompt Engineering &amp; Programming with OpenAI</h3>
+        <p>Prompt design, LLM limitations, OpenAI API programming and practical generative-AI workflows.</p>
+        <div class="meta"><span>Columbia Engineering</span><span>Jan 2026</span></div>
+        <a class="card-link" href="https://plus.columbia.edu/content/prompt-engineering-programming-openai" target="_blank" rel="noopener noreferrer">course record ↗</a>
+      </article>
+
+      <article class="credential" data-tags="all done university ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="UC Berkeley">
+            <svg viewBox="0 0 220 70" role="img">
+              <text x="0" y="42" font-family="Georgia,serif" font-size="30" font-weight="600">UC BERKELEY</text>
+            </svg>
+          </div>
+          <span class="status done">2025</span>
+        </div>
+        <div class="type">MOOC / AI</div>
+        <h3>Agentic AI</h3>
+        <p>Agent architectures, reasoning, planning, frameworks, infrastructure, applications and the risks of LLM agents.</p>
+        <div class="meta"><span>Berkeley RDI</span><span>2025</span></div>
+        <a class="card-link" href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank" rel="noopener noreferrer">course record ↗</a>
+      </article>
+
+      <article class="credential" data-tags="all done university ai">
+        <div class="orbit"></div>
+        <div class="card-top">
+          <div class="logo" aria-label="Hasso Plattner Institute">
+            <svg viewBox="0 0 210 80" role="img">
+              <path d="M18 15l28 0 14 14-14 14H18l14-14zM18 48h28l14 14-14 14H18l14-14z" fill="none" stroke="currentColor" stroke-width="3"/>
+              <text x="76" y="38" font-family="Arial,sans-serif" font-size="17" font-weight="600">HPI</text>
+              <text x="76" y="58" font-family="Arial,sans-serif" font-size="10">POTSDAM</text>
+            </svg>
+          </div>
+          <span class="status done">completed · apr 2022</span>
+        </div>
+        <div class="type">Sustainable computing</div>
+        <h3>Sustainable Software Engineering</h3>
+        <p>Resource-efficient development, power measurement, software and systems architecture, complexity, storage and caching.</p>
+        <div class="meta"><span>Hasso Plattner Institute</span><span>Apr 2022</span></div>
+        <a class="card-link" href="https://open.hpi.de/courses/sustainablesoftware2022/overview" target="_blank" rel="noopener noreferrer">course record ↗</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section journey">
+  <div class="wrap">
+    <div class="kicker">02 · Learning trajectory</div>
+    <h2 style="font:500 clamp(40px,5vw,72px)/.98 'Source Serif 4',serif;letter-spacing:-.04em;margin:10px 0 0">From software foundations<br>to <em style="color:var(--terra)">responsible AI.</em></h2>
+
+    <div class="path">
+      <div class="step">
+        <div class="dot">01</div>
+        <h3>Technical foundations</h3>
+        <p>Machine learning, language models, programming and computational thinking.</p>
+      </div>
+      <div class="step">
+        <div class="dot">02</div>
+        <h3>Modern AI systems</h3>
+        <p>LLMs, prompt engineering, agents, cloud platforms and AI research practice.</p>
+      </div>
+      <div class="step">
+        <div class="dot">03</div>
+        <h3>Efficient systems</h3>
+        <p>Sustainable software and an explicit interest in the environmental footprint of computation.</p>
+      </div>
+      <div class="step">
+        <div class="dot">04</div>
+        <h3>Ethics &amp; policy</h3>
+        <p>Technology governance, algorithmic fairness, scenario planning and responsible innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="kicker">03 · How to read this page</div>
+    <div class="note">
+      <strong>Learning is evidence, not decoration.</strong>
+      The portfolio distinguishes formal education from continuing learning and distinguishes completed records from ongoing programs. Where an institution offers a certificate or record of completion, the page links to the official course or program rather than implying a credential that is not explicitly documented.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>RAHUL // AI · CERTIFICATIONS &amp; LEARNING · 2026</span>
+  <span>RESEARCH · OPEN KNOWLEDGE · CONTINUOUS LEARNING</span>
+</footer>
+
+<script>
+(() => {
+  const canvas = document.getElementById('certCanvas');
+  const ctx = canvas.getContext('2d');
+  if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let w=0,h=0,dpr=1, mx=-9999,my=-9999,t0=performance.now();
+
+  const points = Array.from({length:48}, (_,i)=>({
+    a: Math.random()*Math.PI*2,
+    r: .16 + Math.random()*.42,
+    speed: (.00015 + Math.random()*.00025) * (i%2 ? 1 : -1),
+    phase: Math.random()*8,
+    size: 1 + Math.random()*2.2
+  }));
+
+  function resize(){
+    dpr=Math.min(devicePixelRatio||1,2);
+    w=canvas.clientWidth; h=canvas.clientHeight;
+    canvas.width=w*dpr; canvas.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function draw(now){
+    const t=now-t0;
+    ctx.clearRect(0,0,w,h);
+
+    // A restrained constellation / orbital field behind the typography.
+    const cx=w*.72, cy=h*.52, base=Math.min(w,h);
+    for(let ring=1; ring<=5; ring++){
+      ctx.beginPath();
+      ctx.ellipse(cx,cy,base*(.16+ring*.095),base*(.08+ring*.05),-.16,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(177,79,42,${.035+ring*.006})`;
+      ctx.lineWidth=1;
+      ctx.stroke();
+    }
+
+    const pts=[];
+    for(const p of points){
+      const a=p.a+t*p.speed;
+      const rr=base*p.r;
+      const x=cx+Math.cos(a)*rr;
+      const y=cy+Math.sin(a)*rr*.48;
+      pts.push({x,y});
+    }
+
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+        const d=Math.hypot(dx,dy);
+        if(d<base*.13){
+          ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle=`rgba(92,107,79,${(1-d/(base*.13))*.055})`;
+          ctx.stroke();
+        }
+      }
+    }
+
+    for(const p of pts){
+      const near=Math.hypot(p.x-mx,p.y-my);
+      const boost=near<150 ? (1-near/150)*4 : 0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size+boost,0,Math.PI*2);
+      ctx.fillStyle='rgba(177,79,42,.22)';
+      ctx.fill();
+    }
+
+    // Cursor influence ring.
+    if(mx>-1000){
+      ctx.beginPath();ctx.arc(mx,my,62+Math.sin(t*.002)*5,0,Math.PI*2);
+      ctx.strokeStyle='rgba(177,79,42,.08)';ctx.stroke();
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize);
+  window.addEventListener('pointermove',e=>{
+    const r=canvas.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
+  });
+  resize();requestAnimationFrame(draw);
+})();
+
+(() => {
+  const buttons=[...document.querySelectorAll('.filter')];
+  const cards=[...document.querySelectorAll('.credential')];
+  const count=document.getElementById('count');
+
+  function apply(filter){
+    let n=0;
+    cards.forEach(card=>{
+      const tags=card.dataset.tags.split(' ');
+      const show=filter==='all'||tags.includes(filter);
+      card.classList.toggle('hidden',!show);
+      if(show)n++;
+    });
+    count.textContent=String(n).padStart(2,'0')+' records';
+  }
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+    buttons.forEach(b=>b.classList.toggle('active',b===btn));
+    apply(btn.dataset.filter);
+  }));
+})();
+</script>
+</body>
+</html>
