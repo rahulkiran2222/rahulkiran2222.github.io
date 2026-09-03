@@ -214,6 +214,1251 @@ nav a.active{
 }
 
 </style>
+<style>
+/* FINAL SHARED EDITORIAL NAV — matches Certifications / Index reference */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule,#DCD3C1)}
+.nav{min-height:72px!important;height:72px!important;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:0!important;width:min(1180px,90vw);margin:0 auto}
+.brand{font:600 15px "IBM Plex Mono",monospace!important;letter-spacing:.03em!important;text-decoration:none;white-space:nowrap}
+.brand .accent{color:var(--terra,#B14F2A)!important}
+.brand small{font-size:9px!important;color:var(--taupe,#857C6E)!important;font-weight:400!important;margin-left:8px!important;letter-spacing:0!important}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;margin:0;align-items:center}
+nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft,#58524A);border-bottom:1px solid transparent;transition:.18s}
+nav a:hover,nav a.active{color:var(--terra,#B14F2A);border-color:var(--terra,#B14F2A)}
+.nav-github{padding:7px 10px;border:1px solid var(--rule,#DCD3C1)!important;border-bottom-color:var(--rule,#DCD3C1)!important}
+@media(max-width:900px){.nav{gap:16px!important}nav ul{gap:12px}}
+@media(max-width:680px){.nav{min-height:auto!important;height:auto!important;align-items:flex-start;gap:12px!important;flex-wrap:wrap;padding:14px 0!important}nav ul{gap:10px;flex-wrap:wrap;justify-content:flex-end}nav a{font-size:10px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>PROJECTS</small></a>
+    <ul>
+      <li><a href="projects.html" class="active" aria-current="page">projects</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="education.html">education</a></li>
+      <li><a href="certifications.html">certifications</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="resources.html">resources</a></li>
+      <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="build-label a">MODEL → SAFETY → EARTH</div>
+  <div class="build-label b">BUILD / MEASURE / LEARN</div>
+  <div class="build-label c">AI SYSTEMS / COMPUTE / IMPACT</div>
+  <div class="build-label d">RESEARCH / SOFTWARE / POLICY</div>
+  <div class="hero-rail">PROJECT FIELD · 48 REPOSITORIES</div>
+
+  <div class="wrap hero-content">
+    <div class="hero-copy">
+      <div class="eyebrow">RAHUL KIRAN · PROJECT FIELD</div>
+      <h1>Things I <em>build</em><br>to understand AI.</h1>
+      <p class="hero-lede">A living map of research and software — from trustworthy AI and foundation models to climate intelligence, sustainable computing, interactive systems and applied engineering.</p>
+      <div class="hero-meta">
+        <div class="metric"><strong>48</strong><span>PROJECT REPOS</span></div>
+        <div class="metric"><strong>06</strong><span>THEMATIC FIELDS</span></div>
+        <div class="metric"><strong>11</strong><span>VERIFIED LIVE</span></div>
+        <div class="metric"><strong>∞</strong><span>QUESTIONS</span></div>
+      </div>
+    </div>
+    <div class="hero-tip">MOVE THE CURSOR · THE BUILD FIELD RESPONDS</div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="intro">
+    <p><b>The work is grouped by the problem it explores.</b> Climate and biodiversity work stays together; safety and ethics stay together; foundation-model work has its own research field. Every project remains one click from its source repository.</p>
+    <div class="tools">
+      <input class="search" id="search" type="search" placeholder="Search all projects…" aria-label="Search all projects">
+      <span class="result-count" id="resultCount">48 PROJECTS</span>
+    </div>
+  </div>
+
+  <nav class="directory">
+    <a href="#section-01">01 · AI SAFETY & TRUST</a><a href="#section-02">02 · FOUNDATION MODELS & LLM RESEARCH</a><a href="#section-03">03 · EARTH, CLIMATE & BIODIVERSITY</a><a href="#section-04">04 · GREEN AI & SUSTAINABLE COMPUTING</a><a href="#section-05">05 · INTERACTIVE SYSTEMS & COMPUTATIONAL WORLDS</a><a href="#section-06">06 · APPLIED AI, PRODUCTS & ENGINEERING</a>
+  </nav>
+
+  
+    <section class="project-section" id="section-01">
+      <div class="section-head reveal">
+        <div class="section-number">01</div>
+        <div class="section-copy">
+          <div class="eyebrow">PROJECT FIELD / 01</div>
+          <h2>AI SAFETY & TRUST</h2>
+          <p>Safety, reliability, ethics and responsible AI</p>
+        </div>
+        <div class="section-total"><strong>04</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="project-grid">
+        
+    <article class="project-card reveal-card" data-title="prompt injection lab" data-desc="evaluation framework for indirect prompt injection in rag systems.">
+      <div class="card-top">
+        <span class="number">22</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>Prompt Injection Lab</h3>
+        <p>Evaluation framework for indirect prompt injection in RAG systems.</p>
+        <div class="tags"><span>RESEARCH</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/prompt-injection-lab" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://huggingface.co/spaces/RahulKiran2222/prompt-injection-lab" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="llm grounding deficit" data-desc="a unified theoretical account of hallucination in large language models.">
+      <div class="card-top">
+        <span class="number">23</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>LLM Grounding Deficit</h3>
+        <p>A unified theoretical account of hallucination in large language models.</p>
+        <div class="tags"><span>RESEARCH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/llm-grounding-deficit" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="llm cognitive biases" data-desc="experimental work replicating classical human cognitive-bias tasks with llms.">
+      <div class="card-top">
+        <span class="number">24</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>LLM Cognitive Biases</h3>
+        <p>Experimental work replicating classical human cognitive-bias tasks with LLMs.</p>
+        <div class="tags"><span>RESEARCH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/llm-cognitive-biases" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="technology ethics — stanford university" data-desc="reflection on ethics, technology, and responsible innovation.">
+      <div class="card-top">
+        <span class="number">26</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>Technology Ethics — Stanford University</h3>
+        <p>Reflection on ethics, technology, and responsible innovation.</p>
+        <div class="tags"><span>ETHICS</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/TechnologyEthics-StanfordUniversity" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://rahulkiran2222.github.io/TechnologyEthics-StanfordUniversity/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+      </div>
+    </section>
+    <section class="project-section" id="section-02">
+      <div class="section-head reveal">
+        <div class="section-number">02</div>
+        <div class="section-copy">
+          <div class="eyebrow">PROJECT FIELD / 02</div>
+          <h2>FOUNDATION MODELS & LLM RESEARCH</h2>
+          <p>Understanding models, representations and failure modes behind modern AI</p>
+        </div>
+        <div class="section-total"><strong>02</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="project-grid">
+        
+    <article class="project-card reveal-card" data-title="foundation model atlas" data-desc="an interactive, evidence-aware atlas of foundation models and their architectures.">
+      <div class="card-top">
+        <span class="number">01</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>Foundation Model Atlas</h3>
+        <p>An interactive, evidence-aware atlas of foundation models and their architectures.</p>
+        <div class="tags"><span>FOUNDATION</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/foundation-model-atlas" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://rahulkiran2222.github.io/foundation-model-atlas/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="tokenizer-bias" data-desc="empirical study of byte-level and subword representations for indic languages.">
+      <div class="card-top">
+        <span class="number">21</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Tokenizer-Bias</h3>
+        <p>Empirical study of byte-level and subword representations for Indic languages.</p>
+        <div class="tags"><span>RESEARCH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/Tokenizer-Bias" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+      </div>
+    </section>
+    <section class="project-section" id="section-03">
+      <div class="section-head reveal">
+        <div class="section-number">03</div>
+        <div class="section-copy">
+          <div class="eyebrow">PROJECT FIELD / 03</div>
+          <h2>EARTH, CLIMATE & BIODIVERSITY</h2>
+          <p>Machine learning for climate systems, ecosystems, hazards and environmental intelligence</p>
+        </div>
+        <div class="section-total"><strong>15</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="project-grid">
+        
+    <article class="project-card reveal-card" data-title="coal power mrv" data-desc="explore coal power plant activity using satellite imagery and computer vision.">
+      <div class="card-top">
+        <span class="number">02</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Coal Power MRV</h3>
+        <p>Explore coal power plant activity using satellite imagery and computer vision.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/coal-power-mrv" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="lkotkote bird bioacoustics" data-desc="bird bioacoustics and ecological monitoring.">
+      <div class="card-top">
+        <span class="number">03</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Lkotkote Bird Bioacoustics</h3>
+        <p>Bird bioacoustics and ecological monitoring.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/lkotkote-bird-bioacoustics" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="flood monitoring" data-desc="climate-ai tutorial for understanding flood impacts in coastal areas.">
+      <div class="card-top">
+        <span class="number">04</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Flood Monitoring</h3>
+        <p>Climate-AI tutorial for understanding flood impacts in coastal areas.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/flood-monitoring" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="bioacoustic monitoring" data-desc="transfer-learning workflows for custom species classifiers.">
+      <div class="card-top">
+        <span class="number">05</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Bioacoustic Monitoring</h3>
+        <p>Transfer-learning workflows for custom species classifiers.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/bioacoustic-monitoring" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="hands-on outbreak analytics" data-desc="open tutorial work around outbreak analytics.">
+      <div class="card-top">
+        <span class="number">06</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Hands-on Outbreak Analytics</h3>
+        <p>Open tutorial work around outbreak analytics.</p>
+        <div class="tags"><span>DATA</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/hands-on-outbreak-analytics" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="hurricane wind var" data-desc="climate-ai tutorial focused on hurricane wind variability.">
+      <div class="card-top">
+        <span class="number">09</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Hurricane Wind VAR</h3>
+        <p>Climate-AI tutorial focused on hurricane wind variability.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/hurricane-wind-var" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="coastal water quality" data-desc="satellite remote sensing and ml for coastal water quality and marine ecosystem change.">
+      <div class="card-top">
+        <span class="number">11</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Coastal Water Quality</h3>
+        <p>Satellite remote sensing and ML for coastal water quality and marine ecosystem change.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/coastal-water-quality" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="detect deforestation" data-desc="detect deforestation from satellite image time series.">
+      <div class="card-top">
+        <span class="number">12</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Detect Deforestation</h3>
+        <p>Detect deforestation from satellite image time series.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/detect-deforestation" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="camels hydrological modeling" data-desc="hydrological modeling with the camels dataset.">
+      <div class="card-top">
+        <span class="number">13</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>CAMELS Hydrological Modeling</h3>
+        <p>Hydrological modeling with the CAMELS dataset.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/camels-hydrological-modeling" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="mobility demand" data-desc="model shared-bike demand and climate-friendlier transportation patterns.">
+      <div class="card-top">
+        <span class="number">14</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Mobility Demand</h3>
+        <p>Model shared-bike demand and climate-friendlier transportation patterns.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/mobility-demand" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="agricultural monitoring" data-desc="field-boundary generation using fields of the world and pretrained models.">
+      <div class="card-top">
+        <span class="number">16</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Agricultural Monitoring</h3>
+        <p>Field-boundary generation using Fields of The World and pretrained models.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/agricultural-monitoring-ftw" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="piggycast" data-desc="ensemble machine learning for weather prediction.">
+      <div class="card-top">
+        <span class="number">17</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>PiggyCast</h3>
+        <p>Ensemble machine learning for weather prediction.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/piggy-cast" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="ai tsunami alerts" data-desc="introductory ai workflow for predicting tsunami alerts from earthquake observations.">
+      <div class="card-top">
+        <span class="number">18</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>AI Tsunami Alerts</h3>
+        <p>Introductory AI workflow for predicting tsunami alerts from earthquake observations.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/intro-ai-tsunami-alerts" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="nlp policy analysis" data-desc="nlp for climate-relevant literature and policy analysis.">
+      <div class="card-top">
+        <span class="number">19</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>NLP Policy Analysis</h3>
+        <p>NLP for climate-relevant literature and policy analysis.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/nlp-policy-analysis" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="climate projection downscaling" data-desc="deep-learning approaches to statistical downscaling of climate projections.">
+      <div class="card-top">
+        <span class="number">20</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Climate Projection Downscaling</h3>
+        <p>Deep-learning approaches to statistical downscaling of climate projections.</p>
+        <div class="tags"><span>EARTH</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/downscaling-climate-projections" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+      </div>
+    </section>
+    <section class="project-section" id="section-04">
+      <div class="section-head reveal">
+        <div class="section-number">04</div>
+        <div class="section-copy">
+          <div class="eyebrow">PROJECT FIELD / 04</div>
+          <h2>GREEN AI & SUSTAINABLE COMPUTING</h2>
+          <p>Energy-aware software, carbon measurement and sustainable AI systems</p>
+        </div>
+        <div class="section-total"><strong>07</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="project-grid">
+        
+    <article class="project-card reveal-card" data-title="tracking ml emissions" data-desc="measure machine-learning carbon footprint and explore lower-energy training strategies.">
+      <div class="card-top">
+        <span class="number">07</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Tracking ML Emissions</h3>
+        <p>Measure machine-learning carbon footprint and explore lower-energy training strategies.</p>
+        <div class="tags"><span>GREEN</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/tracking-ml-emissions" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="optimal power flow" data-desc="ac optimal power flow for generator setpoints, cost, and grid constraints.">
+      <div class="card-top">
+        <span class="number">10</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Optimal Power Flow</h3>
+        <p>AC optimal power flow for generator setpoints, cost, and grid constraints.</p>
+        <div class="tags"><span>ENERGY</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/optimal-power-flow" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="citylearn" data-desc="control algorithms and datasets for energy flexibility in buildings.">
+      <div class="card-top">
+        <span class="number">15</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>CityLearn</h3>
+        <p>Control algorithms and datasets for energy flexibility in buildings.</p>
+        <div class="tags"><span>ENERGY</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/citylearn" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="envirometric" data-desc="software energy profiling and environmental-impact analysis.">
+      <div class="card-top">
+        <span class="number">25</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>EnviroMetric</h3>
+        <p>Software energy profiling and environmental-impact analysis.</p>
+        <div class="tags"><span>GREEN</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/EnviroMetric" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://huggingface.co/spaces/RahulKiran2222/EnviroMetric" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="greenprompt" data-desc="sustainability-aware ai playground for comparing prompts, models, and optimization strategies.">
+      <div class="card-top">
+        <span class="number">27</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>GreenPrompt</h3>
+        <p>Sustainability-aware AI playground for comparing prompts, models, and optimization strategies.</p>
+        <div class="tags"><span>GREEN</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/GreenPrompt" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://greenprompt.raphussolutions.com/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="ai carbon footprint visualizer" data-desc="interactive 3d simulation of compute energy, carbon intensity, and hardware choices.">
+      <div class="card-top">
+        <span class="number">30</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>AI Carbon Footprint Visualizer</h3>
+        <p>Interactive 3D simulation of compute energy, carbon intensity, and hardware choices.</p>
+        <div class="tags"><span>GREEN</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/AI-Carbon-Footprint-Visualizer" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://huggingface.co/spaces/RahulKiran2222/AI-Carbon-Footprint-Visualizer" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="sse — sustainable software engineering" data-desc="interactive simulation for environmental, social, and individual software sustainability.">
+      <div class="card-top">
+        <span class="number">31</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>SSE — Sustainable Software Engineering</h3>
+        <p>Interactive simulation for environmental, social, and individual software sustainability.</p>
+        <div class="tags"><span>GREEN</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/SSE" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+      </div>
+    </section>
+    <section class="project-section" id="section-05">
+      <div class="section-head reveal">
+        <div class="section-number">05</div>
+        <div class="section-copy">
+          <div class="eyebrow">PROJECT FIELD / 05</div>
+          <h2>INTERACTIVE SYSTEMS & COMPUTATIONAL WORLDS</h2>
+          <p>3D, computer vision, simulation and experimental interfaces</p>
+        </div>
+        <div class="section-total"><strong>07</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="project-grid">
+        
+    <article class="project-card reveal-card" data-title="3d model playground" data-desc="browser-based 3d model interaction using gesture and voice controls.">
+      <div class="card-top">
+        <span class="number">28</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>3D Model Playground</h3>
+        <p>Browser-based 3D model interaction using gesture and voice controls.</p>
+        <div class="tags"><span>INTERACTIVE</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/3D-Model-Playground" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://raphussolutions.github.io/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="jellyslide" data-desc="gpu-accelerated soft-body interactive ui system using webgpu, typegpu, wgsl, and typescript.">
+      <div class="card-top">
+        <span class="number">29</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>JellySlide</h3>
+        <p>GPU-accelerated soft-body interactive UI system using WebGPU, TypeGPU, WGSL, and TypeScript.</p>
+        <div class="tags"><span>GRAPHICS</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/JellySlide" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="strategic interaction engine" data-desc="3d game-theory simulator for strategic interaction, adaptation, and equilibrium dynamics.">
+      <div class="card-top">
+        <span class="number">32</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Strategic Interaction Engine</h3>
+        <p>3D game-theory simulator for strategic interaction, adaptation, and equilibrium dynamics.</p>
+        <div class="tags"><span>SIMULATION</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/strategicinteractionengine" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="dynamic market engine" data-desc="3d computational-economics simulator for market equilibrium and policy shocks.">
+      <div class="card-top">
+        <span class="number">33</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Dynamic Market Engine</h3>
+        <p>3D computational-economics simulator for market equilibrium and policy shocks.</p>
+        <div class="tags"><span>SIMULATION</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/DynamicMarketEngine" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="hand cricket 2026" data-desc="browser-based hand-cricket project.">
+      <div class="card-top">
+        <span class="number">39</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Hand Cricket 2026</h3>
+        <p>Browser-based hand-cricket project.</p>
+        <div class="tags"><span>INTERACTIVE</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/hand-cricket-2026" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="minecraft cube" data-desc="real-time webcam hand tracking to rotate and scale a 3d minecraft block.">
+      <div class="card-top">
+        <span class="number">41</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>Minecraft Cube</h3>
+        <p>Real-time webcam hand tracking to rotate and scale a 3D Minecraft block.</p>
+        <div class="tags"><span>INTERACTIVE</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/minecraft-cube" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://huggingface.co/spaces/RahulKiran2222/minecraft-cube-controller" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="jjk vision" data-desc="real-time gesture recognition mapped to visual interaction.">
+      <div class="card-top">
+        <span class="number">42</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>JJK Vision</h3>
+        <p>Real-time gesture recognition mapped to visual interaction.</p>
+        <div class="tags"><span>COMPUTER</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/jjk-vision" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+      </div>
+    </section>
+    <section class="project-section" id="section-06">
+      <div class="section-head reveal">
+        <div class="section-number">06</div>
+        <div class="section-copy">
+          <div class="eyebrow">PROJECT FIELD / 06</div>
+          <h2>APPLIED AI, PRODUCTS & ENGINEERING</h2>
+          <p>Practical software, analytics, education and product experiments</p>
+        </div>
+        <div class="section-total"><strong>13</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="project-grid">
+        
+    <article class="project-card reveal-card" data-title="wohnung wg application generator" data-desc="a browser-based application generator for german housing applications.">
+      <div class="card-top">
+        <span class="number">08</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>Wohnung WG Application Generator</h3>
+        <p>A browser-based application generator for German housing applications.</p>
+        <div class="tags"><span>WEB</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/wohnung-wg-application-generator" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://rahulkiran2222.github.io/wohnung-wg-application-generator/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="automatic number plate recognition" data-desc="automatic number-plate recognition project.">
+      <div class="card-top">
+        <span class="number">34</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Automatic Number Plate Recognition</h3>
+        <p>Automatic number-plate recognition project.</p>
+        <div class="tags"><span>COMPUTER</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/Automatic-Number-Plate-Recognition" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="financial chatbot" data-desc="conversational ai project for financial use cases.">
+      <div class="card-top">
+        <span class="number">35</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Financial Chatbot</h3>
+        <p>Conversational AI project for financial use cases.</p>
+        <div class="tags"><span>FINANCE</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/financial-chatbot" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="financial analysis" data-desc="notebook-based financial analysis work.">
+      <div class="card-top">
+        <span class="number">36</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Financial Analysis</h3>
+        <p>Notebook-based financial analysis work.</p>
+        <div class="tags"><span>FINANCE</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/financial-analysis" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="telemetry converter" data-desc="python project for telemetry-data conversion.">
+      <div class="card-top">
+        <span class="number">37</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Telemetry Converter</h3>
+        <p>Python project for telemetry-data conversion.</p>
+        <div class="tags"><span>DATA</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/telemetry-converter" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="horizon ai courses" data-desc="ai learning hub for structured beginner-friendly ai, ml, and computer-vision learning.">
+      <div class="card-top">
+        <span class="number">38</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Horizon AI Courses</h3>
+        <p>AI Learning Hub for structured beginner-friendly AI, ML, and computer-vision learning.</p>
+        <div class="tags"><span>EDUCATION</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="carbendazim vs. aspergillus analytics" data-desc="interactive analytics project focused on carbendazim and aspergillus.">
+      <div class="card-top">
+        <span class="number">40</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Carbendazim vs. Aspergillus Analytics</h3>
+        <p>Interactive analytics project focused on Carbendazim and Aspergillus.</p>
+        <div class="tags"><span>ANALYTICS</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/Carbendazimvs.AspergillusAnalytics" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="horizontrax mock" data-desc="ai-first mock-test platform for engineering freshers with diagnostics and progress tracking.">
+      <div class="card-top">
+        <span class="number">43</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>HorizonTrax Mock</h3>
+        <p>AI-first mock-test platform for engineering freshers with diagnostics and progress tracking.</p>
+        <div class="tags"><span>PRODUCT</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/horizontrax-mock" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://horizontrax-mock.pages.dev/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="tinyml" data-desc="tiny machine-learning project.">
+      <div class="card-top">
+        <span class="number">44</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>TinyML</h3>
+        <p>Tiny machine-learning project.</p>
+        <div class="tags"><span>ML</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/TinyML" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="aevacare backend" data-desc="fastapi backend for lightweight real-time facial-emotion detection.">
+      <div class="card-top">
+        <span class="number">45</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>AEVACare Backend</h3>
+        <p>FastAPI backend for lightweight real-time facial-emotion detection.</p>
+        <div class="tags"><span>COMPUTER</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/aevacare-backend" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="manufacturing financial health" data-desc="python-based manufacturing and financial-health analysis project.">
+      <div class="card-top">
+        <span class="number">46</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Manufacturing Financial Health</h3>
+        <p>Python-based manufacturing and financial-health analysis project.</p>
+        <div class="tags"><span>ANALYTICS</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/Manufacturing-Financial-Health" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="skylearn test" data-desc="learning-oriented experimental repository.">
+      <div class="card-top">
+        <span class="number">47</span>
+        <span class="status ">BUILD</span>
+      </div>
+      <div class="card-main">
+        <h3>Skylearn Test</h3>
+        <p>Learning-oriented experimental repository.</p>
+        <div class="tags"><span>EDUCATION</span><span>GITHUB</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/skylearn-test" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        
+      </div>
+    </article>
+    <article class="project-card reveal-card" data-title="postx / xposts" data-desc="ai-powered web app for turning topics into polished x posts.">
+      <div class="card-top">
+        <span class="number">48</span>
+        <span class="status live-status">LIVE</span>
+      </div>
+      <div class="card-main">
+        <h3>PostX / XPosts</h3>
+        <p>AI-powered web app for turning topics into polished X posts.</p>
+        <div class="tags"><span>WEB</span><span>GITHUB</span><span>LIVE</span></div>
+      </div>
+      <div class="card-actions">
+        <a class="repo" href="https://github.com/rahulkiran2222/PostX" target="_blank" rel="noopener noreferrer">GITHUB REPOSITORY ↗</a>
+        <a class="live" href="https://xposts2.netlify.app/" target="_blank" rel="noopener noreferrer">LIVE ↗</a>
+      </div>
+    </article>
+      </div>
+    </section>
+
+  <div class="empty" id="empty">No project matches that search.</div>
+
+  <div class="note">
+    <b>Link policy.</b> Every one of the 48 projects has a direct GitHub repository link. <b>LIVE</b> appears only for public deployments currently represented by the project information; it is not inferred merely from an <code>index.html</code>. Climate Change AI tutorial repositories are explicitly marked <b>FORK</b> so the portfolio distinguishes open learning work from original projects.
+  </div>
+</main>
+
+<footer class="wrap footer">
+  <span>RAHUL // AI · PROJECT FIELD</span>
+  <span>48 PROJECT REPOSITORIES · 06 THEMATIC SECTIONS</span>
+</footer>
+
+<script>
+/* ============================================================
+   HERO BUILD FIELD
+   A lightweight canvas "project system" — no external libraries.
+   It shows a pseudo-3D architecture/network behind the hero copy.
+   ============================================================ */
+(() => {
+  const canvas = document.getElementById('heroCanvas');
+  const ctx = canvas.getContext('2d');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W=0,H=0,dpr=1,time=0,raf=0;
+  const mouse={x:.78,y:.48,tx:.78,ty:.48};
+  const pts=[];
+
+  function resize(){
+    const r=canvas.getBoundingClientRect();
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    W=r.width;H=r.height;
+    canvas.width=W*dpr;canvas.height=H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    pts.length=0;
+    const count=Math.max(32,Math.floor(W/29));
+    for(let i=0;i<count;i++){
+      pts.push({
+        a:(i/count)*Math.PI*2,
+        r:Math.min(W,H)*(.15+.23*((i*47)%100)/100),
+        speed:(.00055+.00115*((i*17)%100)/100)*(i%2?1:-1),
+        size:1.2+2.1*((i*31)%100)/100,
+        phase:i*.73
+      });
+    }
+  }
+
+  function strokeLine(x1,y1,x2,y2,a,w=1){
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);
+    ctx.strokeStyle=`rgba(65,70,63,${a})`;ctx.lineWidth=w;ctx.stroke();
+  }
+
+  function dot(x,y,r,a,kind=0){
+    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
+    const rgb=kind===1?'169,79,46':kind===2?'101,122,102':'70,75,68';
+    ctx.fillStyle=`rgba(${rgb},${a})`;ctx.fill();
+  }
+
+  function frame(cx,cy,w,h,skew,alpha){
+    ctx.save();ctx.translate(cx,cy);ctx.rotate(skew);
+    ctx.strokeStyle=`rgba(65,70,63,${alpha})`;ctx.lineWidth=.8;
+    ctx.strokeRect(-w/2,-h/2,w,h);
+    ctx.strokeRect(-w*.36,-h*.34,w*.72,h*.68);
+    strokeLine(-w*.5,0,w*.5,0,alpha*.8,.7);
+    strokeLine(0,-h*.5,0,h*.5,alpha*.8,.7);
+    ctx.restore();
+  }
+
+  function draw(){
+    if(!reduce){time+=.9;}
+    mouse.x+=(mouse.tx-mouse.x)*.055;
+    mouse.y+=(mouse.ty-mouse.y)*.055;
+    ctx.clearRect(0,0,W,H);
+
+    // Technical grid.
+    for(let x=0;x<W;x+=46) strokeLine(x,0,x,H,.035,.5);
+    for(let y=0;y<H;y+=46) strokeLine(0,y,W,y,.035,.5);
+
+    const cx=W*.77+(mouse.x-.5)*24;
+    const cy=H*.52+(mouse.y-.5)*18;
+    const radius=Math.min(W,H);
+    const projected=[];
+
+    // Orbiting project nodes.
+    pts.forEach((p,i)=>{
+      if(!reduce)p.a+=p.speed*12;
+      const z=.55+.45*Math.sin(p.a+p.phase);
+      const x=cx+Math.cos(p.a)*p.r*(1+.06*Math.sin(time*.008+p.phase));
+      const y=cy+Math.sin(p.a)*p.r*.56;
+      projected.push({x,y,z,r:p.size*(.65+z),i});
+    });
+
+    // Connections create a "project dependency" field.
+    for(let i=0;i<projected.length;i++){
+      for(let j=i+1;j<projected.length;j++){
+        const a=projected[i],b=projected[j];
+        const d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<88) strokeLine(a.x,a.y,b.x,b.y,.035+.055*(1-d/88),.7);
+      }
+    }
+
+    projected.forEach(p=>dot(p.x,p.y,p.r,.13+.15*p.z,p.i%9===0?1:(p.i%7===0?2:0)));
+
+    // A restrained pseudo-3D "architecture" stack.
+    for(let k=0;k<4;k++){
+      const w=radius*(.15+.045*k),h=radius*(.06+.017*k);
+      frame(cx,cy,w,h,-.18+k*.08,.11-.012*k);
+    }
+
+    // Central build core.
+    const core=radius*.055;
+    ctx.beginPath();ctx.arc(cx,cy,core,0,Math.PI*2);
+    ctx.fillStyle='rgba(244,239,229,.52)';ctx.fill();
+    ctx.strokeStyle='rgba(169,79,46,.52)';ctx.lineWidth=1.2;ctx.stroke();
+    for(let k=0;k<10;k++){
+      const a=k*Math.PI/5+time*.0018;
+      strokeLine(cx+Math.cos(a)*core*.65,cy+Math.sin(a)*core*.65,
+                 cx+Math.cos(a)*core*1.55,cy+Math.sin(a)*core*1.55,.18,1);
+    }
+    ctx.font='700 9px Arial';
+    ctx.textAlign='center';ctx.fillStyle='rgba(48,48,44,.52)';
+    ctx.fillText('BUILD',cx,cy+3);
+
+    // Small category labels orbiting the core.
+    const labels=['SAFETY','LLM','EARTH','ENERGY','3D','DATA','POLICY','VISION','GREEN','RESEARCH'];
+    ctx.textAlign='left';ctx.font='700 8px Arial';
+    labels.forEach((s,i)=>{
+      const a=i*Math.PI*2/labels.length+time*.00022*(i%2?1:-1);
+      const x=cx+Math.cos(a)*radius*(.25+.018*(i%3));
+      const y=cy+Math.sin(a)*radius*(.14+.015*(i%4));
+      ctx.fillStyle=i%3===0?'rgba(169,79,46,.34)':'rgba(62,70,64,.28)';
+      ctx.fillText(s,x,y);
+    });
+
+    if(!reduce) raf=requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener('mousemove',e=>{
+    const r=canvas.getBoundingClientRect();
+    mouse.tx=(e.clientX-r.left)/r.width;
+    mouse.ty=(e.clientY-r.top)/r.height;
+  });
+  canvas.addEventListener('mouseleave',()=>{mouse.tx=.78;mouse.ty=.48;});
+  window.addEventListener('resize',resize);
+  resize();draw();
+})();
+
+/* Search without destroying the thematic sections. */
+(() => {
+  const input=document.getElementById('search');
+  const cards=[...document.querySelectorAll('.project-card')];
+  const sections=[...document.querySelectorAll('.project-section')];
+  const count=document.getElementById('resultCount');
+  const empty=document.getElementById('empty');
+
+  function update(){
+    const q=input.value.trim().toLowerCase();
+    let shown=0;
+    cards.forEach(card=>{
+      const match=!q || card.dataset.title.includes(q) || card.dataset.desc.includes(q);
+      card.hidden=!match;
+      if(match)shown++;
+    });
+    sections.forEach(section=>{
+      const visible=[...section.querySelectorAll('.project-card')].some(c=>!c.hidden);
+      section.hidden=q && !visible;
+    });
+    count.textContent=`${String(shown).padStart(2,'0')} PROJECTS`;
+    empty.classList.toggle('show',shown===0);
+  }
+  input.addEventListener('input',update);
+})();
+
+/* Scroll reveal for section headings. */
+(() => {
+  const items=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(x=>x.classList.add('visible'));return;
+  }
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  items.forEach(x=>io.observe(x));
+})();
+</script>
+</body>
+</html>.hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:
+  linear-gradient(90deg,rgba(244,239,229,.995) 0%,rgba(244,239,229,.96) 28%,rgba(244,239,229,.76) 53%,rgba(244,239,229,.18) 100%),
+  radial-gradient(circle at 79% 47%,rgba(169,79,46,.15),transparent 26%),
+  radial-gradient(circle at 88% 68%,rgba(101,122,102,.20),transparent 29%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);z-index:2}
+.hero-content{position:relative;z-index:4;padding:84px 0 78px}
+.hero-copy{max-width:650px}
+.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--rust)}
+.hero h1{font-size:clamp(58px,7.2vw,94px);line-height:.86;letter-spacing:-.057em;margin:17px 0 23px;max-width:720px}
+.hero h1 em{font-style:italic;color:var(--rust)}
+.hero-lede{font-size:18px;line-height:1.54;color:#504a43;max-width:610px;margin:0}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:33px}
+.metric{min-width:105px;border-top:1px solid var(--line);padding-top:9px}
+.metric strong{display:block;font:700 23px Arial,sans-serif;letter-spacing:-.05em}
+.metric span{display:block;margin-top:4px;font:700 8px Arial,sans-serif;letter-spacing:.13em;color:var(--muted)}
+.hero-tip{position:absolute;right:0;bottom:25px;font:700 9px Arial,sans-serif;letter-spacing:.12em;color:#655e56;text-transform:uppercase}
+.hero-rail{position:absolute;right:4.5vw;top:28px;font:700 9px Arial,sans-serif;letter-spacing:.16em;color:#617064;writing-mode:vertical-rl}
+.build-label{position:absolute;z-index:1;font:700 9px Arial,sans-serif;letter-spacing:.14em;color:#667269;text-transform:uppercase;pointer-events:none}
+.build-label.a{right:7%;top:20%}
+.build-label.b{right:17%;top:72%;color:#8b604f}
+.build-label.c{right:32%;top:27%;color:#69767a}
+.build-label.d{right:11%;top:50%;color:#677a68}
+
+main{padding-bottom:45px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;padding:32px 0 16px}
+.intro p{margin:0;max-width:680px;font-size:14px;line-height:1.55;color:var(--muted)}
+.tools{display:flex;align-items:center;gap:10px}
+.search{width:235px;border:1px solid var(--line);background:rgba(255,250,241,.55);padding:10px 12px;font:500 12px Arial,sans-serif;color:var(--ink);outline:none}
+.search:focus{border-color:var(--rust)}
+.result-count{font:700 9px Arial,sans-serif;letter-spacing:.1em;color:var(--muted);white-space:nowrap}
+
+.directory{display:flex;gap:8px;flex-wrap:wrap;padding:20px 0 5px}
+.directory a{font:700 9px Arial,sans-serif;letter-spacing:.08em;padding:8px 10px;border:1px solid var(--line);background:rgba(255,250,241,.38);transition:.2s ease}
+.directory a:hover{color:var(--rust);border-color:var(--rust);transform:translateY(-2px)}
+
+.project-section{padding:58px 0 6px;scroll-margin-top:72px}
+.section-head{display:grid;grid-template-columns:62px minmax(0,1fr) 70px;gap:19px;align-items:end;border-top:1px solid var(--line);padding-top:19px;margin-bottom:22px}
+.section-number{font:700 33px Arial,sans-serif;letter-spacing:-.07em;color:var(--rust);line-height:1}
+.section-head h2{font-size:clamp(28px,3.2vw,43px);line-height:.95;letter-spacing:-.045em;margin:7px 0 9px}
+.section-head p{font-size:14px;line-height:1.45;color:var(--muted);max-width:720px;margin:0}
+.section-total{text-align:right}
+.section-total strong{display:block;font:700 28px Arial,sans-serif;letter-spacing:-.06em}
+.section-total span{font:700 8px Arial,sans-serif;letter-spacing:.13em;color:var(--muted)}
+
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.project-card{position:relative;display:flex;flex-direction:column;min-height:238px;border:1px solid var(--line);background:var(--card);overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.project-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rust);transform:scaleY(0);transform-origin:top;transition:transform .25s ease}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(49,39,28,.09);border-color:rgba(24,23,22,.27)}
+.project-card:hover::before{transform:scaleY(1)}
+.card-top{display:flex;justify-content:space-between;align-items:center;padding:13px 15px 0;font:700 9px Arial,sans-serif;letter-spacing:.11em}
+.number{color:#8b837a}
+.status{padding:4px 6px;border:1px solid var(--line);font-size:8px;color:#635c54}
+.live-status{color:var(--sage);border-color:rgba(101,122,102,.35)}
+.card-main{padding:14px 15px 13px;flex:1}
+.card-main h3{font-size:24px;line-height:1.04;letter-spacing:-.035em;margin:0 0 10px}
+.card-main p{font-size:13.5px;line-height:1.48;color:#5a544d;margin:0 0 13px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tags span{font:700 8px Arial,sans-serif;letter-spacing:.07em;border:1px solid var(--line);padding:4px 5px;color:#6b645c;background:rgba(255,255,255,.22)}
+.card-actions{display:flex;border-top:1px solid var(--line);min-height:43px}
+.card-actions a{display:flex;align-items:center;justify-content:center;padding:0 12px;font:700 9px Arial,sans-serif;letter-spacing:.085em}
+.card-actions .repo{flex:1}
+.card-actions .live{min-width:82px;border-left:1px solid var(--line);color:var(--sage)}
+.card-actions a:hover{background:var(--ink);color:var(--paper)}
+
+.empty{display:none;text-align:center;padding:60px 20px;border:1px dashed var(--line);color:var(--muted);font-size:15px;margin-top:30px}
+.empty.show{display:block}
+.note{padding:24px 0 50px;margin-top:30px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.6}
+.note b{color:var(--ink)}
+.footer{border-top:1px solid var(--line);padding:18px 0 30px;display:flex;justify-content:space-between;gap:20px;font:700 9px Arial,sans-serif;letter-spacing:.1em;color:#6b645b}
+
+.reveal{opacity:0;transform:translateY(13px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-card{animation:cardIn .7s ease both}
+@keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+@media(max-width:900px){
+ .hero{min-height:575px}
+ .project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .intro{align-items:flex-start;flex-direction:column}
+ .hero-rail,.build-label{display:none}
+}
+@media(max-width:620px){
+ .nav{align-items:flex-start}
+ .navlinks{gap:10px}
+ .hero{min-height:585px}
+ .hero-content{padding:72px 0 65px}
+ .hero h1{font-size:56px}
+ .hero-lede{font-size:16px}
+ .hero-tip{display:none}
+ .project-grid{grid-template-columns:1fr}
+ .section-head{grid-template-columns:43px minmax(0,1fr)}
+ .section-total{display:none}
+ .tools,.search{width:100%}
+ .footer{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+<style>
+
+/* EDITORIAL NAV — shared across portfolio pages */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(250,246,238,.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule, #DCD3C1);
+}
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.brand{
+  font:600 15px "IBM Plex Mono",monospace;
+  letter-spacing:.03em;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.brand .accent{color:var(--terra, #B14F2A)}
+.brand small{
+  font-size:9px;
+  color:var(--taupe, #857C6E);
+  font-weight:400;
+  margin-left:8px;
+}
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+  padding:0;
+  margin:0;
+  align-items:center;
+}
+nav a{
+  font:11px "IBM Plex Mono",monospace;
+  text-decoration:none;
+  color:var(--soft, #58524A);
+  border-bottom:1px solid transparent;
+  transition:.18s;
+}
+nav a:hover{
+  color:var(--terra, #B14F2A);
+  border-color:var(--terra, #B14F2A);
+}
+nav a.active{
+  color:var(--terra, #B14F2A);
+  border-color:var(--terra, #B14F2A);
+}
+.nav-github{
+  padding:7px 10px;
+  border:1px solid var(--rule, #DCD3C1)!important;
+  border-bottom-color:var(--rule, #DCD3C1)!important;
+}
+@media(max-width:900px){
+  .nav{gap:16px}
+  nav ul{gap:12px}
+}
+@media(max-width:680px){
+  .nav{
+    align-items:flex-start;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:14px 0;
+  }
+  nav ul{
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  nav a{font-size:10px}
+}
+
+</style>
 </head>
 <body>
 
