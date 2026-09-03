@@ -118,81 +118,103 @@ main{padding-bottom:55px}
 }
 </style>
 <style>
-/* SHARED PORTFOLIO NAV — exact Index / Projects / Education treatment */
-.nav{
+
+/* EDITORIAL NAV — shared with Index / Research */
+nav{
   position:sticky;
   top:0;
   z-index:100;
-  height:87px;
+  background:rgba(250,246,238,.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule, #DCD3C1);
+}
+.nav{
+  min-height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:30px;
-  padding:0 5.2vw;
-  border-bottom:1px solid var(--line);
-  background:rgba(244,239,229,.94);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
+  gap:28px;
 }
 .brand{
-  display:inline-block;
-  color:var(--ink);
-  font:800 20px/1 Arial,sans-serif;
-  letter-spacing:.045em;
+  font:600 15px "IBM Plex Mono",monospace;
+  letter-spacing:.03em;
+  text-decoration:none;
   white-space:nowrap;
 }
-.brand b{
-  color:var(--rust);
-  font-weight:800;
-  letter-spacing:.04em;
+.brand .accent{color:var(--terra, #B14F2A)}
+.brand small{
+  font-size:9px;
+  color:var(--taupe, #857C6E);
+  font-weight:400;
+  margin-left:8px;
 }
-.navlinks{
+nav ul{
   display:flex;
+  gap:20px;
+  list-style:none;
+  padding:0;
+  margin:0;
   align-items:center;
-  justify-content:flex-end;
-  gap:30px;
-  margin-left:auto;
-  flex-wrap:nowrap;
 }
-.navlinks a{
-  color:#514c45;
-  font:800 12px/1 Arial,sans-serif;
-  letter-spacing:.075em;
-  text-transform:uppercase;
-  white-space:nowrap;
-  transition:color .2s ease;
+nav a{
+  font:11px "IBM Plex Mono",monospace;
+  text-decoration:none;
+  color:var(--soft, #58524A);
+  border-bottom:1px solid transparent;
+  transition:.18s;
 }
-.navlinks a:hover,
-.navlinks a.active{
-  color:var(--rust);
+nav a:hover{
+  color:var(--terra, #B14F2A);
+  border-color:var(--terra, #B14F2A);
 }
-@media(max-width:1050px){
-  .nav{padding:0 3.5vw}
-  .navlinks{gap:18px}
-  .navlinks a{font-size:10px}
+nav a.active{
+  color:var(--terra, #B14F2A);
+  border-color:var(--terra, #B14F2A);
 }
-@media(max-width:760px){
-  .nav{height:auto;min-height:72px;padding:14px 20px;flex-wrap:wrap}
-  .brand{font-size:18px}
-  .navlinks{width:100%;overflow-x:auto;justify-content:flex-start;gap:18px;padding-bottom:2px}
-  .navlinks a{font-size:9px}
+.nav-github{
+  padding:7px 10px;
+  border:1px solid var(--rule, #DCD3C1)!important;
+  border-bottom-color:var(--rule, #DCD3C1)!important;
 }
+@media(max-width:900px){
+  .nav{gap:16px}
+  nav ul{gap:12px}
+}
+@media(max-width:680px){
+  .nav{
+    align-items:flex-start;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:14px 0;
+  }
+  nav ul{
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  nav a{font-size:10px}
+}
+
 </style>
 </head>
 <body>
 
-<header class="nav">
- <a class="brand" href="index.html">RK <b>//</b> AI</a>
- <nav class="navlinks" aria-label="Primary navigation">
-  <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="research.html">Research</a>
-  <a class="active" href="education.html" aria-current="page">Education</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="resources.html">Resources</a>
-  <a href="contact.html">Contact</a>
- </nav>
-</header>
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>EDUCATION</small></a>
+    <ul>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="education.html" class="active" aria-current="page">education</a></li>
+      <li><a href="certifications.html">certifications</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="resources.html">resources</a></li>
+      <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
 
 <section class="hero">
  <canvas id="eduCanvas" aria-hidden="true"></canvas>
