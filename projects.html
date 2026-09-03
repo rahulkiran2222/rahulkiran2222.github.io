@@ -134,21 +134,104 @@ main{padding-bottom:45px}
  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
+<style>
+
+/* EDITORIAL NAV — shared across portfolio pages */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(250,246,238,.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule, #DCD3C1);
+}
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.brand{
+  font:600 15px "IBM Plex Mono",monospace;
+  letter-spacing:.03em;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.brand .accent{color:var(--terra, #B14F2A)}
+.brand small{
+  font-size:9px;
+  color:var(--taupe, #857C6E);
+  font-weight:400;
+  margin-left:8px;
+}
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+  padding:0;
+  margin:0;
+  align-items:center;
+}
+nav a{
+  font:11px "IBM Plex Mono",monospace;
+  text-decoration:none;
+  color:var(--soft, #58524A);
+  border-bottom:1px solid transparent;
+  transition:.18s;
+}
+nav a:hover{
+  color:var(--terra, #B14F2A);
+  border-color:var(--terra, #B14F2A);
+}
+nav a.active{
+  color:var(--terra, #B14F2A);
+  border-color:var(--terra, #B14F2A);
+}
+.nav-github{
+  padding:7px 10px;
+  border:1px solid var(--rule, #DCD3C1)!important;
+  border-bottom-color:var(--rule, #DCD3C1)!important;
+}
+@media(max-width:900px){
+  .nav{gap:16px}
+  nav ul{gap:12px}
+}
+@media(max-width:680px){
+  .nav{
+    align-items:flex-start;
+    gap:12px;
+    flex-wrap:wrap;
+    padding:14px 0;
+  }
+  nav ul{
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  nav a{font-size:10px}
+}
+
+</style>
 </head>
 <body>
 
-<header class="nav">
-  <a class="brand" href="index.html">RK <b>//</b> AI</a>
-  <nav class="navlinks">
-    <a href="index.html">Home</a>
-    <a class="active" href="projects.html">Projects</a>
-    <a href="research.html">Research</a>
-    <a href="education.html">Education</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="resources.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>PROJECTS</small></a>
+    <ul>
+      <li><a href="projects.html" class="active" aria-current="page">projects</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="education.html">education</a></li>
+      <li><a href="certifications.html">certifications</a></li>
+      <li><a href="gallery.html">gallery</a></li>
+      <li><a href="resources.html">resources</a></li>
+      <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
 
 <section class="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
