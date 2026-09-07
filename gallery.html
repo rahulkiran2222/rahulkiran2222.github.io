@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Kiran Gunti — Field Notes</title>
+<meta name="description" content="Rahul Kiran Gunti — visual field notes, talks, people, AI × Earth, HorizonTrax and open work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#FAF6EE;--bg2:#F2EBDD;--ink:#221F1B;--soft:#58524A;
+  --taupe:#857C6E;--rule:#DCD3C1;--terra:#B14F2A;--sage:#5C6B4F;
+  --max:1450px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 34px}
+::selection{background:var(--terra);color:#fff}
+
+/* =========================================================
+   EDITORIAL NAV — SHARED WITH INDEX / RESEARCH / EDUCATION /
+   PROJECTS / CERTIFICATIONS
+   ========================================================= */
+nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(250,246,238,.92);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule)
+}
+.nav{
+  min-height:72px;display:flex;align-items:center;
+  justify-content:space-between;gap:28px
+}
+.brand{
+  font:600 15px "IBM Plex Mono",monospace;letter-spacing:.03em;
+  text-decoration:none;white-space:nowrap
+}
+.brand .accent{color:var(--terra)}
+.brand small{
+  font-size:9px;color:var(--taupe);font-weight:400;
+  margin-left:8px;letter-spacing:.08em
+}
+nav ul{
+  display:flex;gap:20px;list-style:none;padding:0;margin:0;
+  align-items:center
+}
+nav a{
+  font:11px "IBM Plex Mono",monospace;text-decoration:none;
+  color:var(--soft);border-bottom:1px solid transparent;
+  transition:.18s
+}
+nav a:hover,nav a.active{color:var(--terra);border-color:var(--terra)}
+.nav-github{
+  padding:7px 10px;border:1px solid var(--rule)!important;
+  border-bottom-color:var(--rule)!important
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;min-height:760px;overflow:hidden;
+  border-bottom:1px solid var(--rule)
+}
+#fieldCanvas{
+  position:absolute;inset:0;width:100%;height:100%;display:block
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(90deg,
+      rgba(250,246,238,.98) 0%,
+      rgba(250,246,238,.90) 30%,
+      rgba(250,246,238,.44) 58%,
+      rgba(250,246,238,.08) 100%),
+    linear-gradient(0deg,rgba(250,246,238,.18),transparent 48%)
+}
+.hero-content{
+  position:relative;z-index:2;min-height:760px;
+  display:flex;align-items:center
+}
+.hero-copy{max-width:800px;padding:70px 0 80px}
+.eyebrow,.kicker{
+  font:11px "IBM Plex Mono",monospace;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--taupe)
+}
+.eyebrow{margin-bottom:20px}
+.hero h1{
+  font:500 clamp(64px,8vw,126px)/.91 "Source Serif 4",serif;
+  letter-spacing:-.055em;margin:0 0 30px
+}
+.hero h1 em{font-style:italic;color:var(--terra)}
+.hero-lede{
+  max-width:680px;font-size:19px;line-height:1.65;
+  color:var(--soft);margin:0
+}
+.hero-meta{
+  display:flex;gap:0;margin-top:42px;
+  border-top:1px solid var(--rule);max-width:760px
+}
+.metric{
+  padding:18px 28px 0 0;margin-right:28px;
+  border-right:1px solid var(--rule)
+}
+.metric:last-child{border-right:0}
+.metric strong{display:block;font:500 28px/1 "Source Serif 4",serif}
+.metric span{
+  display:block;margin-top:7px;font:9px "IBM Plex Mono",monospace;
+  letter-spacing:.08em;color:var(--taupe);text-transform:uppercase
+}
+.hero-note{
+  position:absolute;right:34px;bottom:28px;z-index:3;
+  font:10px "IBM Plex Mono",monospace;color:var(--taupe);
+  letter-spacing:.08em
+}
+
+/* =========================================================
+   FILTER BAR
+   ========================================================= */
+.filterbar{
+  position:sticky;top:72px;z-index:500;
+  background:rgba(250,246,238,.94);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule)
+}
+.filter-inner{
+  min-height:64px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px
+}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{
+  appearance:none;background:transparent;border:1px solid transparent;
+  padding:8px 11px;color:var(--soft);
+  font:10px "IBM Plex Mono",monospace;letter-spacing:.06em;
+  text-transform:uppercase;cursor:pointer
+}
+.filter:hover,.filter.active{border-color:var(--terra);color:var(--terra)}
+.count{font:10px "IBM Plex Mono",monospace;color:var(--taupe);white-space:nowrap}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+.intro{padding:90px 0 54px}
+.intro-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:70px;align-items:end
+}
+.intro h2{
+  font:500 clamp(42px,5vw,74px)/.98 "Source Serif 4",serif;
+  letter-spacing:-.045em;margin:10px 0 0
+}
+.intro p{max-width:570px;color:var(--soft);font-size:15px;margin:0}
+.rule-note{
+  margin-top:32px;padding-top:16px;border-top:1px dashed var(--rule);
+  font:10px "IBM Plex Mono",monospace;color:var(--taupe);
+  text-transform:uppercase;letter-spacing:.07em
+}
+
+/* =========================================================
+   ARCHIVE
+   ========================================================= */
+.archive{padding:36px 0 100px}
+.chapter{
+  padding:76px 0;border-top:1px solid var(--rule)
+}
+.chapter:first-child{border-top:0;padding-top:25px}
+.chapter-head{
+  display:grid;grid-template-columns:.7fr 1.3fr;
+  gap:40px;align-items:start;margin-bottom:34px
+}
+.chapter-index{
+  font:10px "IBM Plex Mono",monospace;color:var(--terra);
+  letter-spacing:.1em
+}
+.chapter h2{
+  font:500 clamp(34px,4.2vw,62px)/1 "Source Serif 4",serif;
+  letter-spacing:-.04em;margin:0 0 9px
+}
+.chapter p{max-width:610px;color:var(--soft);font-size:14px;margin:0}
+
+/* Mixed editorial grid */
+.archive-grid{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:12px
+}
+.item{
+  position:relative;min-height:340px;background:var(--bg2);
+  border:1px solid var(--rule);overflow:hidden;cursor:pointer;
+  transition:transform .32s ease,box-shadow .32s ease
+}
+.item:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 36px rgba(34,31,27,.08)
+}
+.item:nth-child(1){grid-column:span 7;min-height:510px}
+.item:nth-child(2){grid-column:span 5}
+.item:nth-child(3){grid-column:span 5}
+.item:nth-child(4){grid-column:span 7;min-height:420px}
+.item:nth-child(5){grid-column:span 4}
+.item:nth-child(6){grid-column:span 4}
+.item:nth-child(7){grid-column:span 4}
+.item:nth-child(8){grid-column:span 8;min-height:430px}
+.item:nth-child(9){grid-column:span 4}
+.item:nth-child(10){grid-column:span 6}
+.item:nth-child(11){grid-column:span 6}
+.item:nth-child(12){grid-column:span 5}
+.item:nth-child(13){grid-column:span 7;min-height:440px}
+
+.item-media{
+  position:absolute;inset:0;background:
+    radial-gradient(circle at 75% 20%,rgba(177,79,42,.13),transparent 30%),
+    linear-gradient(135deg,#EEE5D5,#F7F0E5)
+}
+.item-media img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  opacity:0;transition:opacity .45s ease,transform .65s ease
+}
+.item.loaded img{opacity:1}
+.item:hover .item-media img{transform:scale(1.025)}
+.item-media .placeholder{
+  position:absolute;inset:0;display:grid;place-items:center;
+  color:rgba(34,31,27,.30);font:10px "IBM Plex Mono",monospace;
+  letter-spacing:.1em;text-transform:uppercase
+}
+.item.loaded .placeholder{display:none}
+.item-shade{
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(22,19,16,.78),rgba(22,19,16,0) 62%)
+}
+.item-info{position:absolute;left:22px;right:22px;bottom:20px;color:#fff}
+.item-type{
+  font:9px "IBM Plex Mono",monospace;letter-spacing:.11em;
+  text-transform:uppercase;opacity:.78;margin-bottom:5px
+}
+.item-title{
+  font:500 25px/1.12 "Source Serif 4",serif;letter-spacing:-.02em;
+  margin:0 0 5px
+}
+.item-caption{font-size:11px;line-height:1.45;opacity:.82;max-width:620px}
+.item-year{
+  position:absolute;top:15px;right:15px;
+  padding:5px 7px;border:1px solid rgba(255,255,255,.38);
+  color:#fff;background:rgba(34,31,27,.16);
+  font:9px "IBM Plex Mono",monospace;letter-spacing:.08em
+}
+.item-arrow{
+  position:absolute;top:15px;left:15px;width:31px;height:31px;
+  display:grid;place-items:center;border:1px solid rgba(255,255,255,.38);
+  color:#fff;background:rgba(34,31,27,.16);
+  font:13px "IBM Plex Mono",monospace;transition:.2s
+}
+.item:hover .item-arrow{background:var(--terra);border-color:var(--terra)}
+
+/* Video / document visual states */
+.item.video .item-media:after{
+  content:"PLAY";position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);width:68px;height:68px;
+  border:1px solid rgba(255,255,255,.72);border-radius:50%;
+  display:grid;place-items:center;color:#fff;
+  font:10px "IBM Plex Mono",monospace;letter-spacing:.08em
+}
+.item.document .item-media{
+  background:
+    linear-gradient(135deg,rgba(177,79,42,.10),transparent 45%),
+    repeating-linear-gradient(0deg,rgba(92,107,79,.08) 0 1px,transparent 1px 18px),
+    #EEE6D8
+}
+.item.document .doc-sheet{
+  position:absolute;left:15%;right:15%;top:12%;bottom:10%;
+  background:#FBF8F1;border:1px solid #D6CCB9;
+  box-shadow:0 20px 35px rgba(34,31,27,.12);
+  transform:rotate(-2deg);padding:11% 9%
+}
+.doc-sheet:before{
+  content:"";display:block;width:52%;height:8px;background:var(--terra);
+  margin-bottom:18px;box-shadow:0 22px 0 #D7CCB9,0 44px 0 #D7CCB9
+}
+
+/* Empty filtered state */
+.empty{
+  display:none;padding:70px 20px;text-align:center;
+  border:1px dashed var(--rule);color:var(--taupe);
+  font:11px "IBM Plex Mono",monospace
+}
+.empty.show{display:block}
+
+/* =========================================================
+   CLOSING NOTE
+   ========================================================= */
+.closing{
+  background:var(--bg2);border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);padding:90px 0
+}
+.closing-grid{
+  display:grid;grid-template-columns:.8fr 1.2fr;gap:70px
+}
+.closing h2{
+  font:500 clamp(42px,5vw,74px)/.96 "Source Serif 4",serif;
+  letter-spacing:-.045em;margin:10px 0 0
+}
+.closing p{max-width:680px;color:var(--soft);font-size:16px;margin:0}
+.note{
+  margin-top:30px;border-left:3px solid var(--terra);
+  padding:4px 0 4px 22px;color:var(--soft)
+}
+.note strong{color:var(--ink);font-weight:600}
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+.lightbox{
+  position:fixed;inset:0;z-index:2000;
+  background:rgba(25,22,19,.90);display:none;
+  align-items:center;justify-content:center;padding:28px
+}
+.lightbox.open{display:flex}
+.lightbox-panel{
+  width:min(1180px,96vw);max-height:92vh;
+  display:grid;grid-template-rows:auto 1fr auto;
+  background:#171512;border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 30px 80px rgba(0,0,0,.38)
+}
+.lightbox-top{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 15px;color:#fff;
+  font:10px "IBM Plex Mono",monospace;letter-spacing:.08em
+}
+.lightbox-close{
+  appearance:none;background:transparent;color:#fff;
+  border:1px solid rgba(255,255,255,.28);padding:6px 9px;
+  cursor:pointer;font:10px "IBM Plex Mono",monospace
+}
+.lightbox-media{
+  min-height:320px;display:grid;place-items:center;
+  overflow:hidden;background:#0f0e0c
+}
+.lightbox-media img{
+  max-width:100%;max-height:72vh;object-fit:contain
+}
+.lightbox-bottom{
+  padding:17px 20px 20px;color:#fff;border-top:1px solid rgba(255,255,255,.12)
+}
+.lightbox-bottom h3{
+  font:500 27px/1.1 "Source Serif 4",serif;margin:0 0 5px
+}
+.lightbox-bottom p{margin:0;color:rgba(255,255,255,.65);font-size:12px}
+.lightbox-hint{
+  margin-top:10px;font:9px "IBM Plex Mono",monospace;
+  color:rgba(255,255,255,.38);text-transform:uppercase
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{
+  border-top:1px solid var(--rule);padding:30px 0 60px;
+  color:var(--taupe);font:10px "IBM Plex Mono",monospace;
+  display:flex;justify-content:space-between;gap:20px
+}
+footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+footer a:hover{color:var(--terra);border-color:var(--terra)}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:1050px){
+  .wrap{padding:0 24px}
+  .nav{gap:16px}
+  nav ul{gap:12px}
+  .intro-grid,.closing-grid{grid-template-columns:1fr;gap:25px}
+  .chapter-head{grid-template-columns:1fr;gap:10px}
+  .archive-grid{grid-template-columns:repeat(6,1fr)}
+  .item,.item:nth-child(n){grid-column:span 3;min-height:350px}
+  .item:nth-child(1),.item:nth-child(4),.item:nth-child(8),.item:nth-child(13){grid-column:span 6;min-height:430px}
+}
+@media(max-width:760px){
+  .wrap{padding:0 18px}
+  nav .nav{align-items:flex-start;gap:12px;flex-wrap:wrap;padding:14px 0}
+  nav ul{gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  nav a{font-size:10px}
+  .hero,.hero-content{min-height:680px}
+  .hero-copy{padding:55px 0 80px}
+  .hero-lede{font-size:16px}
+  .hero-meta{flex-wrap:wrap}
+  .metric{padding-top:14px;margin-bottom:10px}
+  .filterbar{top:88px}
+  .filter-inner{align-items:flex-start;flex-direction:column;padding-top:10px;padding-bottom:10px}
+  .count{align-self:flex-end}
+  .intro{padding:65px 0 35px}
+  .archive{padding-top:20px}
+  .chapter{padding:60px 0}
+  .archive-grid{grid-template-columns:1fr}
+  .item,.item:nth-child(n),
+  .item:nth-child(1),.item:nth-child(4),.item:nth-child(8),.item:nth-child(13){
+    grid-column:span 1;min-height:340px
+  }
+  .item:nth-child(1),.item:nth-child(4),.item:nth-child(8),.item:nth-child(13){min-height:390px}
+  .closing{padding:65px 0}
+  footer{flex-direction:column}
+}
+@media(max-width:520px){
+  nav ul li:nth-child(5),nav ul li:nth-child(6){display:none}
+  .hero h1{font-size:58px}
+  .hero-note{right:18px;font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     SHARED EDITORIAL NAV
+     ========================================================= -->
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>FIELD NOTES</small></a>
+    <ul>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="research.html">research</a></li>
+      <li><a href="education.html">education</a></li>
+      <li><a href="certifications.html">certifications</a></li>
+      <li><a class="active" href="gallery.html" aria-current="page">gallery</a></li>
+      <li><a href="resources.html">resources</a></li>
+      <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero">
+  <canvas id="fieldCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid"></div>
+
+  <div class="wrap hero-content">
+    <div class="hero-copy">
+      <div class="eyebrow">06 / Gallery · Field Notes</div>
+      <h1>Where the<br>work <em>happens.</em></h1>
+      <p class="hero-lede">
+        A visual archive of talks, rooms, people, experiments, open work,
+        AI × Earth, and the public-facing work that sits behind the research.
+      </p>
+
+      <div class="hero-meta">
+        <div class="metric"><strong>05</strong><span>Archive chapters</span></div>
+        <div class="metric"><strong>—</strong><span>Real moments only</span></div>
+        <div class="metric"><strong>2021–26</strong><span>Working timeline</span></div>
+        <div class="metric"><strong>↗</strong><span>Open archive</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-note">MOVE THE CURSOR · THE FIELD RESPONDS</div>
+</section>
+
+<!-- =========================================================
+     FILTERS
+     ========================================================= -->
+<div class="filterbar">
+  <div class="wrap filter-inner">
+    <div class="filters" role="group" aria-label="Gallery filters">
+      <button class="filter active" data-filter="all">all</button>
+      <button class="filter" data-filter="talks">talks</button>
+      <button class="filter" data-filter="people">people</button>
+      <button class="filter" data-filter="earth">AI × earth</button>
+      <button class="filter" data-filter="horizon">horizontrax</button>
+      <button class="filter" data-filter="open">open work</button>
+    </div>
+    <div class="count"><span id="visibleCount">15</span> archive items</div>
+  </div>
+</div>
+
+<main>
+
+<!-- =========================================================
+     INTRO
+     ========================================================= -->
+<section class="intro">
+  <div class="wrap intro-grid">
+    <div>
+      <div class="kicker">The visual layer</div>
+      <h2>Not a photo dump.<br>An <em>archive.</em></h2>
+    </div>
+    <div>
+      <p>
+        The Projects page records what gets built. Research records what gets
+        investigated. This page records the rooms, people, visual artifacts
+        and moments around that work.
+      </p>
+      <div class="rule-note">
+        Replace every image source below with your own Google Photos image URL.
+        Replace captions with the exact context you want published.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ARCHIVE
+     IMPORTANT:
+     Each item has a clearly marked data-src.
+     Replace the value with your DIRECT image URL.
+     A normal Google Photos sharing-page URL usually cannot be used
+     directly as an <img src>. Use a direct/embeddable image URL.
+     ========================================================= -->
+<section class="archive">
+<div class="wrap">
+
+  <!-- 01 TALKS & ROOMS -->
+  <section class="chapter" data-chapter="talks">
+    <div class="chapter-head">
+      <div class="chapter-index">01 / TALKS & ROOMS</div>
+      <div>
+        <h2>Talks & rooms.</h2>
+        <p>Presentations, workshops, lectures, conferences and the rooms where technical and policy conversations happen.</p>
+      </div>
+    </div>
+
+    <div class="archive-grid">
+
+      <article class="item" data-category="talks"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_01"
+        data-title="Talk / Presentation"
+        data-caption="Replace with the exact talk, workshop or event context."
+        data-type="PHOTO" data-year="2026">
+        <div class="item-media">
+          <img loading="lazy" alt="Talk or presentation — replace image source">
+          <div class="placeholder">PHOTO 01 · ADD SOURCE</div>
+        </div>
+        <div class="item-shade"></div>
+        <div class="item-arrow">↗</div>
+        <div class="item-year">2026</div>
+        <div class="item-info">
+          <div class="item-type">PHOTO · TALK</div>
+          <h3 class="item-title">Talk / Presentation</h3>
+          <div class="item-caption">Replace with the exact event context and caption.</div>
+        </div>
+      </article>
+
+      <article class="item video" data-category="talks horizon"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_02"
+        data-title="Workshop / Session"
+        data-caption="Replace with the exact workshop or session context."
+        data-type="VIDEO" data-year="2026">
+        <div class="item-media">
+          <img loading="lazy" alt="Workshop or session — replace image source">
+          <div class="placeholder">VIDEO THUMBNAIL 02</div>
+        </div>
+        <div class="item-shade"></div>
+        <div class="item-arrow">▶</div>
+        <div class="item-year">2026</div>
+        <div class="item-info">
+          <div class="item-type">VIDEO · SESSION</div>
+          <h3 class="item-title">Workshop / Session</h3>
+          <div class="item-caption">Use a thumbnail here; add the actual video link later if needed.</div>
+        </div>
+      </article>
+
+      <article class="item" data-category="talks people"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_03"
+        data-title="Conference / Community"
+        data-caption="Replace with the exact conference, community or event context."
+        data-type="PHOTO" data-year="2025">
+        <div class="item-media">
+          <img loading="lazy" alt="Conference or community event — replace image source">
+          <div class="placeholder">PHOTO 03 · ADD SOURCE</div>
+        </div>
+        <div class="item-shade"></div>
+        <div class="item-arrow">↗</div>
+        <div class="item-year">2025</div>
+        <div class="item-info">
+          <div class="item-type">PHOTO · COMMUNITY</div>
+          <h3 class="item-title">Conference / Community</h3>
+          <div class="item-caption">Replace with the exact context.</div>
+        </div>
+      </article>
+
+      <article class="item" data-category="talks"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_04"
+        data-title="Technical Session"
+        data-caption="Replace with the exact session title and context."
+        data-type="PHOTO" data-year="2025">
+        <div class="item-media">
+          <img loading="lazy" alt="Technical session — replace image source">
+          <div class="placeholder">PHOTO 04 · ADD SOURCE</div>
+        </div>
+        <div class="item-shade"></div>
+        <div class="item-arrow">↗</div>
+        <div class="item-year">2025</div>
+        <div class="item-info">
+          <div class="item-type">PHOTO · TECHNICAL</div>
+          <h3 class="item-title">Technical Session</h3>
+          <div class="item-caption">Replace with the exact context.</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 02 PEOPLE & NETWORKS -->
+  <section class="chapter" data-chapter="people">
+    <div class="chapter-head">
+      <div class="chapter-index">02 / PEOPLE & NETWORKS</div>
+      <div>
+        <h2>People & networks.</h2>
+        <p>People encountered through technology, research, entrepreneurship, public-sector work, workshops and communities.</p>
+      </div>
+    </div>
+
+    <div class="archive-grid">
+
+      <article class="item" data-category="people"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_05"
+        data-title="People / Technology"
+        data-caption="Replace with the exact people and context you want to publish."
+        data-type="PHOTO" data-year="2026">
+        <div class="item-media"><img loading="lazy" alt="People and technology — replace image source"><div class="placeholder">PHOTO 05 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">PHOTO · PEOPLE</div><h3 class="item-title">People / Technology</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="people"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_06"
+        data-title="Research Community"
+        data-caption="Replace with the exact research or community context."
+        data-type="PHOTO" data-year="2026">
+        <div class="item-media"><img loading="lazy" alt="Research community — replace image source"><div class="placeholder">PHOTO 06 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">PHOTO · NETWORK</div><h3 class="item-title">Research Community</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="people talks"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_07"
+        data-title="Workshop Group"
+        data-caption="Replace with the exact workshop, cohort or group context."
+        data-type="PHOTO" data-year="2025">
+        <div class="item-media"><img loading="lazy" alt="Workshop group — replace image source"><div class="placeholder">PHOTO 07 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2025</div>
+        <div class="item-info"><div class="item-type">PHOTO · WORKSHOP</div><h3 class="item-title">Workshop Group</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="people"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_08"
+        data-title="Technology Ecosystem"
+        data-caption="Replace with the exact startup, government, company or ecosystem context."
+        data-type="PHOTO" data-year="2024">
+        <div class="item-media"><img loading="lazy" alt="Technology ecosystem — replace image source"><div class="placeholder">PHOTO 08 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2024</div>
+        <div class="item-info"><div class="item-type">PHOTO · ECOSYSTEM</div><h3 class="item-title">Technology Ecosystem</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 03 AI × EARTH -->
+  <section class="chapter" data-chapter="earth">
+    <div class="chapter-head">
+      <div class="chapter-index">03 / AI × EARTH</div>
+      <div>
+        <h2>AI × Earth.</h2>
+        <p>Visual material around climate, sustainability, environmental systems, efficient AI and the relationship between computation and the planet.</p>
+      </div>
+    </div>
+
+    <div class="archive-grid">
+
+      <article class="item" data-category="earth"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_09"
+        data-title="AI × Earth"
+        data-caption="Replace with the exact environmental, climate or AI-sustainability context."
+        data-type="PHOTO" data-year="2026">
+        <div class="item-media"><img loading="lazy" alt="AI and Earth — replace image source"><div class="placeholder">PHOTO 09 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">PHOTO · AI × EARTH</div><h3 class="item-title">AI × Earth</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="earth open"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_10"
+        data-title="Environmental Systems"
+        data-caption="Replace with the exact environmental dataset, field context or system."
+        data-type="PHOTO" data-year="2025">
+        <div class="item-media"><img loading="lazy" alt="Environmental systems — replace image source"><div class="placeholder">PHOTO 10 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2025</div>
+        <div class="item-info"><div class="item-type">PHOTO · ENVIRONMENT</div><h3 class="item-title">Environmental Systems</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="earth"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_11"
+        data-title="Sustainable Computing"
+        data-caption="Replace with the exact sustainability or efficient-AI context."
+        data-type="PHOTO" data-year="2025">
+        <div class="item-media"><img loading="lazy" alt="Sustainable computing — replace image source"><div class="placeholder">PHOTO 11 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2025</div>
+        <div class="item-info"><div class="item-type">PHOTO · GREEN AI</div><h3 class="item-title">Sustainable Computing</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="earth"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_12"
+        data-title="Climate / Data"
+        data-caption="Replace with the exact climate-data context."
+        data-type="PHOTO" data-year="2024">
+        <div class="item-media"><img loading="lazy" alt="Climate and data — replace image source"><div class="placeholder">PHOTO 12 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2024</div>
+        <div class="item-info"><div class="item-type">PHOTO · CLIMATE</div><h3 class="item-title">Climate / Data</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 04 HORIZONTRAX -->
+  <section class="chapter" data-chapter="horizon">
+    <div class="chapter-head">
+      <div class="chapter-index">04 / HORIZONTRAX</div>
+      <div>
+        <h2>Making AI understandable.</h2>
+        <p>AI-literacy videos, educational material, public-facing explainers and the work of turning technical ideas into accessible learning.</p>
+      </div>
+    </div>
+
+    <div class="archive-grid">
+
+      <article class="item video" data-category="horizon"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_13"
+        data-title="HorizonTrax — AI Literacy"
+        data-caption="Replace with the exact video title and link/context."
+        data-type="VIDEO" data-year="2026">
+        <div class="item-media"><img loading="lazy" alt="HorizonTrax AI literacy — replace image source"><div class="placeholder">VIDEO THUMBNAIL 13</div></div>
+        <div class="item-shade"></div><div class="item-arrow">▶</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">VIDEO · HORIZONTRAX</div><h3 class="item-title">AI Literacy</h3><div class="item-caption">Add the exact episode/video context.</div></div>
+      </article>
+
+      <article class="item video" data-category="horizon"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_14"
+        data-title="HorizonTrax — Learning"
+        data-caption="Replace with the exact video title and link/context."
+        data-type="VIDEO" data-year="2026">
+        <div class="item-media"><img loading="lazy" alt="HorizonTrax learning — replace image source"><div class="placeholder">VIDEO THUMBNAIL 14</div></div>
+        <div class="item-shade"></div><div class="item-arrow">▶</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">VIDEO · EDUCATION</div><h3 class="item-title">Learning / Explainer</h3><div class="item-caption">Add the exact episode/video context.</div></div>
+      </article>
+
+      <article class="item video" data-category="horizon"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_15"
+        data-title="HorizonTrax — Public AI"
+        data-caption="Replace with the exact video title and link/context."
+        data-type="VIDEO" data-year="2025">
+        <div class="item-media"><img loading="lazy" alt="HorizonTrax public AI — replace image source"><div class="placeholder">VIDEO THUMBNAIL 15</div></div>
+        <div class="item-shade"></div><div class="item-arrow">▶</div><div class="item-year">2025</div>
+        <div class="item-info"><div class="item-type">VIDEO · PUBLIC AI</div><h3 class="item-title">Public AI</h3><div class="item-caption">Add the exact episode/video context.</div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 05 OPEN WORK -->
+  <section class="chapter" data-chapter="open">
+    <div class="chapter-head">
+      <div class="chapter-index">05 / OPEN WORK</div>
+      <div>
+        <h2>Research that can travel.</h2>
+        <p>White papers, research artifacts, diagrams, open-source systems and visual material that make the work easier to inspect and reuse.</p>
+      </div>
+    </div>
+
+    <div class="archive-grid">
+
+      <article class="item document" data-category="open"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_16"
+        data-title="Research Artifact"
+        data-caption="Replace with the exact paper, white paper, experiment or artifact."
+        data-type="DOCUMENT" data-year="2026">
+        <div class="item-media">
+          <div class="doc-sheet"></div>
+        </div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">DOCUMENT · RESEARCH</div><h3 class="item-title">Research Artifact</h3><div class="item-caption">Replace with the exact artifact title.</div></div>
+      </article>
+
+      <article class="item" data-category="open"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_17"
+        data-title="Open Research"
+        data-caption="Replace with the exact research context."
+        data-type="PHOTO" data-year="2026">
+        <div class="item-media"><img loading="lazy" alt="Open research — replace image source"><div class="placeholder">PHOTO 17 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2026</div>
+        <div class="item-info"><div class="item-type">PHOTO · OPEN WORK</div><h3 class="item-title">Open Research</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item document" data-category="open"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_18"
+        data-title="White Paper / Note"
+        data-caption="Replace with the exact document title and context."
+        data-type="DOCUMENT" data-year="2025">
+        <div class="item-media"><div class="doc-sheet"></div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2025</div>
+        <div class="item-info"><div class="item-type">DOCUMENT · OPEN KNOWLEDGE</div><h3 class="item-title">White Paper / Note</h3><div class="item-caption">Add the exact document title.</div></div>
+      </article>
+
+      <article class="item" data-category="open"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_19"
+        data-title="Prototype / System"
+        data-caption="Replace with the exact prototype or system context."
+        data-type="PHOTO" data-year="2025">
+        <div class="item-media"><img loading="lazy" alt="Prototype or system — replace image source"><div class="placeholder">PHOTO 19 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2025</div>
+        <div class="item-info"><div class="item-type">PHOTO · PROTOTYPE</div><h3 class="item-title">Prototype / System</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+      <article class="item" data-category="open earth"
+        data-src="YOUR_GOOGLE_PHOTOS_DIRECT_IMAGE_URL_20"
+        data-title="Visual Research"
+        data-caption="Replace with the exact visualization, dataset or research context."
+        data-type="PHOTO" data-year="2024">
+        <div class="item-media"><img loading="lazy" alt="Visual research — replace image source"><div class="placeholder">PHOTO 20 · ADD SOURCE</div></div>
+        <div class="item-shade"></div><div class="item-arrow">↗</div><div class="item-year">2024</div>
+        <div class="item-info"><div class="item-type">PHOTO · VISUAL RESEARCH</div><h3 class="item-title">Visual Research</h3><div class="item-caption">Add the exact context.</div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="empty" id="emptyState">No archive items match this filter yet.</div>
+
+</div>
+</section>
+
+<!-- =========================================================
+     CLOSING
+     ========================================================= -->
+<section class="closing">
+  <div class="wrap closing-grid">
+    <div>
+      <div class="kicker">Archive principle</div>
+      <h2>Keep the<br>evidence <em>close.</em></h2>
+    </div>
+    <div>
+      <p>
+        A portfolio can describe the work. A field archive can show the
+        environments, conversations and artifacts around it. This page is
+        designed to stay useful as new talks, workshops, videos and research
+        moments are added.
+      </p>
+      <div class="note">
+        <strong>Publishing rule:</strong> use real images, exact captions and
+        links you control. Do not add invented events, affiliations or people.
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="width:100%;display:flex;justify-content:space-between;gap:20px;">
+    <span>© 2026 Rahul Kiran Gunti</span>
+    <span>
+      <a href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="index.html">Back to index</a>
+    </span>
+  </div>
+</footer>
+
+<!-- =========================================================
+     LIGHTBOX
+     ========================================================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Gallery item">
+    <div class="lightbox-top">
+      <span id="lightboxType">FIELD NOTE</span>
+      <button class="lightbox-close" id="lightboxClose" type="button">close ×</button>
+    </div>
+    <div class="lightbox-media" id="lightboxMedia"></div>
+    <div class="lightbox-bottom">
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxCaption"></p>
+      <div class="lightbox-hint">ESC · CLOSE</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   IMAGE LOADER
+   ---------------------------------------------------------
+   Every card uses data-src. Replace each placeholder value
+   with your direct/embeddable image URL.
+   ========================================================= */
+const items = [...document.querySelectorAll('.item')];
+
+items.forEach(item => {
+  const img = item.querySelector('img');
+  const src = item.dataset.src;
+
+  if (!img || !src || src.startsWith('YOUR_')) return;
+
+  img.src = src;
+  img.onload = () => item.classList.add('loaded');
+  img.onerror = () => item.classList.remove('loaded');
+});
+
+/* =========================================================
+   FILTERING
+   ========================================================= */
+const filterButtons = [...document.querySelectorAll('.filter')];
+const visibleCount = document.getElementById('visibleCount');
+const emptyState = document.getElementById('emptyState');
+
+function applyFilter(filter){
+  let visible = 0;
+
+  items.forEach(item => {
+    const categories = (item.dataset.category || '').split(/\s+/);
+    const show = filter === 'all' || categories.includes(filter);
+
+    item.style.display = show ? '' : 'none';
+    if(show) visible++;
+  });
+
+  document.querySelectorAll('.chapter').forEach(chapter => {
+    const chapterItems = [...chapter.querySelectorAll('.item')];
+    const hasVisible = chapterItems.some(item => item.style.display !== 'none');
+    chapter.style.display = hasVisible ? '' : 'none';
+  });
+
+  visibleCount.textContent = visible;
+  emptyState.classList.toggle('show', visible === 0);
+}
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    applyFilter(button.dataset.filter);
+  });
+});
+
+applyFilter('all');
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+const lightbox = document.getElementById('lightbox');
+const lightboxMedia = document.getElementById('lightboxMedia');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxType = document.getElementById('lightboxType');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(item){
+  const src = item.dataset.src;
+  const title = item.dataset.title || 'Field Note';
+  const caption = item.dataset.caption || '';
+  const type = item.dataset.type || 'FIELD NOTE';
+
+  lightboxTitle.textContent = title;
+  lightboxCaption.textContent = caption;
+  lightboxType.textContent = `${type} · ${item.dataset.year || ''}`;
+
+  lightboxMedia.innerHTML = '';
+
+  if(src && !src.startsWith('YOUR_')){
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = title;
+    lightboxMedia.appendChild(img);
+  }else{
+    const placeholder = document.createElement('div');
+    placeholder.style.cssText = 'color:rgba(255,255,255,.35);font:11px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;';
+    placeholder.textContent = 'Replace image source to preview';
+    lightboxMedia.appendChild(placeholder);
+  }
+
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  lightboxMedia.innerHTML='';
+}
+
+items.forEach(item => item.addEventListener('click', () => openLightbox(item)));
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => {
+  if(e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeLightbox();
+});
+
+/* =========================================================
+   HERO — lightweight interactive field / constellation
+   ========================================================= */
+const canvas = document.getElementById('fieldCanvas');
+const ctx = canvas.getContext('2d');
+let W=0,H=0,dpr=1;
+let particles=[];
+let mouse={x:-9999,y:-9999,active:false};
+
+function resizeCanvas(){
+  const rect=canvas.getBoundingClientRect();
+  dpr=Math.min(window.devicePixelRatio||1,2);
+  W=rect.width;H=rect.height;
+  canvas.width=Math.floor(W*dpr);
+  canvas.height=Math.floor(H*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  const count=Math.min(115,Math.max(55,Math.floor(W/12)));
+  particles=Array.from({length:count},(_,i)=>({
+    x:W*.48+Math.random()*W*.62-W*.31,
+    y:H*.5+Math.random()*H*1.05-H*.525,
+    z:.15+Math.random()*.95,
+    r:.6+Math.random()*1.7,
+    a:.12+Math.random()*.34,
+    speed:.00035+Math.random()*.00075,
+    phase:Math.random()*Math.PI*2,
+    orbit:20+Math.random()*130
+  }));
+}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+
+canvas.addEventListener('pointermove',e=>{
+  const r=canvas.getBoundingClientRect();
+  mouse.x=e.clientX-r.left;
+  mouse.y=e.clientY-r.top;
+  mouse.active=true;
+});
+canvas.addEventListener('pointerleave',()=>mouse.active=false);
+
+function drawField(t){
+  ctx.clearRect(0,0,W,H);
+
+  const cx=W*.72,cy=H*.51;
+
+  /* large orbital rings */
+  ctx.save();
+  ctx.translate(cx,cy);
+  ctx.rotate(-.22);
+
+  for(let i=0;i<6;i++){
+    const rx=150+i*62;
+    const ry=62+i*27;
+    ctx.beginPath();
+    ctx.ellipse(0,0,rx,ry,0,0,Math.PI*2);
+    ctx.strokeStyle=`rgba(177,79,42,${.045+i*.006})`;
+    ctx.lineWidth=1;
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  ctx.arc(0,0,92,0,Math.PI*2);
+  ctx.strokeStyle='rgba(92,107,79,.09)';
+  ctx.stroke();
+  ctx.restore();
+
+  /* particles */
+  for(const p of particles){
+    const ang=t*p.speed+p.phase;
+    const ox=Math.cos(ang)*p.orbit*p.z;
+    const oy=Math.sin(ang*.73)*p.orbit*.55*p.z;
+    let x=p.x+ox, y=p.y+oy;
+
+    if(mouse.active){
+      const dx=x-mouse.x,dy=y-mouse.y;
+      const d=Math.hypot(dx,dy);
+      if(d<170){
+        const push=(1-d/170)*18;
+        x+=dx/d*push;
+        y+=dy/d*push;
+      }
+    }
+
+    ctx.beginPath();
+    ctx.arc(x,y,p.r*p.z,0,Math.PI*2);
+    ctx.fillStyle=`rgba(92,107,79,${p.a*p.z})`;
+    ctx.fill();
+
+    /* subtle connections to nearby points */
+    for(let j=0;j<particles.length;j+=7){
+      const q=particles[j];
+      const qang=t*q.speed+q.phase;
+      const qx=q.x+Math.cos(qang)*q.orbit*q.z;
+      const qy=q.y+Math.sin(qang*.73)*q.orbit*.55*q.z;
+      const d=Math.hypot(x-qx,y-qy);
+      if(d<95){
+        ctx.beginPath();
+        ctx.moveTo(x,y);ctx.lineTo(qx,qy);
+        ctx.strokeStyle=`rgba(177,79,42,${.025*(1-d/95)})`;
+        ctx.stroke();
+      }
+    }
+  }
+
+  /* central signal */
+  const pulse=1+Math.sin(t*.0014)*.06;
+  ctx.beginPath();
+  ctx.arc(cx,cy,35*pulse,0,Math.PI*2);
+  ctx.strokeStyle='rgba(177,79,42,.13)';
+  ctx.stroke();
+
+  requestAnimationFrame(drawField);
+}
+requestAnimationFrame(drawField);
+</script>
+
+</body>
+</html>
