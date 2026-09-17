@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact — Rahul Kiran</title>
+<meta name="description" content="Contact Rahul Kiran for research, collaboration, academic opportunities and responsible AI work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f0e7;--paper2:#ebe5d8;--ink:#292c26;--muted:#706f65;--line:#cfc8b9;--terra:#a45f49;--sage:#dbe2d3;--white:#faf8f2;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}::selection{background:var(--terra);color:#fff}
+.nav{position:sticky;top:0;z-index:50;background:rgba(244,240,231,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--max);height:70px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:baseline;gap:14px;white-space:nowrap}.brand strong{font:500 15px "DM Mono",monospace;letter-spacing:.08em}.brand span{font:400 10px "DM Mono",monospace;color:var(--terra);letter-spacing:.12em}
+.links{display:flex;align-items:center;gap:22px;font:400 10px "DM Mono",monospace}.links a{opacity:.72;transition:.2s}.links a:hover,.links a.active{opacity:1;color:var(--terra)}.gh{border:1px solid var(--ink);padding:8px 11px;opacity:1!important}
+@media(max-width:850px){.links a:nth-child(n+4){display:none}.nav-in{padding:0 18px}.links{gap:13px}.brand span{display:none}}
+.hero{min-height:68vh;border-bottom:1px solid var(--line);position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero:before{content:"";position:absolute;width:58vw;height:58vw;right:-20vw;top:-20vw;border-radius:50%;background:radial-gradient(circle,rgba(164,95,73,.16),rgba(164,95,73,0) 68%)}
+.hero:after{content:"";position:absolute;width:70vw;height:42vw;left:-18vw;bottom:-28vw;border-radius:50%;background:radial-gradient(circle,rgba(203,214,197,.9),rgba(203,214,197,0) 68%)}
+.hero-in{max-width:var(--max);width:100%;margin:auto;padding:105px 28px 68px;position:relative;z-index:2}
+.eyebrow,.label{font:500 10px "DM Mono",monospace;color:var(--terra);letter-spacing:.16em}
+h1{font:400 clamp(70px,11vw,145px) "DM Serif Display",serif;line-height:.84;letter-spacing:-.06em;margin:25px 0 0;max-width:900px}h1 em{font-style:normal;color:var(--terra)}
+.hero-foot{display:grid;grid-template-columns:1fr 260px;gap:60px;margin-top:72px}.hero-copy{font-size:16px;line-height:1.75;color:var(--muted);max-width:640px}.hero-meta{font:400 10px "DM Mono",monospace;color:var(--muted);line-height:1.9}.hero-meta b{color:var(--ink);font-weight:500}
+@media(max-width:700px){.hero-in{padding:80px 20px 48px}.hero-foot{display:block;margin-top:50px}.hero-meta{margin-top:28px}}
+.section{padding:95px 0;border-bottom:1px solid var(--line)}.wrap{max-width:var(--max);margin:auto;padding:0 28px}
+.grid{display:grid;grid-template-columns:1fr 1.7fr;gap:70px}.left h2{font:400 clamp(44px,5vw,70px) "DM Serif Display",serif;line-height:.96;letter-spacing:-.04em;margin:18px 0 0}.left p{font-size:13px;line-height:1.7;color:var(--muted);max-width:300px;margin-top:25px}.rule{height:1px;background:var(--line);margin-top:24px}
+.contact-box{background:var(--white);border:1px solid var(--line);padding:38px;box-shadow:0 25px 60px rgba(54,54,45,.08)}
+.contact-intro{font:400 28px "DM Serif Display",serif;line-height:1.1;margin:0 0 30px;max-width:650px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:22px}.field{display:flex;flex-direction:column;gap:9px}.field.full{grid-column:1/-1}label{font:500 9px "DM Mono",monospace;color:var(--muted);letter-spacing:.1em}
+input,textarea,select{font:400 14px Inter,Arial,sans-serif;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:14px 15px;border-radius:0;outline:none;transition:.2s}textarea{min-height:155px;resize:vertical}select{appearance:auto}
+input:focus,textarea:focus,select:focus{border-color:var(--terra);box-shadow:0 0 0 2px rgba(164,95,73,.08)}
+.actions{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:5px}.submit{background:var(--ink);color:var(--white);border:1px solid var(--ink);padding:14px 20px;font:500 10px "DM Mono",monospace;letter-spacing:.06em;cursor:pointer;transition:.2s}.submit:hover{background:var(--terra);border-color:var(--terra)}.form-note{font:400 9px "DM Mono",monospace;color:var(--muted)}
+@media(max-width:800px){.wrap{padding:0 20px}.grid{grid-template-columns:1fr;gap:40px}.contact-box{padding:25px}.form{grid-template-columns:1fr}.field.full{grid-column:auto}.actions{grid-column:auto;display:block}.form-note{margin-top:16px}}
+.channels{background:var(--sage);padding:85px 0;border-bottom:1px solid var(--line)}.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:45px}.channel{background:var(--sage);padding:28px;min-height:205px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.channel:hover{background:var(--white)}.channel small{font:500 9px "DM Mono",monospace;color:var(--terra);letter-spacing:.12em}.channel h3{font:400 29px "DM Serif Display",serif;margin:25px 0 8px;line-height:1}.channel p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}.channel .go{font:400 10px "DM Mono",monospace;margin-top:25px}
+@media(max-width:750px){.channel-grid{grid-template-columns:1fr}}
+.expect{padding:95px 0}.expect-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:end}.expect h2{font:400 clamp(45px,6vw,78px) "DM Serif Display",serif;line-height:.94;letter-spacing:-.045em;margin:20px 0}.expect h2 em{font-style:normal;color:var(--terra)}.expect-copy{font-size:14px;line-height:1.75;color:var(--muted);max-width:520px}.availability{border-top:1px solid var(--line)}.availability div{padding:16px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font:400 10px "DM Mono",monospace}.availability span:last-child{color:var(--muted);text-align:right}
+@media(max-width:750px){.expect-inner{grid-template-columns:1fr;gap:45px}}
+footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;justify-content:space-between;gap:30px;font:400 9px "DM Mono",monospace;color:var(--muted)}footer b{font-weight:500;color:var(--ink)}
+@media(max-width:600px){footer{padding:45px 20px;display:block}footer div+div{margin-top:20px}}
+#status{font:400 10px "DM Mono",monospace;margin-top:18px;display:none;color:var(--terra)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+<a class="brand" href="index.html"><strong>RAHUL // AI</strong><span>CONTACT</span></a>
+<div class="links">
+<a href="projects.html">projects</a><a href="research.html">research</a><a href="education.html">education</a><a href="certifications.html">certifications</a><a href="gallery.html">gallery</a><a href="resources.html">resources</a><a class="gh" href="https://github.com/rahulkiran2222" target="_blank">github ↗</a><a class="active" href="contact.html">contact</a>
+</div></div></nav>
+
+<header class="hero"><div class="hero-in">
+<div class="eyebrow">08 / OPEN FOR CONVERSATION</div>
+<h1>Let's talk<br><em>about the work.</em></h1>
+<div class="hero-foot"><div class="hero-copy">For research collaboration, PhD conversations, responsible AI, digital transformation, or thoughtful technical work, send a note. A concise message with context and a clear reason for reaching out is always welcome.</div><div class="hero-meta"><b>RESEARCH</b> collaboration<br><b>ACADEMIA</b> PhD / supervision<br><b>ENGINEERING</b> technical work<br><b>EDUCATION</b> HorizonTrax</div></div>
+</div></header>
+
+<section class="section"><div class="wrap"><div class="grid">
+<div class="left"><div class="label">01 / SEND A NOTE</div><div class="rule"></div><h2>Start with<br>a question.</h2><p>The form is intentionally simple. Tell me who you are, what you are working on, and why you think there is something worth discussing.</p></div>
+<div class="contact-box">
+<p class="contact-intro">What would you like to discuss?</p>
+<form class="form" id="contactForm">
+<div class="field"><label for="name">YOUR NAME</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+<div class="field"><label for="email">EMAIL</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
+<div class="field full"><label for="topic">TOPIC</label><select id="topic" name="topic"><option>Research collaboration</option><option>PhD / academic opportunity</option><option>Responsible AI / AI governance</option><option>Digital product engineering</option><option>HorizonTrax / education</option><option>Other</option></select></div>
+<div class="field full"><label for="message">MESSAGE</label><textarea id="message" name="message" placeholder="A little context, your question, and what you have in mind..." required></textarea></div>
+<div class="actions"><button class="submit" type="submit">OPEN EMAIL ↗</button><span class="form-note">This opens your email client with the message prepared.</span></div>
+</form><div id="status"></div>
+</div>
+</div></div></section>
+
+<section class="channels"><div class="wrap">
+<div class="label">02 / OTHER DOORS</div><div class="rule"></div>
+<div class="channel-grid">
+<a class="channel" href="https://github.com/rahulkiran2222" target="_blank"><div><small>CODE / RESEARCH</small><h3>GitHub</h3><p>Repositories, experiments, prototypes and public technical work.</p></div><div class="go">VISIT PROFILE ↗</div></a>
+<a class="channel" href="https://www.linkedin.com/" target="_blank"><div><small>PROFESSIONAL</small><h3>LinkedIn</h3><p>Professional background, academic interests and broader network.</p></div><div class="go">OPEN LINKEDIN ↗</div></a>
+<a class="channel" href="https://zenodo.org/" target="_blank"><div><small>PUBLICATIONS</small><h3>Zenodo</h3><p>Research records and publicly archived scholarly work.</p></div><div class="go">OPEN ARCHIVE ↗</div></a>
+</div></div></section>
+
+<section class="expect"><div class="wrap"><div class="expect-inner">
+<div><div class="label">03 / BEFORE YOU WRITE</div><div class="rule"></div><h2>Good conversations<br>start with <em>context.</em></h2><p class="expect-copy">If you are reaching out about research, include the problem you are interested in, the relevant work or paper, and what kind of collaboration you are proposing. For engineering work, a short description of the problem, scope and expected outcome is enough.</p></div>
+<div class="availability"><div><span>RESEARCH</span><span>COLLABORATION / DISCUSSION</span></div><div><span>ACADEMIC</span><span>PHD / SUPERVISION</span></div><div><span>ENGINEERING</span><span>PRODUCT / AI SYSTEMS</span></div><div><span>EDUCATION</span><span>HORIZONTRAX</span></div></div>
+</div></div></section>
+
+<footer><div><b>RAHUL // AI</b><br>Research · engineering · responsible technology</div><div>CONTACT / OPEN CONVERSATION<br>Built for thoughtful correspondence</div></footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const email=document.getElementById('email').value.trim();
+ const topic=document.getElementById('topic').value;
+ const message=document.getElementById('message').value.trim();
+ const subject=encodeURIComponent(topic+' — from '+name);
+ const body=encodeURIComponent('Name: '+name+'\\nEmail: '+email+'\\nTopic: '+topic+'\\n\\n'+message);
+ window.location.href='mailto:rahulkiran2222@gmail.com?subject='+subject+'&body='+body;
+ const s=document.getElementById('status');s.style.display='block';s.textContent='Opening your email client…';
+});
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'});io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.contact-box,.channel,.expect-inner').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
