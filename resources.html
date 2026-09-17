@@ -4,470 +4,132 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Resources — Rahul Kiran</title>
-<meta name="description" content="Open resources, papers, tools, learning materials and public research by Rahul Kiran.">
+<meta name="description" content="Open learning, public research, free courses and knowledge resources by Rahul Kiran.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#f4f0e7; --paper2:#ebe5d8; --ink:#292c26; --muted:#706f65;
-  --line:#cfc8b9; --terracotta:#a45f49; --sage:#dbe2d3; --white:#faf8f2;
-  --max:1240px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--terracotta);color:#fff}
-
-/* NAV */
+:root{--paper:#f4f0e7;--paper2:#ebe5d8;--ink:#292c26;--muted:#706f65;--line:#cfc8b9;--terra:#a45f49;--sage:#dbe2d3;--sage2:#cbd6c5;--white:#faf8f2;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}::selection{background:var(--terra);color:#fff}
 .nav{position:sticky;top:0;z-index:50;background:rgba(244,240,231,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:var(--max);height:70px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.brand{display:flex;align-items:baseline;gap:14px;white-space:nowrap}
-.brand strong{font:500 15px "DM Mono",monospace;letter-spacing:.08em}
-.brand span{font:400 10px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.12em}
-.links{display:flex;align-items:center;gap:22px;font:400 10px "DM Mono",monospace}
-.links a{opacity:.72;transition:.2s}
-.links a:hover,.links a.active{opacity:1;color:var(--terracotta)}
-.gh{border:1px solid var(--ink);padding:8px 11px;opacity:1!important}
+.brand{display:flex;align-items:baseline;gap:14px;white-space:nowrap}.brand strong{font:500 15px "DM Mono",monospace;letter-spacing:.08em}.brand span{font:400 10px "DM Mono",monospace;color:var(--terra);letter-spacing:.12em}
+.links{display:flex;align-items:center;gap:22px;font:400 10px "DM Mono",monospace}.links a{opacity:.72;transition:.2s}.links a:hover,.links a.active{opacity:1;color:var(--terra)}.gh{border:1px solid var(--ink);padding:8px 11px;opacity:1!important}
 @media(max-width:850px){.links a:nth-child(n+4){display:none}.nav-in{padding:0 18px}.links{gap:13px}.brand span{display:none}}
-
-/* HERO */
-.hero{min-height:72vh;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:flex-end}
-.hero:before{content:"";position:absolute;width:58vw;height:58vw;right:-20vw;top:-18vw;border-radius:50%;background:radial-gradient(circle,rgba(164,95,73,.15),rgba(164,95,73,0) 68%)}
-.hero:after{content:"";position:absolute;width:70vw;height:35vw;left:-15vw;bottom:-23vw;border-radius:50%;background:radial-gradient(circle,rgba(203,214,197,.9),rgba(203,214,197,0) 67%)}
-.hero-in{max-width:var(--max);width:100%;margin:auto;padding:100px 28px 65px;position:relative;z-index:2}
-.eyebrow{font:500 10px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.16em;margin-bottom:25px}
-h1{font:400 clamp(66px,10vw,132px) "DM Serif Display",serif;line-height:.87;letter-spacing:-.055em;margin:0;max-width:900px}
-h1 em{font-style:normal;color:var(--terracotta)}
-.hero-foot{display:grid;grid-template-columns:1fr 220px;gap:50px;margin-top:72px}
-.hero-copy{font-size:16px;line-height:1.75;color:var(--muted);max-width:610px}
-.hero-meta{font:400 10px "DM Mono",monospace;color:var(--muted);line-height:1.8}
-.hero-meta b{color:var(--ink);font-weight:500}
+.hero{min-height:70vh;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:flex-end}
+.hero:before{content:"";position:absolute;width:62vw;height:62vw;right:-22vw;top:-22vw;border-radius:50%;background:radial-gradient(circle,rgba(164,95,73,.15),rgba(164,95,73,0) 68%)}
+.hero:after{content:"";position:absolute;width:70vw;height:38vw;left:-15vw;bottom:-25vw;border-radius:50%;background:radial-gradient(circle,rgba(203,214,197,.9),rgba(203,214,197,0) 68%)}
+.hero-in{max-width:var(--max);width:100%;margin:auto;padding:100px 28px 62px;position:relative;z-index:2}.eyebrow{font:500 10px "DM Mono",monospace;color:var(--terra);letter-spacing:.16em;margin-bottom:25px}
+h1{font:400 clamp(66px,10vw,132px) "DM Serif Display",serif;line-height:.87;letter-spacing:-.055em;margin:0;max-width:950px}h1 em{font-style:normal;color:var(--terra)}
+.hero-foot{display:grid;grid-template-columns:1fr 220px;gap:50px;margin-top:70px}.hero-copy{font-size:16px;line-height:1.75;color:var(--muted);max-width:620px}.hero-meta{font:400 10px "DM Mono",monospace;color:var(--muted);line-height:1.8}.hero-meta b{color:var(--ink);font-weight:500}
 @media(max-width:700px){.hero-in{padding:80px 20px 45px}.hero-foot{display:block;margin-top:48px}.hero-meta{margin-top:28px}}
-
-/* COMMON */
-.section{padding:96px 0;border-bottom:1px solid var(--line)}
-.section.sage{background:var(--sage)}
-.wrap{max-width:var(--max);margin:auto;padding:0 28px}
-.section-head{display:grid;grid-template-columns:1fr 2fr;gap:55px;margin-bottom:50px}
-.section-no{font:400 10px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.13em}
-.rule{height:1px;background:var(--line);margin-top:24px}
-h2{font:400 clamp(42px,5vw,67px) "DM Serif Display",serif;line-height:.98;letter-spacing:-.04em;margin:0}
-.deck{font-size:14px;line-height:1.75;color:var(--muted);max-width:620px;margin:17px 0 0}
+.section{padding:96px 0;border-bottom:1px solid var(--line)}.section.sage{background:var(--sage)}.wrap{max-width:var(--max);margin:auto;padding:0 28px}
+.section-head{display:grid;grid-template-columns:1fr 2fr;gap:55px;margin-bottom:50px}.section-no{font:400 10px "DM Mono",monospace;color:var(--terra);letter-spacing:.13em}.rule{height:1px;background:var(--line);margin-top:24px}
+h2{font:400 clamp(42px,5vw,67px) "DM Serif Display",serif;line-height:.98;letter-spacing:-.04em;margin:0}.deck{font-size:14px;line-height:1.75;color:var(--muted);max-width:640px;margin:17px 0 0}
 @media(max-width:750px){.section{padding:70px 0}.wrap{padding:0 20px}.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:35px}}
 
-/* RESOURCE CARDS */
-.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.resource{border:1px solid var(--line);background:var(--white);min-height:300px;padding:23px;display:flex;flex-direction:column;justify-content:space-between;position:relative;transition:transform .35s,box-shadow .35s}
-.resource:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(54,54,45,.11)}
-.resource-no{font:400 9px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.1em}
-.resource h3{font:400 28px "DM Serif Display",serif;line-height:1.05;margin:25px 0 12px}
-.resource p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
-.resource-foot{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;display:flex;justify-content:space-between;gap:15px;font:400 9px "DM Mono",monospace;color:var(--muted)}
-.resource-foot span:last-child{color:var(--terracotta)}
-@media(max-width:900px){.resource-grid{grid-template-columns:1fr 1fr}}@media(max-width:580px){.resource-grid{grid-template-columns:1fr}}
+/* GRAND HORIZON SECTION */
+.horizon{background:var(--sage);padding:105px 0 115px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.horizon:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(41,44,38,.11);border-radius:50%;right:-210px;top:-190px}
+.horizon:after{content:"";position:absolute;width:390px;height:390px;border:1px dashed rgba(164,95,73,.28);border-radius:50%;right:-90px;top:-75px}
+.horizon-in{max-width:var(--max);margin:auto;padding:0 28px;position:relative;z-index:2}
+.horizon-kicker{font:500 10px "DM Mono",monospace;color:var(--terra);letter-spacing:.16em}
+.horizon-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:20px}
+.horizon-title{font:400 clamp(55px,8vw,108px) "DM Serif Display",serif;line-height:.86;letter-spacing:-.055em;max-width:780px}
+.horizon-title em{font-style:normal;color:var(--terra)}
+.free-badge{border:1px solid var(--ink);padding:13px 16px;font:500 10px "DM Mono",monospace;white-space:nowrap;background:rgba(250,248,242,.55)}
+.horizon-intro{max-width:700px;margin:34px 0 48px;font-size:16px;line-height:1.75;color:var(--muted)}
+.course-shell{background:var(--white);border:1px solid var(--line);padding:18px;box-shadow:0 28px 70px rgba(54,54,45,.12)}
+.course-head{display:flex;justify-content:space-between;gap:25px;align-items:center;padding:18px 18px 22px;border-bottom:1px solid var(--line)}
+.course-label{font:500 9px "DM Mono",monospace;color:var(--terra);letter-spacing:.12em}.course-name{font:400 34px "DM Serif Display",serif;margin-top:8px}
+.course-links{display:flex;gap:8px;flex-wrap:wrap}.course-link{border:1px solid var(--ink);padding:10px 13px;font:400 9px "DM Mono",monospace;transition:.2s}.course-link.primary{background:var(--ink);color:var(--white)}.course-link:hover{border-color:var(--terra);color:var(--terra)}.course-link.primary:hover{background:var(--terra);color:#fff}
+.course-map{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:18px}
+.module{min-height:235px;padding:22px;border-right:1px solid var(--line);position:relative}.module:last-child{border-right:0}
+.module-no{font:400 9px "DM Mono",monospace;color:var(--terra)}.module h3{font:400 28px "DM Serif Display",serif;line-height:1.02;margin:40px 0 12px}.module p{font-size:11px;line-height:1.65;color:var(--muted);margin:0}
+.module:after{content:"↗";position:absolute;right:20px;bottom:20px;font:400 13px "DM Mono",monospace;color:var(--muted)}
+.horizon-note{margin-top:20px;font:400 9px "DM Mono",monospace;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){.horizon{padding:75px 0}.horizon-in{padding:0 20px}.horizon-top{display:block}.free-badge{display:inline-block;margin-top:25px}.course-head{display:block}.course-links{margin-top:20px}.course-map{grid-template-columns:1fr 1fr}.module:nth-child(2){border-right:0}.module:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:520px){.course-map{grid-template-columns:1fr}.module{border-right:0!important;border-bottom:1px solid var(--line)}.module:last-child{border-bottom:0}.course-name{font-size:28px}}
 
-/* FEATURED PAPER */
-.paper-list{border-top:1px solid var(--line)}
-.paper{display:grid;grid-template-columns:75px 1fr 150px;gap:25px;align-items:center;padding:27px 8px;border-bottom:1px solid var(--line);transition:.25s}
-.paper:hover{background:rgba(255,255,255,.35);padding-left:16px;padding-right:16px}
-.paper-num,.paper-type,.paper-date{font:400 9px "DM Mono",monospace;color:var(--muted)}
-.paper-title{font:400 27px "DM Serif Display",serif;line-height:1.1}
-.paper-sub{font-size:11px;color:var(--muted);margin-top:7px}
-.paper-date{text-align:right;color:var(--terracotta)}
+/* PAPERS */
+.paper-list{border-top:1px solid var(--line)}.paper{display:grid;grid-template-columns:70px 1fr 150px;gap:25px;align-items:center;padding:27px 8px;border-bottom:1px solid var(--line);transition:.25s}.paper:hover{background:rgba(255,255,255,.35);padding-left:16px;padding-right:16px}
+.paper-num,.paper-date{font:400 9px "DM Mono",monospace;color:var(--muted)}.paper-title{font:400 27px "DM Serif Display",serif;line-height:1.1}.paper-sub{font-size:11px;color:var(--muted);margin-top:7px}.paper-date{text-align:right;color:var(--terra)}
 @media(max-width:700px){.paper{grid-template-columns:45px 1fr}.paper-date{display:none}.paper-title{font-size:22px}}
 
-/* TOOL STRIP */
-.tool-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:stretch}
-.tool-intro{border:1px solid var(--line);padding:32px;background:var(--white)}
-.tool-intro h3{font:400 38px "DM Serif Display",serif;margin:0 0 13px}
-.tool-intro p{font-size:13px;line-height:1.75;color:var(--muted);margin:0}
-.tool-list{border-top:1px solid var(--line)}
-.tool-row{display:grid;grid-template-columns:1fr 100px 30px;gap:15px;align-items:center;padding:17px 8px;border-bottom:1px solid var(--line)}
-.tool-row strong{font:400 20px "DM Serif Display",serif}
-.tool-row span{font:400 9px "DM Mono",monospace;color:var(--terracotta)}
-.tool-row i{font-style:normal;font:400 13px "DM Mono",monospace;text-align:right}
-@media(max-width:850px){.tool-wrap{grid-template-columns:1fr}.tool-intro h3{font-size:32px}}
-
 /* LEARNING */
-.learning{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.learn{background:var(--paper);padding:24px;min-height:190px;transition:.25s}
-.learn:hover{background:var(--white)}
-.learn small{font:400 9px "DM Mono",monospace;color:var(--terracotta)}
-.learn h3{font:400 23px "DM Serif Display",serif;line-height:1.05;margin:25px 0 10px}
-.learn p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+.learning{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.learn{background:var(--paper);padding:24px;min-height:190px;transition:.25s}.learn:hover{background:var(--white)}
+.learn small{font:400 9px "DM Mono",monospace;color:var(--terra)}.learn h3{font:400 23px "DM Serif Display",serif;line-height:1.05;margin:25px 0 10px}.learn p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
 @media(max-width:850px){.learning{grid-template-columns:1fr 1fr}}@media(max-width:560px){.learning{grid-template-columns:1fr}}
 
-/* PROFILES */
-.profiles{display:flex;flex-wrap:wrap;gap:10px}
-.profile{border:1px solid var(--line);padding:13px 16px;background:var(--white);font:400 10px "DM Mono",monospace;transition:.2s}
-.profile:hover{border-color:var(--terracotta);color:var(--terracotta);transform:translateY(-2px)}
-
-/* FOOTER */
-footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;justify-content:space-between;gap:30px;font:400 9px "DM Mono",monospace;color:var(--muted)}
-footer b{font-weight:500;color:var(--ink)}
-@media(max-width:600px){footer{padding:45px 20px;display:block}footer div+div{margin-top:20px}}
-.shelf{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}.shelf-main,.shelf-side{border:1px solid var(--line);background:var(--white);padding:28px}.shelf-main h3,.shelf-side h3{font:400 34px 'DM Serif Display';margin:0 0 13px}.shelf-main p,.shelf-side p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.platforms{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.platform{border:1px solid var(--line);background:var(--paper);padding:14px 16px;font:400 10px 'DM Mono';transition:.2s}.platform:hover{border-color:var(--terracotta);color:var(--terracotta);transform:translateY(-2px)}.reading-list{margin-top:26px;border-top:1px solid var(--line)}.reading{display:grid;grid-template-columns:45px 1fr auto;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid var(--line)}.reading span,.reading a{font:400 9px 'DM Mono'}.reading a{color:var(--terracotta)}.reading strong{font:400 18px 'DM Serif Display'}.media-note{display:grid;grid-template-columns:1fr 1fr;gap:16px}.media{border:1px solid var(--line);padding:28px;background:var(--paper2);min-height:220px}.media small{font:400 9px 'DM Mono';color:var(--terracotta)}.media h3{font:400 30px 'DM Serif Display';margin:28px 0 10px}.media p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.media .label{margin-top:25px;font:400 9px 'DM Mono';color:var(--muted)}@media(max-width:850px){.shelf{grid-template-columns:1fr}}@media(max-width:560px){.media-note{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-
-<nav class="nav">
-  <div class="nav-in">
-    <a class="brand" href="index.html"><strong>RAHUL // AI</strong><span>RESOURCES</span></a>
-    <div class="links">
-      <a href="projects.html">projects</a>
-      <a href="research.html">research</a>
-      <a href="education.html">education</a>
-      <a href="certifications.html">certifications</a>
-      <a href="gallery.html">gallery</a>
-      <a class="active" href="resources.html">resources</a>
-      <a class="gh" href="https://github.com/rahulkiran2222" target="_blank">github ↗</a>
-      <a href="contact.html">contact</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-in">
-    <div class="eyebrow">OPEN KNOWLEDGE / PUBLIC WORK</div>
-    <h1>Things worth<br><em>passing on.</em></h1>
-    <div class="hero-foot">
-      <div class="hero-copy">A curated shelf of papers, learning materials and public references. This page is meant to make the work reusable — not simply visible.</div>
-      <div class="hero-meta"><b>01</b> papers & white papers<br><b>02</b> learning pathways<br><b>03</b> public archives<br><b>04</b> educational media</div>
-    </div>
-  </div>
-</header>
-
-<section class="section" id="papers">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">01 / PAPERS & WHITE PAPERS</div><div class="rule"></div></div>
-    <div><h2>Research you<br>can take with you.</h2><p class="deck">Public-facing writing around responsible AI, digital transformation and sustainable AI systems. Each item links to its public record.</p></div>
-  </div>
-
-  <div class="paper-list">
-    <a class="paper" href="https://doi.org/10.5281/zenodo.19728540" target="_blank">
-      <span class="paper-num">01</span>
-      <div><div class="paper-title">Responsible AI</div><div class="paper-sub">White paper · public research record</div></div>
-      <span class="paper-date">2025 ↗ DOI</span>
-    </a>
-    <a class="paper" href="https://doi.org/10.5281/zenodo.19897024" target="_blank">
-      <span class="paper-num">02</span>
-      <div><div class="paper-title">Digital Transformation ROI</div><div class="paper-sub">White paper · public research record</div></div>
-      <span class="paper-date">2025 ↗ DOI</span>
-    </a>
-    <a class="paper" href="https://doi.org/10.5281/zenodo.20504482" target="_blank">
-      <span class="paper-num">03</span>
-      <div><div class="paper-title">The Sustainable AI Stack</div><div class="paper-sub">White paper · energy-aware AI platforms</div></div>
-      <span class="paper-date">2026 ↗ DOI</span>
-    </a>
-  </div>
-</div>
-</section>
-
-
-
-<section class="section sage" id="learning">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">04 / LEARNING SHELF</div><div class="rule"></div></div>
-    <div><h2>Resources that<br>shaped the work.</h2><p class="deck">Institutions and learning pathways that shaped the intellectual route behind the portfolio. This page keeps the emphasis on learning, not on repeating the project archive.</p></div>
-  </div>
-
-  <div class="learning">
-    <a class="learn" href="https://www.stanford.edu/" target="_blank"><small>01 · STANFORD</small><h3>Ethics & Technology</h3><p>Technology, ethics, public policy and responsible innovation.</p></a>
-    <a class="learn" href="https://www.engineering.columbia.edu/" target="_blank"><small>02 · COLUMBIA</small><h3>Machine Learning</h3><p>Machine learning and prompt engineering coursework.</p></a>
-    <a class="learn" href="https://rdi.berkeley.edu/" target="_blank"><small>03 · UC BERKELEY RDI</small><h3>Agentic AI</h3><p>Open learning around agentic AI and modern AI systems.</p></a>
-    <a class="learn" href="https://hpi.de/en/" target="_blank"><small>04 · HPI</small><h3>Sustainable Software</h3><p>Sustainable software engineering and responsible computing.</p></a>
-  </div>
-</div>
-</section>
-
-<section class="section" id="profiles">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">05 / PUBLIC PROFILES</div><div class="rule"></div></div>
-    <div><h2>Where the work<br>continues.</h2><p class="deck">Primary public places to read, inspect or follow the work.</p></div>
-  </div>
-  <div class="profiles">
-    <a class="profile" href="https://github.com/rahulkiran2222" target="_blank">GITHUB ↗</a>
-    <a class="profile" href="https://zenodo.org/" target="_blank">ZENODO ↗</a>
-    <a class="profile" href="https://www.researchgate.net/" target="_blank">RESEARCHGATE ↗</a>
-    <a class="profile" href="https://www.ssrn.com/" target="_blank">SSRN ↗</a>
-    <a class="profile" href="https://www.academia.edu/" target="_blank">ACADEMIA ↗</a>
-  </div>
-</div>
-</section>
-
-<section class="section" id="archives"><div class="wrap"><div class="section-head"><div><div class="section-no">03 / PUBLIC ARCHIVES</div><div class="rule"></div></div><div><h2>Where the longer<br>record lives.</h2><p class="deck">Public scholarly spaces for following papers, preprints and professional writing beyond the portfolio itself.</p></div></div><div class="shelf"><div class="shelf-main"><h3>Research archives</h3><p>These are discovery points for the scholarly record. Use the primary publication or repository entry when reading or citing the work.</p><div class="platforms"><a class="platform" href="https://zenodo.org/" target="_blank">ZENODO ↗</a><a class="platform" href="https://www.researchgate.net/" target="_blank">RESEARCHGATE ↗</a><a class="platform" href="https://www.ssrn.com/" target="_blank">SSRN ↗</a><a class="platform" href="https://www.academia.edu/" target="_blank">ACADEMIA ↗</a></div></div><div class="shelf-side"><h3>How to use this shelf</h3><p>Start with the original record, then move to the abstract, methodology and limitations. The portfolio provides context; the source provides the evidence.</p><div class="reading-list"><div class="reading"><span>01</span><strong>Read the record</strong><a href="#papers">PAPERS ↗</a></div><div class="reading"><span>02</span><strong>Follow the institution</strong><a href="#learning">LEARNING ↗</a></div><div class="reading"><span>03</span><strong>Explore the archive</strong><a href="https://zenodo.org/" target="_blank">ZENODO ↗</a></div></div></div></div></div></section>
-
-<section class="section sage" id="media"><div class="wrap"><div class="section-head"><div><div class="section-no">04 / EDUCATIONAL MEDIA</div><div class="rule"></div></div><div><h2>Learning should<br>remain accessible.</h2><p class="deck">A space for public explainers, workshop recordings, teaching material and other resources designed to make technical ideas easier to approach.</p></div></div><div class="media-note"><article class="media"><small>MEDIA / 01</small><h3>HorizonTrax</h3><p>Place the public AI-literacy videos and educational material here as direct links or embeds.</p><div class="label">ADD PUBLIC VIDEO / RESOURCE LINK</div></article><article class="media"><small>MEDIA / 02</small><h3>Open explainers</h3><p>Use this space for short explainers, talks, workshop recordings or other public-facing learning material.</p><div class="label">ADD PUBLIC VIDEO / RESOURCE LINK</div></article></div></div></section>
-
-<footer>
-  <div><b>RAHUL // AI</b><br>Research · engineering · responsible technology</div>
-  <div>RESOURCES / OPEN KNOWLEDGE<br>Public work · continually updated</div>
-</footer>
-
-<script>
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.animate(
-        [{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],
-        {duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'}
-      );
-      io.unobserve(e.target);
-    }
-  });
-},{threshold:.08});
-document.querySelectorAll('.section-head,.paper,.resource,.tool-wrap,.learn,.profile').forEach(el=>io.observe(el));
-</script>
-</body>
-</html>
-.hero:before{content:"";position:absolute;width:58vw;height:58vw;right:-20vw;top:-18vw;border-radius:50%;background:radial-gradient(circle,rgba(164,95,73,.15),rgba(164,95,73,0) 68%)}
-.hero:after{content:"";position:absolute;width:70vw;height:35vw;left:-15vw;bottom:-23vw;border-radius:50%;background:radial-gradient(circle,rgba(203,214,197,.9),rgba(203,214,197,0) 67%)}
-.hero-in{max-width:var(--max);width:100%;margin:auto;padding:100px 28px 65px;position:relative;z-index:2}
-.eyebrow{font:500 10px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.16em;margin-bottom:25px}
-h1{font:400 clamp(66px,10vw,132px) "DM Serif Display",serif;line-height:.87;letter-spacing:-.055em;margin:0;max-width:900px}
-h1 em{font-style:normal;color:var(--terracotta)}
-.hero-foot{display:grid;grid-template-columns:1fr 220px;gap:50px;margin-top:72px}
-.hero-copy{font-size:16px;line-height:1.75;color:var(--muted);max-width:610px}
-.hero-meta{font:400 10px "DM Mono",monospace;color:var(--muted);line-height:1.8}
-.hero-meta b{color:var(--ink);font-weight:500}
-@media(max-width:700px){.hero-in{padding:80px 20px 45px}.hero-foot{display:block;margin-top:48px}.hero-meta{margin-top:28px}}
-
-/* COMMON */
-.section{padding:96px 0;border-bottom:1px solid var(--line)}
-.section.sage{background:var(--sage)}
-.wrap{max-width:var(--max);margin:auto;padding:0 28px}
-.section-head{display:grid;grid-template-columns:1fr 2fr;gap:55px;margin-bottom:50px}
-.section-no{font:400 10px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.13em}
-.rule{height:1px;background:var(--line);margin-top:24px}
-h2{font:400 clamp(42px,5vw,67px) "DM Serif Display",serif;line-height:.98;letter-spacing:-.04em;margin:0}
-.deck{font-size:14px;line-height:1.75;color:var(--muted);max-width:620px;margin:17px 0 0}
-@media(max-width:750px){.section{padding:70px 0}.wrap{padding:0 20px}.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:35px}}
-
-/* RESOURCE CARDS */
-.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.resource{border:1px solid var(--line);background:var(--white);min-height:300px;padding:23px;display:flex;flex-direction:column;justify-content:space-between;position:relative;transition:transform .35s,box-shadow .35s}
-.resource:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(54,54,45,.11)}
-.resource-no{font:400 9px "DM Mono",monospace;color:var(--terracotta);letter-spacing:.1em}
-.resource h3{font:400 28px "DM Serif Display",serif;line-height:1.05;margin:25px 0 12px}
-.resource p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
-.resource-foot{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;display:flex;justify-content:space-between;gap:15px;font:400 9px "DM Mono",monospace;color:var(--muted)}
-.resource-foot span:last-child{color:var(--terracotta)}
-@media(max-width:900px){.resource-grid{grid-template-columns:1fr 1fr}}@media(max-width:580px){.resource-grid{grid-template-columns:1fr}}
-
-/* FEATURED PAPER */
-.paper-list{border-top:1px solid var(--line)}
-.paper{display:grid;grid-template-columns:75px 1fr 150px;gap:25px;align-items:center;padding:27px 8px;border-bottom:1px solid var(--line);transition:.25s}
-.paper:hover{background:rgba(255,255,255,.35);padding-left:16px;padding-right:16px}
-.paper-num,.paper-type,.paper-date{font:400 9px "DM Mono",monospace;color:var(--muted)}
-.paper-title{font:400 27px "DM Serif Display",serif;line-height:1.1}
-.paper-sub{font-size:11px;color:var(--muted);margin-top:7px}
-.paper-date{text-align:right;color:var(--terracotta)}
-@media(max-width:700px){.paper{grid-template-columns:45px 1fr}.paper-date{display:none}.paper-title{font-size:22px}}
-
-/* TOOL STRIP */
-.tool-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:stretch}
-.tool-intro{border:1px solid var(--line);padding:32px;background:var(--white)}
-.tool-intro h3{font:400 38px "DM Serif Display",serif;margin:0 0 13px}
-.tool-intro p{font-size:13px;line-height:1.75;color:var(--muted);margin:0}
-.tool-list{border-top:1px solid var(--line)}
-.tool-row{display:grid;grid-template-columns:1fr 100px 30px;gap:15px;align-items:center;padding:17px 8px;border-bottom:1px solid var(--line)}
-.tool-row strong{font:400 20px "DM Serif Display",serif}
-.tool-row span{font:400 9px "DM Mono",monospace;color:var(--terracotta)}
-.tool-row i{font-style:normal;font:400 13px "DM Mono",monospace;text-align:right}
-@media(max-width:850px){.tool-wrap{grid-template-columns:1fr}.tool-intro h3{font-size:32px}}
-
-/* LEARNING */
-.learning{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.learn{background:var(--paper);padding:24px;min-height:190px;transition:.25s}
-.learn:hover{background:var(--white)}
-.learn small{font:400 9px "DM Mono",monospace;color:var(--terracotta)}
-.learn h3{font:400 23px "DM Serif Display",serif;line-height:1.05;margin:25px 0 10px}
-.learn p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
-@media(max-width:850px){.learning{grid-template-columns:1fr 1fr}}@media(max-width:560px){.learning{grid-template-columns:1fr}}
-
-/* PROFILES */
-.profiles{display:flex;flex-wrap:wrap;gap:10px}
-.profile{border:1px solid var(--line);padding:13px 16px;background:var(--white);font:400 10px "DM Mono",monospace;transition:.2s}
-.profile:hover{border-color:var(--terracotta);color:var(--terracotta);transform:translateY(-2px)}
-
-/* FOOTER */
-footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;justify-content:space-between;gap:30px;font:400 9px "DM Mono",monospace;color:var(--muted)}
-footer b{font-weight:500;color:var(--ink)}
+/* PUBLIC ARCHIVE */
+.archive{display:flex;flex-wrap:wrap;gap:10px}.archive a{border:1px solid var(--line);padding:13px 16px;background:var(--white);font:400 10px "DM Mono",monospace;transition:.2s}.archive a:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px)}
+footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;justify-content:space-between;gap:30px;font:400 9px "DM Mono",monospace;color:var(--muted)}footer b{font-weight:500;color:var(--ink)}
 @media(max-width:600px){footer{padding:45px 20px;display:block}footer div+div{margin-top:20px}}
 </style>
 </head>
 <body>
+<nav class="nav"><div class="nav-in">
+<a class="brand" href="index.html"><strong>RAHUL // AI</strong><span>RESOURCES</span></a>
+<div class="links">
+<a href="projects.html">projects</a><a href="research.html">research</a><a href="education.html">education</a><a href="certifications.html">certifications</a><a href="gallery.html">gallery</a><a class="active" href="resources.html">resources</a><a class="gh" href="https://github.com/rahulkiran2222" target="_blank">github ↗</a><a href="contact.html">contact</a>
+</div></div></nav>
 
-<nav class="nav">
-  <div class="nav-in">
-    <a class="brand" href="index.html"><strong>RAHUL // AI</strong><span>RESOURCES</span></a>
-    <div class="links">
-      <a href="projects.html">projects</a>
-      <a href="research.html">research</a>
-      <a href="education.html">education</a>
-      <a href="certifications.html">certifications</a>
-      <a href="gallery.html">gallery</a>
-      <a class="active" href="resources.html">resources</a>
-      <a class="gh" href="https://github.com/rahulkiran2222" target="_blank">github ↗</a>
-      <a href="contact.html">contact</a>
-    </div>
-  </div>
-</nav>
+<header class="hero"><div class="hero-in">
+<div class="eyebrow">OPEN KNOWLEDGE / FREE LEARNING / PUBLIC WORK</div>
+<h1>Things worth<br><em>passing on.</em></h1>
+<div class="hero-foot"><div class="hero-copy">A public shelf for learning material, research records and resources intended to be reused. The centre of this page is Horizon AI Courses — a free learning initiative built to make AI knowledge more accessible.</div><div class="hero-meta"><b>01</b> free learning<br><b>02</b> research records<br><b>03</b> learning pathways<br><b>04</b> public archives</div></div>
+</div></header>
 
-<header class="hero">
-  <div class="hero-in">
-    <div class="eyebrow">OPEN KNOWLEDGE / PUBLIC WORK</div>
-    <h1>Things worth<br><em>passing on.</em></h1>
-    <div class="hero-foot">
-      <div class="hero-copy">A curated shelf of papers, open-source projects, learning materials and public resources. This page is meant to make the work reusable — not simply visible.</div>
-      <div class="hero-meta"><b>01</b> papers & white papers<br><b>02</b> open tools<br><b>03</b> learning paths<br><b>04</b> public profiles</div>
-    </div>
-  </div>
-</header>
+<section class="horizon" id="horizon-ai-courses">
+<div class="horizon-in">
+<div class="horizon-kicker">01 / HORIZONTRAX · HORIZON AI COURSES</div>
+<div class="horizon-top"><div class="horizon-title">Learn AI.<br><em>Build freely.</em></div><div class="free-badge">FREE · OPEN · SELF-DIRECTED</div></div>
+<p class="horizon-intro">Horizon AI Courses is the free-learning side of the HorizonTrax work: a public space for people who want to learn AI concepts and practical skills without putting the material behind a paywall. This is the resource page's flagship section.</p>
 
-<section class="section" id="papers">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">01 / PAPERS & WHITE PAPERS</div><div class="rule"></div></div>
-    <div><h2>Research you<br>can take with you.</h2><p class="deck">Public-facing writing around responsible AI, digital transformation and sustainable AI systems. Each item links to its public record.</p></div>
-  </div>
-
-  <div class="paper-list">
-    <a class="paper" href="https://doi.org/10.5281/zenodo.19728540" target="_blank">
-      <span class="paper-num">01</span>
-      <div><div class="paper-title">Responsible AI</div><div class="paper-sub">White paper · public research record</div></div>
-      <span class="paper-date">2025 ↗ DOI</span>
-    </a>
-    <a class="paper" href="https://doi.org/10.5281/zenodo.19897024" target="_blank">
-      <span class="paper-num">02</span>
-      <div><div class="paper-title">Digital Transformation ROI</div><div class="paper-sub">White paper · public research record</div></div>
-      <span class="paper-date">2025 ↗ DOI</span>
-    </a>
-    <a class="paper" href="https://doi.org/10.5281/zenodo.20504482" target="_blank">
-      <span class="paper-num">03</span>
-      <div><div class="paper-title">The Sustainable AI Stack</div><div class="paper-sub">White paper · energy-aware AI platforms</div></div>
-      <span class="paper-date">2026 ↗ DOI</span>
-    </a>
-  </div>
+<div class="course-shell">
+<div class="course-head">
+<div><div class="course-label">HORIZON AI COURSES / OPEN CURRICULUM</div><div class="course-name">A growing library for learning AI</div></div>
+<div class="course-links"><a class="course-link primary" href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">EXPLORE COURSES ↗</a><a class="course-link" href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">GITHUB ↗</a></div>
+</div>
+<div class="course-map">
+<div class="module"><div class="module-no">01</div><h3>Foundations</h3><p>Start here. Use this area for introductory AI concepts and the fundamentals represented in the course repository.</p></div>
+<div class="module"><div class="module-no">02</div><h3>Machine Learning</h3><p>A space for the ML learning sequence, exercises and practical explanations contained in the open curriculum.</p></div>
+<div class="module"><div class="module-no">03</div><h3>Generative AI</h3><p>A place for modern generative-AI material, examples and hands-on learning from the course collection.</p></div>
+<div class="module"><div class="module-no">04</div><h3>Practice</h3><p>Projects, notebooks, exercises and experiments can live here as learners move from concepts to building.</p></div>
+</div>
+</div>
+<div class="horizon-note"><span>OPEN RESOURCE · HORIZONTRAX</span><span>COURSE CONTENT → GITHUB REPOSITORY</span></div>
 </div>
 </section>
 
-<section class="section sage" id="open-tools">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">02 / OPEN TOOLS & PROJECTS</div><div class="rule"></div></div>
-    <div><h2>Tools built to<br>be inspected.</h2><p class="deck">Selected public repositories and live artifacts. The full project archive remains available from the Projects page.</p></div>
-  </div>
+<section class="section" id="papers"><div class="wrap">
+<div class="section-head"><div><div class="section-no">02 / PAPERS & WHITE PAPERS</div><div class="rule"></div></div><div><h2>Research you<br>can take with you.</h2><p class="deck">Public-facing writing around responsible AI, digital transformation and sustainable AI systems.</p></div></div>
+<div class="paper-list">
+<a class="paper" href="https://doi.org/10.5281/zenodo.19728540" target="_blank"><span class="paper-num">01</span><div><div class="paper-title">Responsible AI</div><div class="paper-sub">White paper · public research record</div></div><span class="paper-date">2025 ↗ DOI</span></a>
+<a class="paper" href="https://doi.org/10.5281/zenodo.19897024" target="_blank"><span class="paper-num">02</span><div><div class="paper-title">Digital Transformation ROI</div><div class="paper-sub">White paper · public research record</div></div><span class="paper-date">2025 ↗ DOI</span></a>
+<a class="paper" href="https://doi.org/10.5281/zenodo.20504482" target="_blank"><span class="paper-num">03</span><div><div class="paper-title">The Sustainable AI Stack</div><div class="paper-sub">White paper · energy-aware AI platforms</div></div><span class="paper-date">2026 ↗ DOI</span></a>
+</div></div></section>
 
-  <div class="resource-grid">
-    <a class="resource" href="https://rahulkiran2222.github.io/foundation-model-atlas/" target="_blank">
-      <div><div class="resource-no">OPEN / 01</div><h3>Foundation Model Atlas</h3><p>A public catalogue and visual index of foundation models and their architectural relationships.</p></div>
-      <div class="resource-foot"><span>LIVE + GITHUB</span><span>OPEN ↗</span></div>
-    </a>
-    <a class="resource" href="https://greenprompt.raphussolutions.com/" target="_blank">
-      <div><div class="resource-no">OPEN / 02</div><h3>GreenPrompt</h3><p>A project exploring energy economics, inference emissions and prompt efficiency in LLM systems.</p></div>
-      <div class="resource-foot"><span>LIVE + GITHUB</span><span>OPEN ↗</span></div>
-    </a>
-    <a class="resource" href="https://huggingface.co/spaces/RahulKiran2222/prompt-injection-lab" target="_blank">
-      <div><div class="resource-no">OPEN / 03</div><h3>Prompt Injection Lab</h3><p>An interactive environment for exploring prompt-injection evaluation and model behaviour.</p></div>
-      <div class="resource-foot"><span>HUGGING FACE</span><span>OPEN ↗</span></div>
-    </a>
-    <a class="resource" href="https://huggingface.co/spaces/RahulKiran2222/AI-Carbon-Footprint-Visualizer" target="_blank">
-      <div><div class="resource-no">OPEN / 04</div><h3>AI Carbon Footprint Visualizer</h3><p>A public visualization project focused on the environmental footprint of AI computation.</p></div>
-      <div class="resource-foot"><span>HUGGING FACE</span><span>OPEN ↗</span></div>
-    </a>
-    <a class="resource" href="https://huggingface.co/spaces/RahulKiran2222/EnviroMetric" target="_blank">
-      <div><div class="resource-no">OPEN / 05</div><h3>EnviroMetric</h3><p>An environmental analytics project presented as a public interactive artifact.</p></div>
-      <div class="resource-foot"><span>HUGGING FACE</span><span>OPEN ↗</span></div>
-    </a>
-    <a class="resource" href="https://rahulkiran2222.github.io/TechnologyEthics-StanfordUniversity/" target="_blank">
-      <div><div class="resource-no">OPEN / 06</div><h3>Technology Ethics</h3><p>A public companion site for work from the Stanford Ethics and Tech program.</p></div>
-      <div class="resource-foot"><span>LIVE + GITHUB</span><span>OPEN ↗</span></div>
-    </a>
-  </div>
-</div>
-</section>
+<section class="section sage" id="learning"><div class="wrap">
+<div class="section-head"><div><div class="section-no">03 / LEARNING SHELF</div><div class="rule"></div></div><div><h2>Learning paths<br>behind the work.</h2><p class="deck">Institutions and programs that shaped the broader learning journey represented across the portfolio.</p></div></div>
+<div class="learning">
+<a class="learn" href="https://www.stanford.edu/" target="_blank"><small>01 · STANFORD</small><h3>Ethics & Technology</h3><p>Technology, ethics, public policy and responsible innovation.</p></a>
+<a class="learn" href="https://www.engineering.columbia.edu/" target="_blank"><small>02 · COLUMBIA</small><h3>Machine Learning</h3><p>Machine learning and prompt engineering coursework.</p></a>
+<a class="learn" href="https://rdi.berkeley.edu/" target="_blank"><small>03 · UC BERKELEY RDI</small><h3>Agentic AI</h3><p>Open learning around agentic AI and modern AI systems.</p></a>
+<a class="learn" href="https://hpi.de/en/" target="_blank"><small>04 · HPI</small><h3>Sustainable Software</h3><p>Sustainable software engineering and responsible computing.</p></a>
+</div></div></section>
 
-<section class="section" id="code">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">03 / RESEARCH CODE</div><div class="rule"></div></div>
-    <div><h2>Follow the<br>implementation.</h2><p class="deck">Research is more useful when the implementation is visible. These repositories are starting points for inspection, reproduction and extension.</p></div>
-  </div>
+<section class="section" id="archive"><div class="wrap">
+<div class="section-head"><div><div class="section-no">04 / PUBLIC KNOWLEDGE</div><div class="rule"></div></div><div><h2>Where the knowledge<br>remains accessible.</h2><p class="deck">Public destinations for papers, records and longer-form work. The technical project archive intentionally stays on the Projects page.</p></div></div>
+<div class="archive">
+<a href="https://zenodo.org/" target="_blank">ZENODO ↗</a><a href="https://www.researchgate.net/" target="_blank">RESEARCHGATE ↗</a><a href="https://www.ssrn.com/" target="_blank">SSRN ↗</a><a href="https://www.academia.edu/" target="_blank">ACADEMIA ↗</a><a href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">HORIZON AI COURSES ↗</a>
+</div></div></section>
 
-  <div class="tool-wrap">
-    <div class="tool-intro">
-      <h3>Public GitHub</h3>
-      <p>Explore experiments spanning LLM evaluation, tokenizer bias, cognitive-bias probes, AI safety, sustainability and applied AI engineering.</p>
-      <div class="resource-foot"><span>49 PUBLIC REPOSITORIES</span><a href="https://github.com/rahulkiran2222?tab=repositories" target="_blank">VIEW ALL ↗</a></div>
-    </div>
-    <div class="tool-list">
-      <a class="tool-row" href="https://github.com/rahulkiran2222/Tokenizer-Bias" target="_blank"><strong>Tokenizer-Bias</strong><span>NLP / RESEARCH</span><i>↗</i></a>
-      <a class="tool-row" href="https://github.com/rahulkiran2222/llm-cognitive-biases" target="_blank"><strong>LLM Cognitive Biases</strong><span>COGNITION</span><i>↗</i></a>
-      <a class="tool-row" href="https://github.com/rahulkiran2222/llm-grounding-deficit" target="_blank"><strong>LLM Grounding Deficit</strong><span>EVALUATION</span><i>↗</i></a>
-      <a class="tool-row" href="https://github.com/rahulkiran2222/latent-probing-toxicity" target="_blank"><strong>Latent Probing — Toxicity</strong><span>PROBING</span><i>↗</i></a>
-      <a class="tool-row" href="https://github.com/rahulkiran2222/latent-probing-mental-health" target="_blank"><strong>Latent Probing — Mental Health</strong><span>PROBING</span><i>↗</i></a>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="section sage" id="learning">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">04 / LEARNING SHELF</div><div class="rule"></div></div>
-    <div><h2>Resources that<br>shaped the work.</h2><p class="deck">A compact list of institutions and learning pathways represented in the wider portfolio. Links point to the corresponding public institution or program.</p></div>
-  </div>
-
-  <div class="learning">
-    <a class="learn" href="https://www.stanford.edu/" target="_blank"><small>01 · STANFORD</small><h3>Ethics & Technology</h3><p>Technology, ethics, public policy and responsible innovation.</p></a>
-    <a class="learn" href="https://www.engineering.columbia.edu/" target="_blank"><small>02 · COLUMBIA</small><h3>Machine Learning</h3><p>Machine learning and prompt engineering coursework.</p></a>
-    <a class="learn" href="https://rdi.berkeley.edu/" target="_blank"><small>03 · UC BERKELEY RDI</small><h3>Agentic AI</h3><p>Open learning around agentic AI and modern AI systems.</p></a>
-    <a class="learn" href="https://hpi.de/en/" target="_blank"><small>04 · HPI</small><h3>Sustainable Software</h3><p>Sustainable software engineering and responsible computing.</p></a>
-  </div>
-</div>
-</section>
-
-<section class="section" id="profiles">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="section-no">05 / PUBLIC PROFILES</div><div class="rule"></div></div>
-    <div><h2>Where the work<br>continues.</h2><p class="deck">Primary public places to read, inspect or follow the work.</p></div>
-  </div>
-  <div class="profiles">
-    <a class="profile" href="https://github.com/rahulkiran2222" target="_blank">GITHUB ↗</a>
-    <a class="profile" href="https://zenodo.org/" target="_blank">ZENODO ↗</a>
-    <a class="profile" href="https://www.researchgate.net/" target="_blank">RESEARCHGATE ↗</a>
-    <a class="profile" href="https://www.ssrn.com/" target="_blank">SSRN ↗</a>
-    <a class="profile" href="https://www.academia.edu/" target="_blank">ACADEMIA ↗</a>
-  </div>
-</div>
-</section>
-
-<footer>
-  <div><b>RAHUL // AI</b><br>Research · engineering · responsible technology</div>
-  <div>RESOURCES / OPEN KNOWLEDGE<br>Public work · continually updated</div>
-</footer>
+<footer><div><b>RAHUL // AI</b><br>Research · engineering · responsible technology</div><div>RESOURCES / OPEN KNOWLEDGE<br>Free learning · public research · open access</div></footer>
 
 <script>
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.animate(
-        [{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],
-        {duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'}
-      );
-      io.unobserve(e.target);
-    }
-  });
-},{threshold:.08});
-document.querySelectorAll('.section-head,.paper,.resource,.tool-wrap,.learn,.profile').forEach(el=>io.observe(el));
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:700,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'});io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.horizon-in,.section-head,.paper,.learn,.archive').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
