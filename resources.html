@@ -51,6 +51,16 @@ h2{font:400 clamp(42px,5vw,67px) "DM Serif Display",serif;line-height:.98;letter
 @media(max-width:800px){.horizon{padding:75px 0}.horizon-in{padding:0 20px}.horizon-top{display:block}.free-badge{display:inline-block;margin-top:25px}.course-head{display:block}.course-links{margin-top:20px}.course-map{grid-template-columns:1fr 1fr}.module:nth-child(2){border-right:0}.module:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media(max-width:520px){.course-map{grid-template-columns:1fr}.module{border-right:0!important;border-bottom:1px solid var(--line)}.module:last-child{border-bottom:0}.course-name{font-size:28px}}
 
+/* PLAYABLE COURSE PLAYLISTS */
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
+.video-card{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.video-frame{position:relative;aspect-ratio:16/9;background:#1f211d}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-meta{display:flex;justify-content:space-between;gap:16px;padding:13px 15px;font:400 9px "DM Mono",monospace;color:var(--muted)}
+.video-meta span{color:var(--terra)}
+.video-meta a:hover{color:var(--terra)}
+@media(max-width:800px){.video-grid{grid-template-columns:1fr;padding:12px}}
+
 /* PAPERS */
 .paper-list{border-top:1px solid var(--line)}.paper{display:grid;grid-template-columns:70px 1fr 150px;gap:25px;align-items:center;padding:27px 8px;border-bottom:1px solid var(--line);transition:.25s}.paper:hover{background:rgba(255,255,255,.35);padding-left:16px;padding-right:16px}
 .paper-num,.paper-date{font:400 9px "DM Mono",monospace;color:var(--muted)}.paper-title{font:400 27px "DM Serif Display",serif;line-height:1.1}.paper-sub{font-size:11px;color:var(--muted);margin-top:7px}.paper-date{text-align:right;color:var(--terra)}
@@ -88,16 +98,16 @@ footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;just
 
 <div class="course-shell">
 <div class="course-head">
-<div><div class="course-label">HORIZON AI COURSES / OPEN CURRICULUM</div><div class="course-name">A growing library for learning AI</div></div>
-<div class="course-links"><a class="course-link primary" href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">EXPLORE COURSES ↗</a><a class="course-link" href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">GITHUB ↗</a></div>
+<div><div class="course-label">HORIZON AI COURSES / PLAYLIST LIBRARY</div><div class="course-name">Watch the courses directly here.</div></div>
+<div class="course-links"><a class="course-link primary" href="https://www.youtube.com/playlist?list=PLERT_RRq6vDUKdSTefXmECM1pH2yRtBHg" target="_blank">YOUTUBE ↗</a></div>
 </div>
-<div class="course-map">
-<div class="module"><div class="module-no">01</div><h3>Foundations</h3><p>Start here. Use this area for introductory AI concepts and the fundamentals represented in the course repository.</p></div>
-<div class="module"><div class="module-no">02</div><h3>Machine Learning</h3><p>A space for the ML learning sequence, exercises and practical explanations contained in the open curriculum.</p></div>
-<div class="module"><div class="module-no">03</div><h3>Generative AI</h3><p>A place for modern generative-AI material, examples and hands-on learning from the course collection.</p></div>
-<div class="module"><div class="module-no">04</div><h3>Practice</h3><p>Projects, notebooks, exercises and experiments can live here as learners move from concepts to building.</p></div>
+<div class="video-grid">
+<article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLERT_RRq6vDUKdSTefXmECM1pH2yRtBHg" title="Horizon AI Courses — Playlist 01" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>PLAYLIST 01</span><a href="https://www.youtube.com/playlist?list=PLERT_RRq6vDUKdSTefXmECM1pH2yRtBHg" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+<article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLERT_RRq6vDXf_92ivhpR34119b0qoGHs" title="Horizon AI Courses — Playlist 02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>PLAYLIST 02</span><a href="https://www.youtube.com/playlist?list=PLERT_RRq6vDXf_92ivhpR34119b0qoGHs" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+<article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PL476JSg50oY1b7UGLjkR7a4WfBVFrV8pg" title="Horizon AI Courses — Playlist 03" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>PLAYLIST 03</span><a href="https://www.youtube.com/playlist?list=PL476JSg50oY1b7UGLjkR7a4WfBVFrV8pg" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+<article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLERT_RRq6vDXnd0hkuidNKaQIRcj5PLJG" title="Horizon AI Courses — Playlist 04" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>PLAYLIST 04</span><a href="https://www.youtube.com/playlist?list=PLERT_RRq6vDXnd0hkuidNKaQIRcj5PLJG" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
 </div>
-</div>
+</div></div>
 <div class="horizon-note"><span>OPEN RESOURCE · HORIZONTRAX</span><span>COURSE CONTENT → GITHUB REPOSITORY</span></div>
 </div>
 </section>
