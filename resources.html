@@ -51,6 +51,119 @@ h2{font:400 clamp(42px,5vw,67px) "DM Serif Display",serif;line-height:.98;letter
 @media(max-width:800px){.horizon{padding:75px 0}.horizon-in{padding:0 20px}.horizon-top{display:block}.free-badge{display:inline-block;margin-top:25px}.course-head{display:block}.course-links{margin-top:20px}.course-map{grid-template-columns:1fr 1fr}.module:nth-child(2){border-right:0}.module:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media(max-width:520px){.course-map{grid-template-columns:1fr}.module{border-right:0!important;border-bottom:1px solid var(--line)}.module:last-child{border-bottom:0}.course-name{font-size:28px}}
 
+
+.video-title{padding:17px 17px 14px;background:var(--white);border-bottom:1px solid var(--line)}
+.video-title span{display:block;font:500 9px "DM Mono",monospace;letter-spacing:.12em;color:var(--terra);margin-bottom:8px}
+.video-title strong{display:block;font:400 25px "DM Serif Display",serif;line-height:1.05;font-weight:400}
+
+/* PLAYABLE COURSE PLAYLISTS */
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
+.video-card{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.video-frame{position:relative;aspect-ratio:16/9;background:#1f211d}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-meta{display:flex;justify-content:space-between;gap:16px;padding:13px 15px;font:400 9px "DM Mono",monospace;color:var(--muted)}
+.video-meta span{color:var(--terra)}
+.video-meta a:hover{color:var(--terra)}
+@media(max-width:800px){.video-grid{grid-template-columns:1fr;padding:12px}}
+
+/* PAPERS */
+.paper-list{border-top:1px solid var(--line)}.paper{display:grid;grid-template-columns:70px 1fr 150px;gap:25px;align-items:center;padding:27px 8px;border-bottom:1px solid var(--line);transition:.25s}.paper:hover{background:rgba(255,255,255,.35);padding-left:16px;padding-right:16px}
+.paper-num,.paper-date{font:400 9px "DM Mono",monospace;color:var(--muted)}.paper-title{font:400 27px "DM Serif Display",serif;line-height:1.1}.paper-sub{font-size:11px;color:var(--muted);margin-top:7px}.paper-date{text-align:right;color:var(--terra)}
+@media(max-width:700px){.paper{grid-template-columns:45px 1fr}.paper-date{display:none}.paper-title{font-size:22px}}
+
+/* LEARNING */
+.learning{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.learn{background:var(--paper);padding:24px;min-height:190px;transition:.25s}.learn:hover{background:var(--white)}
+.learn small{font:400 9px "DM Mono",monospace;color:var(--terra)}.learn h3{font:400 23px "DM Serif Display",serif;line-height:1.05;margin:25px 0 10px}.learn p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+@media(max-width:850px){.learning{grid-template-columns:1fr 1fr}}@media(max-width:560px){.learning{grid-template-columns:1fr}}
+
+/* PUBLIC ARCHIVE */
+.archive{display:flex;flex-wrap:wrap;gap:10px}.archive a{border:1px solid var(--line);padding:13px 16px;background:var(--white);font:400 10px "DM Mono",monospace;transition:.2s}.archive a:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px)}
+footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;justify-content:space-between;gap:30px;font:400 9px "DM Mono",monospace;color:var(--muted)}footer b{font-weight:500;color:var(--ink)}
+@media(max-width:600px){footer{padding:45px 20px;display:block}footer div+div{margin-top:20px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+<a class="brand" href="index.html"><strong>RAHUL // AI</strong><span>RESOURCES</span></a>
+<div class="links">
+<a href="projects.html">projects</a><a href="research.html">research</a><a href="education.html">education</a><a href="certifications.html">certifications</a><a href="gallery.html">gallery</a><a class="active" href="resources.html">resources</a><a class="gh" href="https://github.com/rahulkiran2222" target="_blank">github ↗</a><a href="contact.html">contact</a>
+</div></div></nav>
+
+<header class="hero"><div class="hero-in">
+<div class="eyebrow">OPEN KNOWLEDGE / FREE LEARNING / PUBLIC WORK</div>
+<h1>Things worth<br><em>passing on.</em></h1>
+<div class="hero-foot"><div class="hero-copy">A public shelf for learning material, research records and resources intended to be reused. The centre of this page is Horizon AI Courses — a free learning initiative built to make AI knowledge more accessible.</div><div class="hero-meta"><b>01</b> free learning<br><b>02</b> research records<br><b>03</b> learning pathways<br><b>04</b> public archives</div></div>
+</div></header>
+
+<section class="horizon" id="horizon-ai-courses">
+<div class="horizon-in">
+<div class="horizon-kicker">01 / HORIZONTRAX · HORIZON AI COURSES</div>
+<div class="horizon-top"><div class="horizon-title">Learn AI.<br><em>Build freely.</em></div><div class="free-badge">FREE · OPEN · SELF-DIRECTED</div></div>
+<p class="horizon-intro">Horizon AI Courses is the free-learning side of the HorizonTrax work: a public space for people who want to learn AI concepts and practical skills without putting the material behind a paywall. Explore four learning series covering AI fundamentals, AI fluency, computer vision, and ethics in artificial intelligence. This is the resource page's flagship section.</p>
+
+<div class="course-shell">
+<div class="course-head">
+<div><div class="course-label">HORIZON AI COURSES / PLAYLIST LIBRARY</div><div class="course-name">Watch the courses directly here.</div></div>
+<div class="course-links"><a class="course-link primary" href="https://www.youtube.com/playlist?list=PLERT_RRq6vDUKdSTefXmECM1pH2yRtBHg" target="_blank">YOUTUBE ↗</a></div>
+</div>
+<div class="video-grid">
+<article class="video-card"><div class="video-title"><span>UNDERSTANDING AI</span><strong>Understanding AI</strong></div><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLERT_RRq6vDUKdSTefXmECM1pH2yRtBHg" title="Understanding AI" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>UNDERSTANDING AI</span><a href="https://www.youtube.com/playlist?list=PLERT_RRq6vDUKdSTefXmECM1pH2yRtBHg" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+<article class="video-card"><div class="video-title"><span>AI FLUENCY</span><strong>AI Fluency – Core Principles and Frameworks</strong></div><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLERT_RRq6vDXf_92ivhpR34119b0qoGHs" title="AI Fluency – Core Principles and Frameworks" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>AI FLUENCY</span><a href="https://www.youtube.com/playlist?list=PLERT_RRq6vDXf_92ivhpR34119b0qoGHs" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+<article class="video-card"><div class="video-title"><span>COMPUTER VISION</span><strong>Foundations of Computer Vision</strong></div><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PL476JSg50oY1b7UGLjkR7a4WfBVFrV8pg" title="Foundations of Computer Vision" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>COMPUTER VISION</span><a href="https://www.youtube.com/playlist?list=PL476JSg50oY1b7UGLjkR7a4WfBVFrV8pg" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+<article class="video-card"><div class="video-title"><span>AI ETHICS</span><strong>Ethics in Artificial Intelligence</strong></div><div class="video-frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLERT_RRq6vDXnd0hkuidNKaQIRcj5PLJG" title="Ethics in Artificial Intelligence" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-meta"><span>AI ETHICS</span><a href="https://www.youtube.com/playlist?list=PLERT_RRq6vDXnd0hkuidNKaQIRcj5PLJG" target="_blank">OPEN ON YOUTUBE ↗</a></div></article>
+</div>
+</div></div>
+<div class="horizon-note"><span>OPEN RESOURCE · HORIZONTRAX</span><span>COURSE CONTENT → GITHUB REPOSITORY</span></div>
+</div>
+</section>
+
+<section class="section" id="papers"><div class="wrap">
+<div class="section-head"><div><div class="section-no">02 / PAPERS & WHITE PAPERS</div><div class="rule"></div></div><div><h2>Research you<br>can take with you.</h2><p class="deck">Public-facing writing around responsible AI, digital transformation and sustainable AI systems.</p></div></div>
+<div class="paper-list">
+<a class="paper" href="https://doi.org/10.5281/zenodo.19728540" target="_blank"><span class="paper-num">01</span><div><div class="paper-title">Responsible AI</div><div class="paper-sub">White paper · public research record</div></div><span class="paper-date">2025 ↗ DOI</span></a>
+<a class="paper" href="https://doi.org/10.5281/zenodo.19897024" target="_blank"><span class="paper-num">02</span><div><div class="paper-title">Digital Transformation ROI</div><div class="paper-sub">White paper · public research record</div></div><span class="paper-date">2025 ↗ DOI</span></a>
+<a class="paper" href="https://doi.org/10.5281/zenodo.20504482" target="_blank"><span class="paper-num">03</span><div><div class="paper-title">The Sustainable AI Stack</div><div class="paper-sub">White paper · energy-aware AI platforms</div></div><span class="paper-date">2026 ↗ DOI</span></a>
+</div></div></section>
+
+<section class="section sage" id="learning"><div class="wrap">
+<div class="section-head"><div><div class="section-no">03 / LEARNING SHELF</div><div class="rule"></div></div><div><h2>Learning paths<br>behind the work.</h2><p class="deck">Institutions and programs that shaped the broader learning journey represented across the portfolio.</p></div></div>
+<div class="learning">
+<a class="learn" href="https://www.stanford.edu/" target="_blank"><small>01 · STANFORD</small><h3>Ethics & Technology</h3><p>Technology, ethics, public policy and responsible innovation.</p></a>
+<a class="learn" href="https://www.engineering.columbia.edu/" target="_blank"><small>02 · COLUMBIA</small><h3>Machine Learning</h3><p>Machine learning and prompt engineering coursework.</p></a>
+<a class="learn" href="https://rdi.berkeley.edu/" target="_blank"><small>03 · UC BERKELEY RDI</small><h3>Agentic AI</h3><p>Open learning around agentic AI and modern AI systems.</p></a>
+<a class="learn" href="https://hpi.de/en/" target="_blank"><small>04 · HPI</small><h3>Sustainable Software</h3><p>Sustainable software engineering and responsible computing.</p></a>
+</div></div></section>
+
+<section class="section" id="archive"><div class="wrap">
+<div class="section-head"><div><div class="section-no">04 / PUBLIC KNOWLEDGE</div><div class="rule"></div></div><div><h2>Where the knowledge<br>remains accessible.</h2><p class="deck">Public destinations for papers, records and longer-form work. The technical project archive intentionally stays on the Projects page.</p></div></div>
+<div class="archive">
+<a href="https://zenodo.org/" target="_blank">ZENODO ↗</a><a href="https://www.researchgate.net/" target="_blank">RESEARCHGATE ↗</a><a href="https://www.ssrn.com/" target="_blank">SSRN ↗</a><a href="https://www.academia.edu/" target="_blank">ACADEMIA ↗</a><a href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">HORIZON AI COURSES ↗</a>
+</div></div></section>
+
+<footer><div><b>RAHUL // AI</b><br>Research · engineering · responsible technology</div><div>RESOURCES / OPEN KNOWLEDGE<br>Free learning · public research · open access</div></footer>
+
+<script>
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:700,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'});io.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.horizon-in,.section-head,.paper,.learn,.archive').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>.horizon-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:20px}
+.horizon-title{font:400 clamp(55px,8vw,108px) "DM Serif Display",serif;line-height:.86;letter-spacing:-.055em;max-width:780px}
+.horizon-title em{font-style:normal;color:var(--terra)}
+.free-badge{border:1px solid var(--ink);padding:13px 16px;font:500 10px "DM Mono",monospace;white-space:nowrap;background:rgba(250,248,242,.55)}
+.horizon-intro{max-width:700px;margin:34px 0 48px;font-size:16px;line-height:1.75;color:var(--muted)}
+.course-shell{background:var(--white);border:1px solid var(--line);padding:18px;box-shadow:0 28px 70px rgba(54,54,45,.12)}
+.course-head{display:flex;justify-content:space-between;gap:25px;align-items:center;padding:18px 18px 22px;border-bottom:1px solid var(--line)}
+.course-label{font:500 9px "DM Mono",monospace;color:var(--terra);letter-spacing:.12em}.course-name{font:400 34px "DM Serif Display",serif;margin-top:8px}
+.course-links{display:flex;gap:8px;flex-wrap:wrap}.course-link{border:1px solid var(--ink);padding:10px 13px;font:400 9px "DM Mono",monospace;transition:.2s}.course-link.primary{background:var(--ink);color:var(--white)}.course-link:hover{border-color:var(--terra);color:var(--terra)}.course-link.primary:hover{background:var(--terra);color:#fff}
+.course-map{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:18px}
+.module{min-height:235px;padding:22px;border-right:1px solid var(--line);position:relative}.module:last-child{border-right:0}
+.module-no{font:400 9px "DM Mono",monospace;color:var(--terra)}.module h3{font:400 28px "DM Serif Display",serif;line-height:1.02;margin:40px 0 12px}.module p{font-size:11px;line-height:1.65;color:var(--muted);margin:0}
+.module:after{content:"↗";position:absolute;right:20px;bottom:20px;font:400 13px "DM Mono",monospace;color:var(--muted)}
+.horizon-note{margin-top:20px;font:400 9px "DM Mono",monospace;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){.horizon{padding:75px 0}.horizon-in{padding:0 20px}.horizon-top{display:block}.free-badge{display:inline-block;margin-top:25px}.course-head{display:block}.course-links{margin-top:20px}.course-map{grid-template-columns:1fr 1fr}.module:nth-child(2){border-right:0}.module:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:520px){.course-map{grid-template-columns:1fr}.module{border-right:0!important;border-bottom:1px solid var(--line)}.module:last-child{border-bottom:0}.course-name{font-size:28px}}
+
 /* PLAYABLE COURSE PLAYLISTS */
 .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
 .video-card{background:var(--paper);border:1px solid var(--line);overflow:hidden}
