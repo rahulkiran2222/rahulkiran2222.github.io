@@ -82,6 +82,29 @@ h2{font:400 clamp(42px,5vw,67px) "DM Serif Display",serif;line-height:.98;letter
 
 /* PUBLIC ARCHIVE */
 .archive{display:flex;flex-wrap:wrap;gap:10px}.archive a{border:1px solid var(--line);padding:13px 16px;background:var(--white);font:400 10px "DM Mono",monospace;transition:.2s}.archive a:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px)}
+/* PERSONAL RESOURCE ARCHIVE */
+.resource-archive{border-top:1px solid var(--line)}
+.resource-row{display:grid;grid-template-columns:55px 1fr 150px;gap:24px;align-items:center;padding:30px 8px;border-bottom:1px solid var(--line);transition:.2s}
+.resource-row:hover{background:rgba(255,255,255,.34);padding-left:15px;padding-right:15px}
+.resource-index{font:400 10px "DM Mono",monospace;color:var(--terra)}
+.resource-type,.archive-label{font:500 9px "DM Mono",monospace;letter-spacing:.12em;color:var(--terra)}
+.resource-main h3{font:400 30px "DM Serif Display",serif;line-height:1.05;margin:9px 0 7px}
+.resource-main p{font-size:11px;line-height:1.65;color:var(--muted);max-width:690px;margin:0}
+.resource-open{font:400 9px "DM Mono",monospace;text-align:right}
+.resource-open:hover{color:var(--terra)}
+.archive-block{margin-top:60px;border-top:1px solid var(--line);padding-top:20px}
+.archive-links{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
+.archive-links a{background:var(--paper);padding:22px;min-height:130px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.archive-links a:hover{background:var(--white);color:var(--terra)}
+.archive-links span{font:500 11px "DM Mono",monospace}
+.archive-links small{font:400 10px "DM Mono",monospace;color:var(--muted);line-height:1.5}
+.open-learning{background:var(--sage);padding:20px;margin-top:45px}
+.open-learning-inner{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:18px}
+.open-learning h3{font:400 34px "DM Serif Display",serif;margin:0 0 7px}
+.open-learning p{font-size:12px;line-height:1.65;color:var(--muted);max-width:650px;margin:0}
+@media(max-width:850px){.archive-links{grid-template-columns:1fr 1fr}.resource-row{grid-template-columns:45px 1fr}.resource-open{grid-column:2;text-align:left;margin-top:5px}.open-learning-inner{display:block}.open-learning-inner .course-link{display:inline-block;margin-top:20px}}
+@media(max-width:550px){.archive-links{grid-template-columns:1fr}.resource-main h3{font-size:25px}.resource-row{gap:15px}}
+
 footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;justify-content:space-between;gap:30px;font:400 9px "DM Mono",monospace;color:var(--muted)}footer b{font-weight:500;color:var(--ink)}
 @media(max-width:600px){footer{padding:45px 20px;display:block}footer div+div{margin-top:20px}}
 </style>
@@ -181,21 +204,31 @@ footer{max-width:var(--max);margin:auto;padding:55px 28px 70px;display:flex;just
 <a class="paper" href="https://doi.org/10.5281/zenodo.20504482" target="_blank"><span class="paper-num">03</span><div><div class="paper-title">The Sustainable AI Stack</div><div class="paper-sub">White paper · energy-aware AI platforms</div></div><span class="paper-date">2026 ↗ DOI</span></a>
 </div></div></section>
 
-<section class="section sage" id="learning"><div class="wrap">
-<div class="section-head"><div><div class="section-no">03 / LEARNING SHELF</div><div class="rule"></div></div><div><h2>Learning paths<br>behind the work.</h2><p class="deck">Institutions and programs that shaped the broader learning journey represented across the portfolio.</p></div></div>
-<div class="learning">
-<a class="learn" href="https://www.stanford.edu/" target="_blank"><small>01 · STANFORD</small><h3>Ethics & Technology</h3><p>Technology, ethics, public policy and responsible innovation.</p></a>
-<a class="learn" href="https://www.engineering.columbia.edu/" target="_blank"><small>02 · COLUMBIA</small><h3>Machine Learning</h3><p>Machine learning and prompt engineering coursework.</p></a>
-<a class="learn" href="https://rdi.berkeley.edu/" target="_blank"><small>03 · UC BERKELEY RDI</small><h3>Agentic AI</h3><p>Open learning around agentic AI and modern AI systems.</p></a>
-<a class="learn" href="https://hpi.de/en/" target="_blank"><small>04 · HPI</small><h3>Sustainable Software</h3><p>Sustainable software engineering and responsible computing.</p></a>
-</div></div></section>
-
 <section class="section" id="archive"><div class="wrap">
-<div class="section-head"><div><div class="section-no">04 / PUBLIC KNOWLEDGE</div><div class="rule"></div></div><div><h2>Where the knowledge<br>remains accessible.</h2><p class="deck">Public destinations for papers, records and longer-form work. The technical project archive intentionally stays on the Projects page.</p></div></div>
-<div class="archive">
-<a href="https://zenodo.org/" target="_blank">ZENODO ↗</a><a href="https://www.researchgate.net/" target="_blank">RESEARCHGATE ↗</a><a href="https://www.ssrn.com/" target="_blank">SSRN ↗</a><a href="https://www.academia.edu/" target="_blank">ACADEMIA ↗</a><a href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">HORIZON AI COURSES ↗</a>
-</div></div></section>
+<div class="section-head">
+<div><div class="section-no">03 / MY PUBLIC RESOURCE ARCHIVE</div><div class="rule"></div></div>
+<div><h2>Research, writing<br>& public records.</h2>
+<p class="deck">A collection of material I have written, published, archived or made openly available — separate from the projects I build.</p></div>
+</div>
 
+<div class="resource-archive">
+<div class="resource-row"><div class="resource-index">01</div><div class="resource-main"><div class="resource-type">WHITE PAPER · 2025</div><h3>Responsible AI</h3><p>Research and writing on responsible artificial intelligence and the governance questions surrounding its development and use.</p></div><a class="resource-open" href="https://doi.org/10.5281/zenodo.19728540" target="_blank">READ / DOI ↗</a></div>
+<div class="resource-row"><div class="resource-index">02</div><div class="resource-main"><div class="resource-type">WHITE PAPER · 2025</div><h3>Digital Transformation ROI</h3><p>A public research record examining digital transformation through the lens of value, investment and organisational change.</p></div><a class="resource-open" href="https://doi.org/10.5281/zenodo.19897024" target="_blank">READ / DOI ↗</a></div>
+<div class="resource-row"><div class="resource-index">03</div><div class="resource-main"><div class="resource-type">WHITE PAPER · 2026</div><h3>The Sustainable AI Stack</h3><p>Research on energy-aware AI platforms and the systems perspective needed to think about sustainable AI infrastructure.</p></div><a class="resource-open" href="https://doi.org/10.5281/zenodo.20504482" target="_blank">READ / DOI ↗</a></div>
+</div>
+
+<div class="archive-block"><div class="archive-label">PUBLIC RESEARCH PLATFORMS</div>
+<div class="archive-links">
+<a href="https://zenodo.org/" target="_blank"><span>ZENODO</span><small>Research records & publications ↗</small></a>
+<a href="https://www.researchgate.net/" target="_blank"><span>RESEARCHGATE</span><small>Research profile & scholarly network ↗</small></a>
+<a href="https://www.ssrn.com/" target="_blank"><span>SSRN</span><small>Working papers & research dissemination ↗</small></a>
+<a href="https://www.academia.edu/" target="_blank"><span>ACADEMIA</span><small>Academic writing & public papers ↗</small></a>
+</div></div>
+
+<div class="archive-block open-learning"><div class="archive-label">OPEN LEARNING / HORIZONTRAX</div>
+<div class="open-learning-inner"><div><h3>Horizon AI Courses</h3><p>Free AI learning material built to be shared openly. The four course playlists above are the main learning entry point.</p></div><a class="course-link primary" href="https://github.com/rahulkiran2222/Horizon-AI-Courses" target="_blank">COURSE REPOSITORY ↗</a></div>
+</div>
+</div></section>
 <footer><div><b>RAHUL // AI</b><br>Research · engineering · responsible technology</div><div>RESOURCES / OPEN KNOWLEDGE<br>Free learning · public research · open access</div></footer>
 
 <script>
