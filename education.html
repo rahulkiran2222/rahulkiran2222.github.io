@@ -16,17 +16,11 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1180px,90vw);margin:auto}
-.nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;gap:22px;padding:13px 5vw;border-bottom:1px solid var(--line);background:rgba(244,239,229,.93);backdrop-filter:blur(14px)}
-.brand{font:700 14px Arial,sans-serif;letter-spacing:.1em;white-space:nowrap}
-.brand b{color:var(--rust)}
-.navlinks{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-.navlinks a{font:700 10px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#514c45}
-.navlinks a:hover,.navlinks .active{color:var(--rust)}
 
 /* Full-width animated learning / knowledge field behind hero text. */
 .hero{position:relative;min-height:620px;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
-#eduCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-3}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:
+#eduCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:auto}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
  linear-gradient(90deg,rgba(244,239,229,.995) 0%,rgba(244,239,229,.96) 31%,rgba(244,239,229,.72) 55%,rgba(244,239,229,.12) 100%),
  radial-gradient(circle at 78% 48%,rgba(101,122,102,.19),transparent 28%),
  radial-gradient(circle at 90% 66%,rgba(169,79,46,.13),transparent 30%)}
@@ -40,12 +34,20 @@ a{color:inherit;text-decoration:none}
 .metric{border-top:1px solid var(--line);padding-top:9px;min-width:105px}
 .metric strong{display:block;font:700 23px Arial,sans-serif;letter-spacing:-.05em}
 .metric span{display:block;margin-top:4px;font:700 8px Arial,sans-serif;letter-spacing:.13em;color:var(--muted)}
-.hero-rail{position:absolute;right:4.5vw;top:28px;font:700 9px Arial,sans-serif;letter-spacing:.16em;color:#617064;writing-mode:vertical-rl}
-.hero-tip{position:absolute;right:0;bottom:24px;font:700 9px Arial,sans-serif;letter-spacing:.12em;color:#655e56;text-transform:uppercase}
+.hero-rail{position:absolute;z-index:3;right:4.5vw;top:28px;font:700 9px Arial,sans-serif;letter-spacing:.16em;color:#617064;writing-mode:vertical-rl}
+.hero-tip{position:absolute;z-index:3;right:0;bottom:24px;font:700 9px Arial,sans-serif;letter-spacing:.12em;color:#655e56;text-transform:uppercase}
 .hero-label{position:absolute;z-index:1;font:700 9px Arial,sans-serif;letter-spacing:.14em;color:#68756c;text-transform:uppercase;pointer-events:none}
 .hero-label.a{right:7%;top:20%}
 .hero-label.b{right:15%;top:70%;color:#8b604f}
 .hero-label.c{right:31%;top:27%;color:#69767a}
+
+.section{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.section.section-visible{opacity:1;transform:none}
+.edu-card,.learn-card,.thread{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.edu-card.card-visible,.learn-card.card-visible,.thread.card-visible{opacity:1;transform:none}
+.edu-card:nth-child(2),.learn-card:nth-child(2){transition-delay:.06s}
+.edu-card:nth-child(3),.learn-card:nth-child(3){transition-delay:.12s}
+.edu-card:nth-child(4),.learn-card:nth-child(4){transition-delay:.18s}
 
 main{padding-bottom:55px}
 .section{padding:66px 0 5px;scroll-margin-top:72px}
@@ -114,88 +116,45 @@ main{padding-bottom:55px}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
- *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}.section,.edu-card,.learn-card,.thread{opacity:1!important;transform:none!important}
 }
 </style>
 <style>
 
-/* EDITORIAL NAV — shared with Index / Research */
+/* FINAL SHARED EDITORIAL NAV — portfolio-wide navigation */
 nav{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(250,246,238,.92);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--rule, #DCD3C1);
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,246,238,.94);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule,#DCD3C1);
 }
 .nav{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:28px;
+  min-height:72px;height:72px;width:min(1180px,90vw);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:28px;padding:0!important;
 }
-.brand{
-  font:600 15px "IBM Plex Mono",monospace;
-  letter-spacing:.03em;
-  text-decoration:none;
-  white-space:nowrap;
+.brand{font:600 15px "IBM Plex Mono",monospace!important;letter-spacing:.03em!important;white-space:nowrap}
+.brand .accent{color:var(--terra,#B14F2A)!important}
+.brand small{font-size:9px!important;color:var(--taupe,#857C6E)!important;font-weight:400!important;margin-left:8px!important;letter-spacing:0!important}
+nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0;align-items:center;justify-content:flex-end}
+nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft,#58524A);border-bottom:1px solid transparent;transition:.18s;white-space:nowrap}
+nav a:hover,nav a.active{color:var(--terra,#B14F2A);border-color:var(--terra,#B14F2A)}
+.nav-github{padding:7px 10px;border:1px solid var(--rule,#DCD3C1)!important;border-bottom-color:var(--rule,#DCD3C1)!important}
+@media(max-width:1050px){
+  .nav{gap:18px}nav ul{gap:13px}nav a{font-size:10px}
 }
-.brand .accent{color:var(--terra, #B14F2A)}
-.brand small{
-  font-size:9px;
-  color:var(--taupe, #857C6E);
-  font-weight:400;
-  margin-left:8px;
-}
-nav ul{
-  display:flex;
-  gap:20px;
-  list-style:none;
-  padding:0;
-  margin:0;
-  align-items:center;
-}
-nav a{
-  font:11px "IBM Plex Mono",monospace;
-  text-decoration:none;
-  color:var(--soft, #58524A);
-  border-bottom:1px solid transparent;
-  transition:.18s;
-}
-nav a:hover{
-  color:var(--terra, #B14F2A);
-  border-color:var(--terra, #B14F2A);
-}
-nav a.active{
-  color:var(--terra, #B14F2A);
-  border-color:var(--terra, #B14F2A);
-}
-.nav-github{
-  padding:7px 10px;
-  border:1px solid var(--rule, #DCD3C1)!important;
-  border-bottom-color:var(--rule, #DCD3C1)!important;
-}
-@media(max-width:900px){
-  .nav{gap:16px}
-  nav ul{gap:12px}
-}
-@media(max-width:680px){
-  .nav{
-    align-items:flex-start;
-    gap:12px;
-    flex-wrap:wrap;
-    padding:14px 0;
-  }
-  nav ul{
-    gap:10px;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-  }
+@media(max-width:820px){
+  .nav{min-height:68px;height:auto;align-items:flex-start;gap:12px;flex-wrap:wrap;padding:12px 0!important}
+  .brand{flex:0 0 auto}
+  nav ul{flex:1 1 100%;width:100%;gap:10px 14px;flex-wrap:wrap;justify-content:flex-start;padding-top:2px}
   nav a{font-size:10px}
 }
-
+@media(max-width:520px){
+  .nav{width:min(1180px,92vw)}
+  nav ul{gap:9px 12px;overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;scrollbar-width:none}
+  nav ul::-webkit-scrollbar{display:none}
+  nav li{flex:0 0 auto}
+}
 </style>
 <style>
 
@@ -228,6 +187,7 @@ nav a:hover,nav a.active{color:var(--terra,#B14F2A);border-color:var(--terra,#B1
     <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>EDUCATION</small></a>
     <ul>
       <li><a href="projects.html">projects</a></li>
+      <li><a href="about.html">about</a></li>
       <li><a href="research.html">research</a></li>
       <li><a href="education.html" class="active" aria-current="page">education</a></li>
       <li><a href="certifications.html">certifications</a></li>
@@ -433,6 +393,21 @@ nav a:hover,nav a.active{color:var(--terra,#B14F2A);border-color:var(--terra,#B1
  c.addEventListener('mouseleave',()=>{m.tx=.78;m.ty=.5});
  addEventListener('resize',resize);resize();draw();
 })();
+/* Editorial scroll reveals — shared portfolio behaviour. */
+(() => {
+  const items=document.querySelectorAll('.section,.edu-card,.learn-card,.thread');
+  if(!items.length)return;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const show=el=>el.classList.add(el.matches('.section')?'section-visible':'card-visible');
+  if(reduce){items.forEach(show);return;}
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){show(entry.target);io.unobserve(entry.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  items.forEach(el=>io.observe(el));
+})();
+
 </script>
 </body>
 </html>
