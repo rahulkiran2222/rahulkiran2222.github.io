@@ -22,21 +22,71 @@ a{color:inherit}
 .mono{font-family:"IBM Plex Mono",monospace}
 ::selection{background:var(--terra);color:#fff}
 
-/* SAME EDITORIAL NAV AS INDEX / RESEARCH / EDUCATION / PROJECTS */
-nav{position:sticky;top:0;z-index:100;background:rgba(250,246,238,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.brand{font:600 15px "IBM Plex Mono",monospace;letter-spacing:.03em;text-decoration:none;white-space:nowrap}
+/* FINAL SHARED EDITORIAL NAV — portfolio-wide navigation */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,246,238,.94);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule);
+}
+.nav{
+  min-height:72px;height:72px;width:min(1180px,90vw);margin:0 auto;
+  padding:0!important;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;
+}
+.brand{
+  font:600 15px "IBM Plex Mono",monospace;
+  letter-spacing:.03em;text-decoration:none;white-space:nowrap;
+}
 .brand .accent{color:var(--terra)}
-.brand small{font-size:9px;color:var(--taupe);font-weight:400;margin-left:8px}
-nav ul{display:flex;gap:20px;list-style:none;padding:0;margin:0;align-items:center}
-nav a{font:11px "IBM Plex Mono",monospace;text-decoration:none;color:var(--soft);border-bottom:1px solid transparent;transition:.18s}
+.brand small{font-size:9px;color:var(--taupe);font-weight:400;margin-left:8px;letter-spacing:0}
+nav ul{
+  display:flex;gap:18px;list-style:none;padding:0;margin:0;
+  align-items:center;justify-content:flex-end;
+}
+nav a{
+  font:11px "IBM Plex Mono",monospace;text-decoration:none;
+  color:var(--soft);border-bottom:1px solid transparent;
+  transition:.18s;white-space:nowrap;
+}
 nav a:hover,nav a.active{color:var(--terra);border-color:var(--terra)}
-.nav-github{padding:7px 10px;border:1px solid var(--rule)!important;border-bottom-color:var(--rule)!important}
+.nav-github{
+  padding:7px 10px;
+  border:1px solid var(--rule)!important;
+  border-bottom-color:var(--rule)!important;
+}
+@media(max-width:1050px){
+  .nav{gap:18px}
+  nav ul{gap:13px}
+  nav a{font-size:10px}
+}
+@media(max-width:820px){
+  .nav{
+    min-height:68px;height:auto;align-items:flex-start;
+    gap:12px;flex-wrap:wrap;padding:12px 0!important;
+  }
+  .brand{flex:0 0 auto}
+  nav ul{
+    flex:1 1 100%;width:100%;
+    gap:10px 14px;flex-wrap:wrap;
+    justify-content:flex-start;padding-top:2px;
+  }
+  nav a{font-size:10px}
+}
+@media(max-width:520px){
+  .nav{width:min(1180px,92vw)}
+  nav ul{
+    gap:9px 12px;overflow-x:auto;flex-wrap:nowrap;
+    padding-bottom:3px;scrollbar-width:none;
+  }
+  nav ul::-webkit-scrollbar{display:none}
+  nav li{flex:0 0 auto}
+}
 
 /* HERO */
 .hero{position:relative;min-height:760px;overflow:hidden;border-bottom:1px solid var(--rule)}
-#certCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero-grid{position:absolute;inset:0;background:
+#certCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:auto}
+.hero-grid{position:absolute;inset:0;z-index:1;background:
  linear-gradient(90deg,rgba(250,246,238,.97) 0%,rgba(250,246,238,.84) 34%,rgba(250,246,238,.25) 63%,rgba(250,246,238,.05) 100%),
  linear-gradient(0deg,rgba(250,246,238,.20),transparent 45%);pointer-events:none}
 .hero-content{position:relative;z-index:2;min-height:760px;display:flex;align-items:center}
@@ -60,6 +110,28 @@ nav a:hover,nav a.active{color:var(--terra);border-color:var(--terra)}
 .filter{appearance:none;background:transparent;border:1px solid transparent;padding:8px 11px;color:var(--soft);font:10px "IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 .filter:hover,.filter.active{border-color:var(--terra);color:var(--terra)}
 .count{font:10px "IBM Plex Mono",monospace;color:var(--taupe)}
+
+body.js-reveal .section,
+body.js-reveal .credential,
+body.js-reveal .step,
+body.js-reveal .note{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+body.js-reveal .section.section-visible,
+body.js-reveal .credential.card-visible,
+body.js-reveal .step.card-visible,
+body.js-reveal .note.card-visible{
+  opacity:1;transform:none;
+}
+body.js-reveal .credential:nth-child(2),
+body.js-reveal .step:nth-child(2){transition-delay:.06s}
+body.js-reveal .credential:nth-child(3),
+body.js-reveal .step:nth-child(3){transition-delay:.12s}
+body.js-reveal .credential:nth-child(4),
+body.js-reveal .step:nth-child(4){transition-delay:.18s}
+body.js-reveal .credential:nth-child(5){transition-delay:.24s}
+body.js-reveal .credential:nth-child(6){transition-delay:.30s}
 
 /* SECTION */
 .section{padding:90px 0}
@@ -134,6 +206,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 60px;color:var(--taupe);f
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  body.js-reveal .section,body.js-reveal .credential,body.js-reveal .step,body.js-reveal .note{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
@@ -144,6 +217,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 60px;color:var(--taupe);f
     <a class="brand" href="index.html">RAHUL <span class="accent">// AI</span><small>CREDENTIALS</small></a>
     <ul>
       <li><a href="projects.html">projects</a></li>
+      <li><a href="about.html">about</a></li>
       <li><a href="research.html">research</a></li>
       <li><a href="education.html">education</a></li>
       <li><a class="active" href="certifications.html" aria-current="page">certifications</a></li>
@@ -474,6 +548,22 @@ footer{border-top:1px solid var(--rule);padding:30px 0 60px;color:var(--taupe);f
     apply(btn.dataset.filter);
   }));
 })();
+/* Shared editorial scroll reveals. */
+(() => {
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items=[...document.querySelectorAll('.section,.credential,.step,.note')];
+  if(!items.length)return;
+  if(reduce)return;
+  document.body.classList.add('js-reveal');
+  const show=el=>el.classList.add(el.matches('.section')?'section-visible':'card-visible');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){show(entry.target);io.unobserve(entry.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  items.forEach(el=>io.observe(el));
+})();
+
 </script>
 </body>
 </html>
