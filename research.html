@@ -7,7 +7,7 @@
 <meta name="description" content="Research portfolio of Rahul Kiran Gunti across AI safety, LLM reliability, foundation models, multilingual NLP, cognition, efficient AI and climate AI.">
 <style>
 :root{--paper:#f7f2e8;--ink:#25221e;--muted:#746f66;--line:#dcd3c4;--terra:#bd4e2a;--sage:#5d7357;--blue:#557b88;--violet:#765b88;--gold:#a57a28;--panel:#fbf8f0}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;padding-top:72px}a{color:inherit;text-decoration:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;}a{color:inherit;text-decoration:none}
 nav{
   position:fixed;
   top:0;
@@ -111,23 +111,140 @@ nav a.active{
   .navlinks a{flex:0 0 auto}
 }
 </style>
+<style id="portfolio-master-nav">
+/* =========================================================
+   PORTFOLIO MASTER NAV — identical across every page
+   ========================================================= */
+nav#siteNav{
+  position:sticky!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  z-index:1000!important;
+  min-height:72px!important;
+  height:72px!important;
+  margin:0!important;
+  background:rgba(250,246,238,.96)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  border-bottom:1px solid #DCD3C1!important;
+  box-shadow:none!important;
+}
+nav#siteNav.scrolled{
+  background:rgba(250,246,238,.98)!important;
+  box-shadow:0 8px 30px rgba(50,40,25,.06)!important;
+}
+nav#siteNav .portfolio-nav-wrap{
+  width:min(1680px,calc(100% - 48px))!important;
+  height:72px!important;
+  min-height:72px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:24px!important;
+}
+nav#siteNav .portfolio-brand{
+  display:inline-flex!important;
+  align-items:baseline!important;
+  flex:0 0 auto!important;
+  font:600 15px/1 "IBM Plex Mono",monospace!important;
+  letter-spacing:.03em!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+  color:#2b2925!important;
+  border:0!important;
+}
+nav#siteNav .portfolio-brand .accent{color:#B14F2A!important}
+nav#siteNav .portfolio-brand small{
+  font:400 9px/1 "IBM Plex Mono",monospace!important;
+  color:#857C6E!important;
+  letter-spacing:0!important;
+  margin-left:8px!important;
+}
+nav#siteNav ul{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:18px!important;
+  list-style:none!important;
+  padding:0!important;
+  margin:0!important;
+}
+nav#siteNav ul li{margin:0!important;padding:0!important;list-style:none!important}
+nav#siteNav ul li a{
+  display:inline-block!important;
+  font:400 10px/1.2 "IBM Plex Mono",monospace!important;
+  letter-spacing:0!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+  color:#58524A!important;
+  border-bottom:1px solid transparent!important;
+  padding:0!important;
+  transition:color .18s ease,border-color .18s ease!important;
+}
+nav#siteNav ul li a:hover,
+nav#siteNav ul li a.active{
+  color:#B14F2A!important;
+  border-bottom-color:#B14F2A!important;
+}
+nav#siteNav ul li a.nav-github{
+  padding:7px 10px!important;
+  border:1px solid #DCD3C1!important;
+  border-bottom-color:#DCD3C1!important;
+}
+nav#siteNav ul li a.nav-github:hover,
+nav#siteNav ul li a.nav-github.active{
+  border-color:#B14F2A!important;
+  color:#B14F2A!important;
+}
+@media(max-width:1180px){
+  nav#siteNav .portfolio-nav-wrap{width:calc(100% - 36px)!important}
+  nav#siteNav ul{gap:13px!important}
+}
+@media(max-width:900px){
+  nav#siteNav{height:auto!important;min-height:72px!important}
+  nav#siteNav .portfolio-nav-wrap{
+    min-height:72px!important;
+    height:auto!important;
+    padding:13px 0!important;
+    align-items:flex-start!important;
+  }
+  nav#siteNav ul{
+    gap:9px 12px!important;
+    flex-wrap:wrap!important;
+  }
+  nav#siteNav ul li a{font-size:9px!important}
+}
+@media(max-width:600px){
+  nav#siteNav .portfolio-nav-wrap{
+    width:calc(100% - 28px)!important;
+    gap:12px!important;
+  }
+  nav#siteNav .portfolio-brand{font-size:13px!important}
+  nav#siteNav .portfolio-brand small{font-size:8px!important}
+  nav#siteNav ul{max-width:245px!important;gap:8px 10px!important}
+  nav#siteNav ul li a{font-size:8px!important}
+}
+</style>
 </head>
 <body>
 <nav id="siteNav">
-  <div class="wrap nav">
-    <a class="brand" href="index.html">
+  <div class="portfolio-nav-wrap">
+    <a class="portfolio-brand" href="index.html">
       RAHUL<span class="accent"> // AI</span><small>RESEARCH</small>
     </a>
     <ul>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="research.html" class="active" aria-current="page">research</a></li>
-      <li><a href="education.html">education</a></li>
-      <li><a href="certifications.html">certifications</a></li>
-      <li><a href="gallery.html">gallery</a></li>
-      <li><a href="resources.html">resources</a></li>
+      <li><a href="projects.html" data-nav="projects">projects</a></li>
+      <li><a href="about.html" data-nav="about">about</a></li>
+      <li><a href="research.html" data-nav="research">research</a></li>
+      <li><a href="education.html" data-nav="education">education</a></li>
+      <li><a href="certifications.html" data-nav="certifications">certifications</a></li>
+      <li><a href="gallery.html" data-nav="gallery">gallery</a></li>
+      <li><a href="resources.html" data-nav="resources">resources</a></li>
       <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
-      <li><a href="contact.html">contact</a></li>
+      <li><a href="contact.html" data-nav="contact">contact</a></li>
     </ul>
   </div>
 </nav>
@@ -175,16 +292,33 @@ nav a.active{
 </div></section>
 </main>
 <footer class="footer wrap"><span>RAHUL // AI · AI SAFETY FOR EARTH · v0.1</span><span>RESEARCH / EVIDENCE / ARTIFACT</span></footer>
-<script>
-(() => {
-  const nav = document.getElementById("siteNav");
-  addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), {passive:true});
-})();
-</script>
+
 <script>
 document.querySelectorAll('.research-map button').forEach(btn=>{
  const target=document.getElementById(btn.dataset.target);
  const go=()=>{document.querySelectorAll('.research-map button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');if(target){target.scrollIntoView({behavior:'smooth',block:'center'});target.animate([{transform:'scale(1)'},{transform:'scale(1.015)'},{transform:'scale(1)'}],{duration:700})}};
  btn.addEventListener('click',go);btn.addEventListener('mouseenter',()=>btn.classList.add('active'));btn.addEventListener('mouseleave',()=>btn.classList.remove('active'));
 });
-</script></body></html>
+</script>
+<script>
+(() => {
+  const nav = document.getElementById('siteNav');
+  if (!nav) return;
+
+  const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const page = file.replace(/\.html?$/,'') || 'index';
+
+  nav.querySelectorAll('[data-nav]').forEach(link => {
+    const active = link.dataset.nav === page;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current','page');
+    else link.removeAttribute('aria-current');
+  });
+
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
+</script>
+
+</body></html>
