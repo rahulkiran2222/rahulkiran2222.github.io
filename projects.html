@@ -111,6 +111,7 @@ main{padding-bottom:45px}
  .hero-rail,.build-label{display:none}
 }
 @media(max-width:620px){
+ .nav{align-items:flex-start}
  .navlinks{gap:10px}
  .hero{min-height:585px}
  .hero-content{padding:72px 0 65px}
@@ -129,40 +130,219 @@ main{padding-bottom:45px}
 }
 </style>
 <style>
-/* SHARED EDITORIAL NAV — exact Index / Certifications system */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,246,238,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(217,207,188,.75);transition:.3s}
-nav.scrolled{background:rgba(250,246,238,.95);box-shadow:0 8px 30px rgba(50,40,25,.06)}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font:600 15px "IBM Plex Mono",monospace;letter-spacing:.03em;text-decoration:none;white-space:nowrap}
-.brand .accent{color:#B14F2A}
-.brand small{font-size:9px;color:#857C6E;font-weight:400;margin-left:8px}
-nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0;align-items:center}
-nav a{font:10px "IBM Plex Mono",monospace;text-decoration:none;color:#58524A;border-bottom:1px solid transparent;transition:.18s}
-nav a:hover,nav a.active{color:#B14F2A;border-color:#B14F2A}
-.nav-github{padding:7px 10px;border:1px solid #DCD3C1!important;border-bottom-color:#DCD3C1!important}
-@media(max-width:760px){.nav{min-height:auto;padding:13px 0;align-items:flex-start}.nav ul{gap:8px 11px;flex-wrap:wrap;justify-content:flex-end}nav a{font-size:8px}}
-@media(max-width:500px){nav ul{max-width:250px}}
-/* Project-field motion remains independent of navigation. */
+/* SHARED EDITORIAL NAV — matches Index / About / Certifications / Gallery / Contact */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(250,246,238,.78);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(217,207,188,.75);
+  transition:.3s
+}
+nav.scrolled{
+  background:rgba(250,246,238,.95);
+  box-shadow:0 8px 30px rgba(50,40,25,.06)
+}
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px
+}
+.brand{
+  font:600 15px "IBM Plex Mono",monospace;
+  letter-spacing:.03em;
+  text-decoration:none;
+  white-space:nowrap
+}
+.brand .accent{color:var(--terra,#B14F2A)}
+.brand small{
+  font-size:9px;
+  color:var(--taupe,#857C6E);
+  font-weight:400;
+  margin-left:8px
+}
+nav ul{
+  display:flex;
+  gap:18px;
+  list-style:none;
+  padding:0;
+  margin:0;
+  align-items:center
+}
+nav a{
+  font:10px "IBM Plex Mono",monospace;
+  text-decoration:none;
+  color:var(--soft,#58524A);
+  border-bottom:1px solid transparent;
+  transition:.18s
+}
+nav a:hover,
+nav a.active{
+  color:var(--terra,#B14F2A);
+  border-color:var(--terra,#B14F2A)
+}
+.nav-github{
+  padding:7px 10px;
+  border:1px solid var(--rule,#DCD3C1)!important;
+  border-bottom-color:var(--rule,#DCD3C1)!important
+}
+@media(max-width:760px){
+ .nav{min-height:auto;padding:13px 0;align-items:flex-start}
+ .nav ul{gap:8px 11px;flex-wrap:wrap;justify-content:flex-end}
+ nav a{font-size:8px}
+}
+@media(max-width:500px){
+ nav ul{max-width:250px}
+}
+
+/* Keep the project-field motion layer, without overriding the shared navigation. */
 .hero{--scan:0px}
-@media(prefers-reduced-motion:no-preference){.hero::before{animation:heroBreath 8s ease-in-out infinite alternate}}
+@media(prefers-reduced-motion:no-preference){
+  .hero::before{animation:heroBreath 8s ease-in-out infinite alternate}
+}
 @keyframes heroBreath{from{opacity:.86}to{opacity:1}}
+</style>
+<style id="portfolio-master-nav">
+/* =========================================================
+   PORTFOLIO MASTER NAV — identical across every page
+   ========================================================= */
+nav#siteNav{
+  position:sticky!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  z-index:1000!important;
+  min-height:72px!important;
+  height:72px!important;
+  margin:0!important;
+  background:rgba(250,246,238,.96)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  border-bottom:1px solid #DCD3C1!important;
+  box-shadow:none!important;
+}
+nav#siteNav.scrolled{
+  background:rgba(250,246,238,.98)!important;
+  box-shadow:0 8px 30px rgba(50,40,25,.06)!important;
+}
+nav#siteNav .portfolio-nav-wrap{
+  width:min(1680px,calc(100% - 48px))!important;
+  height:72px!important;
+  min-height:72px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:24px!important;
+}
+nav#siteNav .portfolio-brand{
+  display:inline-flex!important;
+  align-items:baseline!important;
+  flex:0 0 auto!important;
+  font:600 15px/1 "IBM Plex Mono",monospace!important;
+  letter-spacing:.03em!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+  color:#2b2925!important;
+  border:0!important;
+}
+nav#siteNav .portfolio-brand .accent{color:#B14F2A!important}
+nav#siteNav .portfolio-brand small{
+  font:400 9px/1 "IBM Plex Mono",monospace!important;
+  color:#857C6E!important;
+  letter-spacing:0!important;
+  margin-left:8px!important;
+}
+nav#siteNav ul{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:18px!important;
+  list-style:none!important;
+  padding:0!important;
+  margin:0!important;
+}
+nav#siteNav ul li{margin:0!important;padding:0!important;list-style:none!important}
+nav#siteNav ul li a{
+  display:inline-block!important;
+  font:400 10px/1.2 "IBM Plex Mono",monospace!important;
+  letter-spacing:0!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+  color:#58524A!important;
+  border-bottom:1px solid transparent!important;
+  padding:0!important;
+  transition:color .18s ease,border-color .18s ease!important;
+}
+nav#siteNav ul li a:hover,
+nav#siteNav ul li a.active{
+  color:#B14F2A!important;
+  border-bottom-color:#B14F2A!important;
+}
+nav#siteNav ul li a.nav-github{
+  padding:7px 10px!important;
+  border:1px solid #DCD3C1!important;
+  border-bottom-color:#DCD3C1!important;
+}
+nav#siteNav ul li a.nav-github:hover,
+nav#siteNav ul li a.nav-github.active{
+  border-color:#B14F2A!important;
+  color:#B14F2A!important;
+}
+@media(max-width:1180px){
+  nav#siteNav .portfolio-nav-wrap{width:calc(100% - 36px)!important}
+  nav#siteNav ul{gap:13px!important}
+}
+@media(max-width:900px){
+  nav#siteNav{height:auto!important;min-height:72px!important}
+  nav#siteNav .portfolio-nav-wrap{
+    min-height:72px!important;
+    height:auto!important;
+    padding:13px 0!important;
+    align-items:flex-start!important;
+  }
+  nav#siteNav ul{
+    gap:9px 12px!important;
+    flex-wrap:wrap!important;
+  }
+  nav#siteNav ul li a{font-size:9px!important}
+}
+@media(max-width:600px){
+  nav#siteNav .portfolio-nav-wrap{
+    width:calc(100% - 28px)!important;
+    gap:12px!important;
+  }
+  nav#siteNav .portfolio-brand{font-size:13px!important}
+  nav#siteNav .portfolio-brand small{font-size:8px!important}
+  nav#siteNav ul{max-width:245px!important;gap:8px 10px!important}
+  nav#siteNav ul li a{font-size:8px!important}
+}
 </style>
 </head>
 <body>
 
 <nav id="siteNav">
-  <div class="wrap nav">
-    <a class="brand" href="index.html">RAHUL<span class="accent"> // AI</span><small>RESEARCH</small></a>
+  <div class="portfolio-nav-wrap">
+    <a class="portfolio-brand" href="index.html">
+      RAHUL<span class="accent"> // AI</span><small>RESEARCH</small>
+    </a>
     <ul>
-      <li><a href="projects.html" class="active" aria-current="page">projects</a></li>
-      <li><a href="about.html">about</a></li>
-      <li><a href="research.html">research</a></li>
-      <li><a href="education.html">education</a></li>
-      <li><a href="certifications.html">certifications</a></li>
-      <li><a href="gallery.html">gallery</a></li>
-      <li><a href="resources.html">resources</a></li>
+      <li><a href="projects.html" data-nav="projects">projects</a></li>
+      <li><a href="about.html" data-nav="about">about</a></li>
+      <li><a href="research.html" data-nav="research">research</a></li>
+      <li><a href="education.html" data-nav="education">education</a></li>
+      <li><a href="certifications.html" data-nav="certifications">certifications</a></li>
+      <li><a href="gallery.html" data-nav="gallery">gallery</a></li>
+      <li><a href="resources.html" data-nav="resources">resources</a></li>
       <li><a class="nav-github" href="https://github.com/rahulkiran2222" target="_blank" rel="noopener noreferrer">github ↗</a></li>
-      <li><a href="contact.html">contact</a></li>
+      <li><a href="contact.html" data-nav="contact">contact</a></li>
     </ul>
   </div>
 </nav>
@@ -1209,17 +1389,28 @@ nav a:hover,nav a.active{color:#B14F2A;border-color:#B14F2A}
 })();
 </script>
 
+
+
 <script>
 (() => {
-  const nav = document.getElementById("siteNav");
-  addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), {passive:true});
+  const nav = document.getElementById('siteNav');
+  if (!nav) return;
+
+  const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const page = file.replace(/\.html?$/,'') || 'index';
+
+  nav.querySelectorAll('[data-nav]').forEach(link => {
+    const active = link.dataset.nav === page;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current','page');
+    else link.removeAttribute('aria-current');
+  });
+
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
 })();
 </script>
-<script>
-(() => {
-  const nav = document.getElementById("siteNav");
-  addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), {passive:true});
-})();
-</script>
+
 </body>
 </html>
